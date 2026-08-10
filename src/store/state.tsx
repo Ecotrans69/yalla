@@ -34,6 +34,7 @@ interface AppApi {
   refreshHearts(): void
   setGoal(n: number): void
   setTheme(t: 'light' | 'dark' | undefined): void
+  setVoice(v: import('../speech/audio').VoiceChoice): void
   exportActive(): string
   importJson(json: string): void
 }
@@ -125,6 +126,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
       },
       setTheme(t) {
         patchData((d) => ({ ...d, theme: t }))
+      },
+      setVoice(v) {
+        patchData((d) => ({ ...d, voice: v }))
       },
       exportActive() {
         if (!state.activeProfileId) throw new Error('Aucun profil actif')

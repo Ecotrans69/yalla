@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { Course, VocabItem } from '../../content/types'
-import { speakItem, ttsAvailable } from '../../speech/tts'
+import { playItem } from '../../speech/audio'
+import { useApp } from '../../store/state'
 
 interface Props {
   item: VocabItem
@@ -10,24 +11,24 @@ interface Props {
   size?: number
 }
 
-/** Bouton 🔊 + tortue 🐢 (lecture lente) */
+/** Bouton 🔊 + tortue 🐢 (lecture lente) — voix neurales avec fallback voix du téléphone */
 export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props) {
+  const { data } = useApp()
+  const voice = data?.voice ?? 'mix'
   const played = useRef(false)
 
   useEffect(() => {
-    if (autoPlay && !played.current && ttsAvailable()) {
+    if (autoPlay && !played.current) {
       played.current = true
-      void speakItem(item, course)
+      void playItem(item, course, false, voice)
     }
-  }, [autoPlay, item, course])
-
-  if (!ttsAvailable()) return null
+  }, [autoPlay, item, course, voice])
 
   return (
     <span style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
       <button
         aria-label="Écouter"
-        onClick={() => void speakItem(item, course)}
+        onClick={() => void playItem(item, course, false, voice)}
         style={{
           background: 'var(--blue)',
           border: 'none',
@@ -42,7 +43,7 @@ export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props
       </button>
       <button
         aria-label="Écouter lentement"
-        onClick={() => void speakItem(item, course, true)}
+        onClick={() => void playItem(item, course, true, voice)}
         style={{
           background: 'transparent',
           border: '2px solid var(--border)',

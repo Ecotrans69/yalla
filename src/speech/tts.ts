@@ -18,13 +18,26 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
   window.speechSynthesis.onvoiceschanged = refreshVoices
 }
 
-/** Meilleure voix pour une langue : correspondance exacte, sinon même préfixe */
+/** Score de naturel d'une voix système (les voix « enhanced/natural » d'abord) */
+function quality(v: SpeechSynthesisVoice): number {
+  const n = v.name.toLowerCase()
+  if (/natural|neural|premium|enhanced|siri/.test(n)) return 3
+  if (/google/.test(n)) return 2
+  return 1
+}
+
+/** Meilleure voix pour une langue : la plus naturelle, correspondance exacte en bonus */
 export function pickVoice(lang: string): SpeechSynthesisVoice | undefined {
   refreshVoices()
-  const prefix = lang.split('-')[0].toLowerCase()
-  const exact = voices.find((v) => v.lang.toLowerCase().replace('_', '-') === lang.toLowerCase())
-  if (exact) return exact
-  return voices.find((v) => v.lang.toLowerCase().startsWith(prefix))
+  const wanted = lang.toLowerCase()
+  const prefix = wanted.split('-')[0]
+  const norm = (v: SpeechSynthesisVoice) => v.lang.toLowerCase().replace('_', '-')
+  const candidates = voices.filter((v) => norm(v).startsWith(prefix))
+  if (!candidates.length) return undefined
+  return candidates.sort(
+    (a, b) =>
+      quality(b) + (norm(b) === wanted ? 0.5 : 0) - (quality(a) + (norm(a) === wanted ? 0.5 : 0))
+  )[0]
 }
 
 /** Y a-t-il une voix installée pour cette langue ? (ex: 'ar') */

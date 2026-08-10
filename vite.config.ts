@@ -25,7 +25,21 @@ export default defineConfig({
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
         ]
       },
-      workbox: { globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'] }
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
+        // les mp3 ne sont PAS préchargés (trop lourds) : mis en cache à la 1re écoute
+        runtimeCaching: [
+          {
+            urlPattern: /\/audio\/.+\.mp3$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'yalla-audio',
+              expiration: { maxEntries: 2500, maxAgeSeconds: 31536000 },
+              cacheableResponse: { statuses: [0, 200] }
+            }
+          }
+        ]
+      }
     })
   ],
   test: {

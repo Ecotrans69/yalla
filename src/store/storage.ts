@@ -1,4 +1,5 @@
 import type { Course, CourseId } from '../content/types'
+import type { VoiceChoice } from '../speech/audio'
 import { onResult, type SrsEntry } from '../engine/srs'
 import {
   earnedBadges,
@@ -29,6 +30,8 @@ export interface ProfileData {
   badges: string[]
   perfectLessons: number
   theme?: 'light' | 'dark'
+  /** Voix préférée pour les audios (h/f/e/mix) */
+  voice?: VoiceChoice
 }
 
 export interface AppState {

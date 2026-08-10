@@ -1,13 +1,21 @@
 import { useRef, useState } from 'react'
-import { hasVoiceFor, speak, ttsAvailable } from '../../speech/tts'
+import { getCourse } from '../../content'
+import { playItem, VOICE_LABELS } from '../../speech/audio'
 import { sttAvailable } from '../../speech/stt'
 import { useApp } from '../../store/state'
 import { useRouter } from '../Router'
 
 const GOALS = [10, 20, 30, 50]
 
+function sampleItem(courseId: string) {
+  const course = getCourse(courseId)!
+  const lesson = course.units.flatMap((u) => u.lessons).find((l) => l.kind === 'vocab')
+  return { course, item: lesson!.items![0] }
+}
+
 export function SettingsScreen() {
-  const { profile, data, setGoal, setTheme, exportActive, importJson, selectProfile } = useApp()
+  const { profile, data, setGoal, setTheme, setVoice, exportActive, importJson, selectProfile } =
+    useApp()
   const { navigate } = useRouter()
   const fileRef = useRef<HTMLInputElement>(null)
   const [msg, setMsg] = useState('')
@@ -31,8 +39,6 @@ export function SettingsScreen() {
       setMsg(`❌ ${(e as Error).message}`)
     }
   }
-
-  const arVoiceOk = ttsAvailable() && hasVoiceFor('ar')
 
   return (
     <div className="screen">
@@ -77,21 +83,38 @@ export function SettingsScreen() {
       </div>
 
       <div className="card" style={{ marginBottom: 12 }}>
-        <div style={{ fontWeight: 800, marginBottom: 8 }}>🔊 Test des voix</div>
+        <div style={{ fontWeight: 800, marginBottom: 8 }}>🗣️ Voix</div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
+          {VOICE_LABELS.map(([value, label]) => (
+            <button
+              key={value}
+              className={`btn-choice ${(data.voice ?? 'mix') === value ? 'selected' : ''}`}
+              onClick={() => setVoice(value)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <button className="btn btn-blue" onClick={() => void speak('Hello! How are you today?', 'en-US')}>
-            Anglais
+          <button
+            className="btn btn-blue"
+            onClick={() => {
+              const { course, item } = sampleItem('en')
+              void playItem(item, course, false, data.voice ?? 'mix')
+            }}
+          >
+            🔊 Essayer en anglais
           </button>
-          <button className="btn btn-blue" onClick={() => void speak('السلام عليكم', 'ar-SA')}>
-            Arabe
+          <button
+            className="btn btn-blue"
+            onClick={() => {
+              const { course, item } = sampleItem('ar')
+              void playItem(item, course, false, data.voice ?? 'mix')
+            }}
+          >
+            🔊 Essayer en arabe
           </button>
         </div>
-        {!arVoiceOk && (
-          <p style={{ color: 'var(--red)', fontSize: 14, marginBottom: 0 }}>
-            ⚠️ Aucune voix arabe détectée. Installe-la dans les réglages du téléphone
-            (Accessibilité → Contenu énoncé → Voix sur iPhone ; Synthèse vocale sur Android).
-          </p>
-        )}
         {!sttAvailable() && (
           <p style={{ color: 'var(--text-dim)', fontSize: 14, marginBottom: 0 }}>
             ℹ️ Le micro n'est pas géré par ce navigateur : les exercices « répète » deviennent des
