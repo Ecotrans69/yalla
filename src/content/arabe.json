@@ -1,0 +1,65 @@
+{
+  "id": "ar",
+  "title": "Arabe littéraire",
+  "flag": "📖",
+  "ttsLang": "ar-SA",
+  "sttLang": "ar-SA",
+  "units": [
+    {
+      "id": "ar-alpha",
+      "title": "L'alphabet",
+      "icon": "✏️",
+      "lessons": [
+        {
+          "id": "ar-alpha-l1",
+          "title": "Premières lettres",
+          "kind": "letters",
+          "letters": [
+            {
+              "id": "ar_alif",
+              "char": "ا",
+              "name": "alif",
+              "phon": "a",
+              "forms": { "isolated": "ا", "initial": "ا", "medial": "ـا", "final": "ـا" }
+            },
+            {
+              "id": "ar_ba",
+              "char": "ب",
+              "name": "ba",
+              "phon": "b",
+              "forms": { "isolated": "ب", "initial": "بـ", "medial": "ـبـ", "final": "ـب" }
+            },
+            {
+              "id": "ar_ta",
+              "char": "ت",
+              "name": "ta",
+              "phon": "t",
+              "forms": { "isolated": "ت", "initial": "تـ", "medial": "ـتـ", "final": "ـت" }
+            },
+            {
+              "id": "ar_tha",
+              "char": "ث",
+              "name": "tha",
+              "phon": "th",
+              "forms": { "isolated": "ث", "initial": "ثـ", "medial": "ـثـ", "final": "ـث" }
+            },
+            {
+              "id": "ar_jim",
+              "char": "ج",
+              "name": "jim",
+              "phon": "j",
+              "forms": { "isolated": "ج", "initial": "جـ", "medial": "ـجـ", "final": "ـج" }
+            },
+            {
+              "id": "ar_ha",
+              "char": "ح",
+              "name": "ha",
+              "phon": "h",
+              "forms": { "isolated": "ح", "initial": "حـ", "medial": "ـحـ", "final": "ـح" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

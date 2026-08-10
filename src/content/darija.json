@@ -1,0 +1,31 @@
+{
+  "id": "dz",
+  "title": "Darija algérienne",
+  "flag": "🇩🇿",
+  "ttsLang": "ar-SA",
+  "sttLang": "ar-DZ",
+  "units": [
+    {
+      "id": "dz-u1",
+      "title": "Salutations",
+      "icon": "👋",
+      "lessons": [
+        {
+          "id": "dz-u1-l1",
+          "title": "Salam !",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_salam", "text": "salam", "fr": "salut", "arScript": "سلام", "emoji": "👋", "kid": true },
+            { "id": "dz_sbah_khir", "text": "sbah el khir", "fr": "bonjour (le matin)", "arScript": "صباح الخير", "emoji": "🌅", "kid": true },
+            { "id": "dz_labas", "text": "labas?", "fr": "ça va ?", "arScript": "لاباس", "emoji": "🙂", "kid": true },
+            { "id": "dz_hamdoullah", "text": "hamdoullah", "fr": "ça va bien (Dieu merci)", "arScript": "الحمد لله", "emoji": "😊", "kid": true },
+            { "id": "dz_saha", "text": "saha", "fr": "merci / santé", "arScript": "صحة", "emoji": "🙏", "kid": true },
+            { "id": "dz_beslama", "text": "beslama", "fr": "au revoir", "arScript": "بالسلامة", "emoji": "🚪", "kid": true },
+            { "id": "dz_wach_rak", "text": "wach rak?", "fr": "comment vas-tu ? (à un homme)", "arScript": "واش راك" },
+            { "id": "dz_mlih", "text": "mlih", "fr": "bien", "arScript": "مليح", "emoji": "👍", "kid": true }
+          ]
+        }
+      ]
+    }
+  ]
+}

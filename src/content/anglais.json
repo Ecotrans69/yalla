@@ -1,0 +1,46 @@
+{
+  "id": "en",
+  "title": "Anglais",
+  "flag": "🇬🇧",
+  "ttsLang": "en-US",
+  "sttLang": "en-US",
+  "units": [
+    {
+      "id": "en-u1",
+      "title": "Salutations",
+      "icon": "👋",
+      "lessons": [
+        {
+          "id": "en-u1-l1",
+          "title": "Bonjour !",
+          "kind": "vocab",
+          "items": [
+            { "id": "en_hello", "text": "hello", "fr": "bonjour", "emoji": "👋", "kid": true },
+            { "id": "en_goodbye", "text": "goodbye", "fr": "au revoir", "emoji": "🚪", "kid": true },
+            { "id": "en_yes", "text": "yes", "fr": "oui", "emoji": "✅", "kid": true },
+            { "id": "en_no", "text": "no", "fr": "non", "emoji": "❌", "kid": true },
+            { "id": "en_please", "text": "please", "fr": "s'il te plaît", "emoji": "🙏", "kid": true },
+            { "id": "en_thanks", "text": "thank you", "fr": "merci", "emoji": "😊", "kid": true },
+            { "id": "en_good_morning", "text": "good morning", "fr": "bonjour (le matin)", "emoji": "🌅", "kid": true },
+            { "id": "en_good_night", "text": "good night", "fr": "bonne nuit", "emoji": "🌙", "kid": true }
+          ]
+        },
+        {
+          "id": "en-u1-l2",
+          "title": "Je me présente",
+          "kind": "vocab",
+          "items": [
+            { "id": "en_my_name_is", "text": "my name is Sofian", "fr": "je m'appelle Sofian" },
+            { "id": "en_how_are_you", "text": "how are you?", "fr": "comment vas-tu ?", "emoji": "🙂", "kid": true },
+            { "id": "en_im_fine", "text": "I am fine", "fr": "je vais bien", "emoji": "😄", "kid": true },
+            { "id": "en_nice_to_meet", "text": "nice to meet you", "fr": "enchanté" },
+            { "id": "en_i_am", "text": "I am", "fr": "je suis" },
+            { "id": "en_you_are", "text": "you are", "fr": "tu es" },
+            { "id": "en_welcome", "text": "welcome", "fr": "bienvenue", "emoji": "🤗", "kid": true },
+            { "id": "en_see_you", "text": "see you later", "fr": "à plus tard", "emoji": "👋" }
+          ]
+        }
+      ]
+    }
+  ]
+}
