@@ -6,7 +6,7 @@ vi.mock('./tts', () => ({
   stopSpeaking: vi.fn(),
 }))
 
-import { pickVariant, audioUrl, playItem } from './audio'
+import { pickVariant, audioUrl, playItem, effectiveRate } from './audio'
 import { speakItem } from './tts'
 
 const EN = { id: 'en', title: '', flag: '', ttsLang: 'en-US', sttLang: 'en-US', units: [] } as Course
@@ -27,6 +27,18 @@ describe('pickVariant', () => {
   it('choix fixe respecté', () => {
     expect(pickVariant(EN, 'h')).toBe('h')
     expect(pickVariant(AR, 'f')).toBe('f')
+  })
+})
+
+describe('effectiveRate', () => {
+  it('normal = réglage tel quel', () => {
+    expect(effectiveRate(1, false)).toBe(1)
+    expect(effectiveRate(0.85, false)).toBe(0.85)
+  })
+  it('tortue = réglage × 0.7, plancher 0.5', () => {
+    expect(effectiveRate(1, true)).toBeCloseTo(0.7)
+    expect(effectiveRate(0.7, true)).toBeCloseTo(0.5)
+    expect(effectiveRate(1.15, true)).toBeCloseTo(0.81)
   })
 })
 

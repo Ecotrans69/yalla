@@ -66,7 +66,7 @@ describe('tts', () => {
     }
     await speakItem({ id: 'x', text: 'salam', fr: 'salut', arScript: 'سلام' }, course, true)
     expect(spoken[0].text).toBe('سلام')
-    expect(spoken[0].rate).toBe(0.6)
+    expect(spoken[0].rate).toBeCloseTo(0.7)
   })
 })
 

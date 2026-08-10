@@ -15,20 +15,21 @@ interface Props {
 export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props) {
   const { data } = useApp()
   const voice = data?.voice ?? 'mix'
+  const rate = data?.rate ?? 1
   const played = useRef(false)
 
   useEffect(() => {
     if (autoPlay && !played.current) {
       played.current = true
-      void playItem(item, course, false, voice)
+      void playItem(item, course, false, voice, rate)
     }
-  }, [autoPlay, item, course, voice])
+  }, [autoPlay, item, course, voice, rate])
 
   return (
     <span style={{ display: 'inline-flex', gap: 8, alignItems: 'center' }}>
       <button
         aria-label="Écouter"
-        onClick={() => void playItem(item, course, false, voice)}
+        onClick={() => void playItem(item, course, false, voice, rate)}
         style={{
           background: 'var(--blue)',
           border: 'none',
@@ -43,7 +44,7 @@ export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props
       </button>
       <button
         aria-label="Écouter lentement"
-        onClick={() => void playItem(item, course, true, voice)}
+        onClick={() => void playItem(item, course, true, voice, rate)}
         style={{
           background: 'transparent',
           border: '2px solid var(--border)',

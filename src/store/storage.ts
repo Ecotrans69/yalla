@@ -32,6 +32,8 @@ export interface ProfileData {
   theme?: 'light' | 'dark'
   /** Voix préférée pour les audios (h/f/e/mix) */
   voice?: VoiceChoice
+  /** Vitesse de lecture des audios (0.7 à 1.15, défaut 1) */
+  rate?: number
 }
 
 export interface AppState {

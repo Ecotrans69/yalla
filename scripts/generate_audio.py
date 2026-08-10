@@ -15,10 +15,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'public', 'audio')
 
 VOICES = {
-    'en': {'h': 'en-US-GuyNeural', 'f': 'en-US-JennyNeural', 'e': 'en-US-AnaNeural'},
+    'en': {'h': 'en-US-AndrewMultilingualNeural', 'f': 'en-US-AvaMultilingualNeural', 'e': 'en-US-AnaNeural'},
     'ar': {'h': 'ar-SA-HamedNeural', 'f': 'ar-SA-ZariyahNeural'},
     'dz': {'h': 'ar-DZ-IsmaelNeural', 'f': 'ar-DZ-AminaNeural'},
 }
+
+# Débit légèrement ralenti pour l'apprentissage (l'arabe et la darija plus posés)
+RATES = {'en': '-5%', 'ar': '-10%', 'dz': '-12%'}
 
 
 def collect_jobs():
@@ -44,7 +47,7 @@ async def gen_one(sem, item_id, text, cid, variant, voice):
     async with sem:
         for attempt in range(3):
             try:
-                await edge_tts.Communicate(text, voice).save(path)
+                await edge_tts.Communicate(text, voice, rate=RATES[cid]).save(path)
                 if os.path.getsize(path) > 500:
                     return 'ok'
             except Exception as e:  # noqa: BLE001 — retry réseau

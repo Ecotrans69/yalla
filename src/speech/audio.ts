@@ -40,22 +40,28 @@ export function audioUrl(itemId: string, variant: 'h' | 'f' | 'e'): string {
   return `${import.meta.env.BASE_URL}audio/${itemId}.${variant}.mp3`
 }
 
+/** Vitesse réellement appliquée : la tortue ralentit encore par rapport au réglage */
+export function effectiveRate(rate: number, slow: boolean): number {
+  return slow ? Math.max(0.5, Math.round(rate * 0.7 * 100) / 100) : rate
+}
+
 /** Joue un item avec la voix neurale choisie, fallback voix du téléphone */
 export function playItem(
   item: VocabItem,
   course: Course,
   slow = false,
-  choice: VoiceChoice = 'mix'
+  choice: VoiceChoice = 'mix',
+  rate = 1
 ): Promise<void> {
   stopAudio()
   return new Promise((resolve) => {
     const variant = pickVariant(course, choice)
     const audio = new Audio(audioUrl(item.id, variant))
-    audio.playbackRate = slow ? 0.65 : 1
+    audio.playbackRate = effectiveRate(rate, slow)
     current = audio
     const fallback = () => {
       current = null
-      void speakItem(item, course, slow).then(resolve)
+      void speakItem(item, course, slow, rate).then(resolve)
     }
     audio.onended = () => {
       current = null

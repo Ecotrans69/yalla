@@ -7,6 +7,13 @@ import { useRouter } from '../Router'
 
 const GOALS = [10, 20, 30, 50]
 
+const RATES: [number, string][] = [
+  [0.7, '🐌 Très lente'],
+  [0.85, '🐢 Lente'],
+  [1, '▶️ Normale'],
+  [1.15, '⚡ Rapide'],
+]
+
 function sampleItem(courseId: string) {
   const course = getCourse(courseId)!
   const lesson = course.units.flatMap((u) => u.lessons).find((l) => l.kind === 'vocab')
@@ -14,7 +21,7 @@ function sampleItem(courseId: string) {
 }
 
 export function SettingsScreen() {
-  const { profile, data, setGoal, setTheme, setVoice, exportActive, importJson, selectProfile } =
+  const { profile, data, setGoal, setTheme, setVoice, setRate, exportActive, importJson, selectProfile } =
     useApp()
   const { navigate } = useRouter()
   const fileRef = useRef<HTMLInputElement>(null)
@@ -95,12 +102,24 @@ export function SettingsScreen() {
             </button>
           ))}
         </div>
+        <div style={{ fontWeight: 800, margin: '12px 0 8px' }}>⏩ Vitesse de la voix</div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
+          {RATES.map(([value, label]) => (
+            <button
+              key={value}
+              className={`btn-choice ${(data.rate ?? 1) === value ? 'selected' : ''}`}
+              onClick={() => setRate(value)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <button
             className="btn btn-blue"
             onClick={() => {
               const { course, item } = sampleItem('en')
-              void playItem(item, course, false, data.voice ?? 'mix')
+              void playItem(item, course, false, data.voice ?? 'mix', data.rate ?? 1)
             }}
           >
             🔊 Essayer en anglais
@@ -109,7 +128,7 @@ export function SettingsScreen() {
             className="btn btn-blue"
             onClick={() => {
               const { course, item } = sampleItem('ar')
-              void playItem(item, course, false, data.voice ?? 'mix')
+              void playItem(item, course, false, data.voice ?? 'mix', data.rate ?? 1)
             }}
           >
             🔊 Essayer en arabe

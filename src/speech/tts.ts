@@ -72,9 +72,9 @@ export function speak(text: string, lang: string, rate = 1): Promise<void> {
 }
 
 /** Prononce un item dans la langue du cours (darija → écriture arabe) */
-export function speakItem(item: VocabItem, course: Course, slow = false): Promise<void> {
+export function speakItem(item: VocabItem, course: Course, slow = false, rate = 1): Promise<void> {
   const text = course.id === 'dz' ? (item.arScript ?? item.text) : item.text
-  return speak(text, course.ttsLang, slow ? 0.6 : 1)
+  return speak(text, course.ttsLang, slow ? Math.max(0.4, rate * 0.7) : rate)
 }
 
 export function stopSpeaking(): void {
