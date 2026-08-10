@@ -3,6 +3,7 @@ import { dueItems } from '../../engine/srs'
 import { parisDay } from '../../engine/gamification'
 import { useApp } from '../../store/state'
 import { useRouter } from '../Router'
+import { InstallHint } from '../components/InstallHint'
 
 export function HomeScreen() {
   const { profile, data } = useApp()
@@ -18,6 +19,7 @@ export function HomeScreen() {
       <h1 style={{ fontSize: 24 }}>
         Salut {profile.name} {profile.avatar}
       </h1>
+      <InstallHint />
 
       <div className="card" style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700 }}>
