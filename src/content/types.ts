@@ -20,6 +20,8 @@ export interface Letter {
   char: string
   name: string
   phon: string
+  /** Nom arabe vocalisé de la lettre (ex بَاء) — utilisé pour l'audio */
+  arName?: string
   forms: {
     isolated: string
     initial: string

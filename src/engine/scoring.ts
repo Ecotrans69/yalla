@@ -58,7 +58,11 @@ export function checkSpoken(
     const viaPhon = item.phon
       ? similarity(translitArToLatin(recognized), normalize(item.phon, 'fr'))
       : 0
-    score = Math.max(viaScript, viaPhon)
+    // lettres de l'alphabet : accepter aussi le NOM de la lettre (« baa » pour ب)
+    const viaName = item.arScript
+      ? similarity(normalize(recognized, 'ar'), normalize(item.arScript, 'ar'))
+      : 0
+    score = Math.max(viaScript, viaPhon, viaName)
   } else {
     const viaTranslit = similarity(translitArToLatin(recognized), normalize(item.text, 'fr'))
     const direct = similarity(normalize(recognized, 'fr'), normalize(item.text, 'fr'))

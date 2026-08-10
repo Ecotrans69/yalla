@@ -182,7 +182,15 @@ function exPairs(items: VocabItem[]): Exercise {
 }
 
 function letterToItem(letter: Letter): VocabItem {
-  return { id: letter.id, text: letter.char, fr: letter.name, phon: letter.phon }
+  // arScript = nom arabe de la lettre : c'est lui que la voix prononce et
+  // que la reconnaissance micro accepte (« baa » pour ب)
+  return {
+    id: letter.id,
+    text: letter.char,
+    fr: letter.name,
+    phon: letter.phon,
+    arScript: letter.arName,
+  }
 }
 
 function exLetterIntro(letter: Letter): Exercise {

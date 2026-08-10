@@ -20,42 +20,78 @@
               "char": "ا",
               "name": "alif",
               "phon": "a",
-              "forms": { "isolated": "ا", "initial": "ا", "medial": "ـا", "final": "ـا" }
+              "forms": {
+                "isolated": "ا",
+                "initial": "ا",
+                "medial": "ـا",
+                "final": "ـا"
+              },
+              "arName": "أَلِف"
             },
             {
               "id": "ar_ba",
               "char": "ب",
               "name": "ba",
               "phon": "b",
-              "forms": { "isolated": "ب", "initial": "بـ", "medial": "ـبـ", "final": "ـب" }
+              "forms": {
+                "isolated": "ب",
+                "initial": "بـ",
+                "medial": "ـبـ",
+                "final": "ـب"
+              },
+              "arName": "بَاء"
             },
             {
               "id": "ar_ta",
               "char": "ت",
               "name": "ta",
               "phon": "t",
-              "forms": { "isolated": "ت", "initial": "تـ", "medial": "ـتـ", "final": "ـت" }
+              "forms": {
+                "isolated": "ت",
+                "initial": "تـ",
+                "medial": "ـتـ",
+                "final": "ـت"
+              },
+              "arName": "تَاء"
             },
             {
               "id": "ar_tha",
               "char": "ث",
               "name": "tha",
               "phon": "th",
-              "forms": { "isolated": "ث", "initial": "ثـ", "medial": "ـثـ", "final": "ـث" }
+              "forms": {
+                "isolated": "ث",
+                "initial": "ثـ",
+                "medial": "ـثـ",
+                "final": "ـث"
+              },
+              "arName": "ثَاء"
             },
             {
               "id": "ar_nun",
               "char": "ن",
               "name": "noun",
               "phon": "n",
-              "forms": { "isolated": "ن", "initial": "نـ", "medial": "ـنـ", "final": "ـن" }
+              "forms": {
+                "isolated": "ن",
+                "initial": "نـ",
+                "medial": "ـنـ",
+                "final": "ـن"
+              },
+              "arName": "نُون"
             },
             {
               "id": "ar_ya",
               "char": "ي",
               "name": "ya",
               "phon": "y",
-              "forms": { "isolated": "ي", "initial": "يـ", "medial": "ـيـ", "final": "ـي" }
+              "forms": {
+                "isolated": "ي",
+                "initial": "يـ",
+                "medial": "ـيـ",
+                "final": "ـي"
+              },
+              "arName": "يَاء"
             }
           ]
         },
@@ -69,42 +105,78 @@
               "char": "ج",
               "name": "jim",
               "phon": "j",
-              "forms": { "isolated": "ج", "initial": "جـ", "medial": "ـجـ", "final": "ـج" }
+              "forms": {
+                "isolated": "ج",
+                "initial": "جـ",
+                "medial": "ـجـ",
+                "final": "ـج"
+              },
+              "arName": "جِيم"
             },
             {
               "id": "ar_ha",
               "char": "ح",
               "name": "ha (fort)",
               "phon": "h",
-              "forms": { "isolated": "ح", "initial": "حـ", "medial": "ـحـ", "final": "ـح" }
+              "forms": {
+                "isolated": "ح",
+                "initial": "حـ",
+                "medial": "ـحـ",
+                "final": "ـح"
+              },
+              "arName": "حَاء"
             },
             {
               "id": "ar_kha",
               "char": "خ",
               "name": "kha",
               "phon": "kh",
-              "forms": { "isolated": "خ", "initial": "خـ", "medial": "ـخـ", "final": "ـخ" }
+              "forms": {
+                "isolated": "خ",
+                "initial": "خـ",
+                "medial": "ـخـ",
+                "final": "ـخ"
+              },
+              "arName": "خَاء"
             },
             {
               "id": "ar_mim",
               "char": "م",
               "name": "mim",
               "phon": "m",
-              "forms": { "isolated": "م", "initial": "مـ", "medial": "ـمـ", "final": "ـم" }
+              "forms": {
+                "isolated": "م",
+                "initial": "مـ",
+                "medial": "ـمـ",
+                "final": "ـم"
+              },
+              "arName": "مِيم"
             },
             {
               "id": "ar_ha2",
               "char": "ه",
               "name": "ha (doux)",
               "phon": "h",
-              "forms": { "isolated": "ه", "initial": "هـ", "medial": "ـهـ", "final": "ـه" }
+              "forms": {
+                "isolated": "ه",
+                "initial": "هـ",
+                "medial": "ـهـ",
+                "final": "ـه"
+              },
+              "arName": "هَاء"
             },
             {
               "id": "ar_ayn",
               "char": "ع",
               "name": "ayn",
               "phon": "'a",
-              "forms": { "isolated": "ع", "initial": "عـ", "medial": "ـعـ", "final": "ـع" }
+              "forms": {
+                "isolated": "ع",
+                "initial": "عـ",
+                "medial": "ـعـ",
+                "final": "ـع"
+              },
+              "arName": "عَيْن"
             }
           ]
         },
@@ -118,42 +190,78 @@
               "char": "د",
               "name": "dal",
               "phon": "d",
-              "forms": { "isolated": "د", "initial": "د", "medial": "ـد", "final": "ـد" }
+              "forms": {
+                "isolated": "د",
+                "initial": "د",
+                "medial": "ـد",
+                "final": "ـد"
+              },
+              "arName": "دَال"
             },
             {
               "id": "ar_dhal",
               "char": "ذ",
               "name": "dhal",
               "phon": "dh",
-              "forms": { "isolated": "ذ", "initial": "ذ", "medial": "ـذ", "final": "ـذ" }
+              "forms": {
+                "isolated": "ذ",
+                "initial": "ذ",
+                "medial": "ـذ",
+                "final": "ـذ"
+              },
+              "arName": "ذَال"
             },
             {
               "id": "ar_ra",
               "char": "ر",
               "name": "ra",
               "phon": "r",
-              "forms": { "isolated": "ر", "initial": "ر", "medial": "ـر", "final": "ـر" }
+              "forms": {
+                "isolated": "ر",
+                "initial": "ر",
+                "medial": "ـر",
+                "final": "ـر"
+              },
+              "arName": "رَاء"
             },
             {
               "id": "ar_zay",
               "char": "ز",
               "name": "zay",
               "phon": "z",
-              "forms": { "isolated": "ز", "initial": "ز", "medial": "ـز", "final": "ـز" }
+              "forms": {
+                "isolated": "ز",
+                "initial": "ز",
+                "medial": "ـز",
+                "final": "ـز"
+              },
+              "arName": "زَاي"
             },
             {
               "id": "ar_waw",
               "char": "و",
               "name": "waw",
               "phon": "w",
-              "forms": { "isolated": "و", "initial": "و", "medial": "ـو", "final": "ـو" }
+              "forms": {
+                "isolated": "و",
+                "initial": "و",
+                "medial": "ـو",
+                "final": "ـو"
+              },
+              "arName": "وَاو"
             },
             {
               "id": "ar_kaf",
               "char": "ك",
               "name": "kaf",
               "phon": "k",
-              "forms": { "isolated": "ك", "initial": "كـ", "medial": "ـكـ", "final": "ـك" }
+              "forms": {
+                "isolated": "ك",
+                "initial": "كـ",
+                "medial": "ـكـ",
+                "final": "ـك"
+              },
+              "arName": "كَاف"
             }
           ]
         },
@@ -167,42 +275,78 @@
               "char": "س",
               "name": "sin",
               "phon": "s",
-              "forms": { "isolated": "س", "initial": "سـ", "medial": "ـسـ", "final": "ـس" }
+              "forms": {
+                "isolated": "س",
+                "initial": "سـ",
+                "medial": "ـسـ",
+                "final": "ـس"
+              },
+              "arName": "سِين"
             },
             {
               "id": "ar_shin",
               "char": "ش",
               "name": "shin",
               "phon": "ch",
-              "forms": { "isolated": "ش", "initial": "شـ", "medial": "ـشـ", "final": "ـش" }
+              "forms": {
+                "isolated": "ش",
+                "initial": "شـ",
+                "medial": "ـشـ",
+                "final": "ـش"
+              },
+              "arName": "شِين"
             },
             {
               "id": "ar_sad",
               "char": "ص",
               "name": "sad",
               "phon": "s (emphatique)",
-              "forms": { "isolated": "ص", "initial": "صـ", "medial": "ـصـ", "final": "ـص" }
+              "forms": {
+                "isolated": "ص",
+                "initial": "صـ",
+                "medial": "ـصـ",
+                "final": "ـص"
+              },
+              "arName": "صَاد"
             },
             {
               "id": "ar_dad",
               "char": "ض",
               "name": "dad",
               "phon": "d (emphatique)",
-              "forms": { "isolated": "ض", "initial": "ضـ", "medial": "ـضـ", "final": "ـض" }
+              "forms": {
+                "isolated": "ض",
+                "initial": "ضـ",
+                "medial": "ـضـ",
+                "final": "ـض"
+              },
+              "arName": "ضَاد"
             },
             {
               "id": "ar_tah",
               "char": "ط",
               "name": "tah",
               "phon": "t (emphatique)",
-              "forms": { "isolated": "ط", "initial": "طـ", "medial": "ـطـ", "final": "ـط" }
+              "forms": {
+                "isolated": "ط",
+                "initial": "طـ",
+                "medial": "ـطـ",
+                "final": "ـط"
+              },
+              "arName": "طَاء"
             },
             {
               "id": "ar_zah",
               "char": "ظ",
               "name": "zah",
               "phon": "z (emphatique)",
-              "forms": { "isolated": "ظ", "initial": "ظـ", "medial": "ـظـ", "final": "ـظ" }
+              "forms": {
+                "isolated": "ظ",
+                "initial": "ظـ",
+                "medial": "ـظـ",
+                "final": "ـظ"
+              },
+              "arName": "ظَاء"
             }
           ]
         },
@@ -216,28 +360,52 @@
               "char": "ف",
               "name": "fa",
               "phon": "f",
-              "forms": { "isolated": "ف", "initial": "فـ", "medial": "ـفـ", "final": "ـف" }
+              "forms": {
+                "isolated": "ف",
+                "initial": "فـ",
+                "medial": "ـفـ",
+                "final": "ـف"
+              },
+              "arName": "فَاء"
             },
             {
               "id": "ar_qaf",
               "char": "ق",
               "name": "qaf",
               "phon": "q",
-              "forms": { "isolated": "ق", "initial": "قـ", "medial": "ـقـ", "final": "ـق" }
+              "forms": {
+                "isolated": "ق",
+                "initial": "قـ",
+                "medial": "ـقـ",
+                "final": "ـق"
+              },
+              "arName": "قَاف"
             },
             {
               "id": "ar_lam",
               "char": "ل",
               "name": "lam",
               "phon": "l",
-              "forms": { "isolated": "ل", "initial": "لـ", "medial": "ـلـ", "final": "ـل" }
+              "forms": {
+                "isolated": "ل",
+                "initial": "لـ",
+                "medial": "ـلـ",
+                "final": "ـل"
+              },
+              "arName": "لَام"
             },
             {
               "id": "ar_ghayn",
               "char": "غ",
               "name": "ghayn",
               "phon": "gh",
-              "forms": { "isolated": "غ", "initial": "غـ", "medial": "ـغـ", "final": "ـغ" }
+              "forms": {
+                "isolated": "غ",
+                "initial": "غـ",
+                "medial": "ـغـ",
+                "final": "ـغ"
+              },
+              "arName": "غَيْن"
             }
           ]
         },
@@ -246,14 +414,70 @@
           "title": "Premiers mots lus",
           "kind": "vocab",
           "items": [
-            { "id": "ar_bab", "text": "بَاب", "fr": "porte", "phon": "bab", "emoji": "🚪", "kid": true },
-            { "id": "ar_ab", "text": "أَب", "fr": "papa / père", "phon": "ab", "emoji": "👨", "kid": true },
-            { "id": "ar_oumm", "text": "أُمّ", "fr": "maman / mère", "phon": "oumm", "emoji": "👩", "kid": true },
-            { "id": "ar_dar", "text": "دَار", "fr": "maison", "phon": "dar", "emoji": "🏠", "kid": true },
-            { "id": "ar_qamar", "text": "قَمَر", "fr": "lune", "phon": "qamar", "emoji": "🌙", "kid": true },
-            { "id": "ar_kitab", "text": "كِتَاب", "fr": "livre", "phon": "kitab", "emoji": "📖", "kid": true },
-            { "id": "ar_ma", "text": "مَاء", "fr": "eau", "phon": "ma", "emoji": "💧", "kid": true },
-            { "id": "ar_walad", "text": "وَلَد", "fr": "garçon", "phon": "walad", "emoji": "👦", "kid": true }
+            {
+              "id": "ar_bab",
+              "text": "بَاب",
+              "fr": "porte",
+              "phon": "bab",
+              "emoji": "🚪",
+              "kid": true
+            },
+            {
+              "id": "ar_ab",
+              "text": "أَب",
+              "fr": "papa / père",
+              "phon": "ab",
+              "emoji": "👨",
+              "kid": true
+            },
+            {
+              "id": "ar_oumm",
+              "text": "أُمّ",
+              "fr": "maman / mère",
+              "phon": "oumm",
+              "emoji": "👩",
+              "kid": true
+            },
+            {
+              "id": "ar_dar",
+              "text": "دَار",
+              "fr": "maison",
+              "phon": "dar",
+              "emoji": "🏠",
+              "kid": true
+            },
+            {
+              "id": "ar_qamar",
+              "text": "قَمَر",
+              "fr": "lune",
+              "phon": "qamar",
+              "emoji": "🌙",
+              "kid": true
+            },
+            {
+              "id": "ar_kitab",
+              "text": "كِتَاب",
+              "fr": "livre",
+              "phon": "kitab",
+              "emoji": "📖",
+              "kid": true
+            },
+            {
+              "id": "ar_ma",
+              "text": "مَاء",
+              "fr": "eau",
+              "phon": "ma",
+              "emoji": "💧",
+              "kid": true
+            },
+            {
+              "id": "ar_walad",
+              "text": "وَلَد",
+              "fr": "garçon",
+              "phon": "walad",
+              "emoji": "👦",
+              "kid": true
+            }
           ]
         }
       ]
@@ -268,14 +492,68 @@
           "title": "Dire bonjour",
           "kind": "vocab",
           "items": [
-            { "id": "ar_salam", "text": "السَّلَامُ عَلَيْكُمْ", "fr": "bonjour (que la paix soit sur vous)", "phon": "assalamou alaykoum", "emoji": "👋", "kid": true },
-            { "id": "ar_walaykoum", "text": "وَعَلَيْكُمُ السَّلَام", "fr": "et sur vous la paix (réponse)", "phon": "wa alaykoumou assalam", "emoji": "🤝", "kid": true },
-            { "id": "ar_sabah_khayr", "text": "صَبَاحُ الْخَيْرِ", "fr": "bonjour (le matin)", "phon": "sabahou al khayr", "emoji": "🌅", "kid": true },
-            { "id": "ar_sabah_nour", "text": "صَبَاحُ النُّورِ", "fr": "matin de lumière (réponse)", "phon": "sabahou annour", "emoji": "☀️" },
-            { "id": "ar_masa_khayr", "text": "مَسَاءُ الْخَيْرِ", "fr": "bonsoir", "phon": "masaou al khayr", "emoji": "🌆" },
-            { "id": "ar_marhaban", "text": "مَرْحَبًا", "fr": "salut", "phon": "marhaban", "emoji": "😀", "kid": true },
-            { "id": "ar_ahlan", "text": "أَهْلًا وَسَهْلًا", "fr": "bienvenue", "phon": "ahlan wa sahlan", "emoji": "🤗", "kid": true },
-            { "id": "ar_maassalama", "text": "مَعَ السَّلَامَةِ", "fr": "au revoir", "phon": "maa assalama", "emoji": "👋", "kid": true }
+            {
+              "id": "ar_salam",
+              "text": "السَّلَامُ عَلَيْكُمْ",
+              "fr": "bonjour (que la paix soit sur vous)",
+              "phon": "assalamou alaykoum",
+              "emoji": "👋",
+              "kid": true
+            },
+            {
+              "id": "ar_walaykoum",
+              "text": "وَعَلَيْكُمُ السَّلَام",
+              "fr": "et sur vous la paix (réponse)",
+              "phon": "wa alaykoumou assalam",
+              "emoji": "🤝",
+              "kid": true
+            },
+            {
+              "id": "ar_sabah_khayr",
+              "text": "صَبَاحُ الْخَيْرِ",
+              "fr": "bonjour (le matin)",
+              "phon": "sabahou al khayr",
+              "emoji": "🌅",
+              "kid": true
+            },
+            {
+              "id": "ar_sabah_nour",
+              "text": "صَبَاحُ النُّورِ",
+              "fr": "matin de lumière (réponse)",
+              "phon": "sabahou annour",
+              "emoji": "☀️"
+            },
+            {
+              "id": "ar_masa_khayr",
+              "text": "مَسَاءُ الْخَيْرِ",
+              "fr": "bonsoir",
+              "phon": "masaou al khayr",
+              "emoji": "🌆"
+            },
+            {
+              "id": "ar_marhaban",
+              "text": "مَرْحَبًا",
+              "fr": "salut",
+              "phon": "marhaban",
+              "emoji": "😀",
+              "kid": true
+            },
+            {
+              "id": "ar_ahlan",
+              "text": "أَهْلًا وَسَهْلًا",
+              "fr": "bienvenue",
+              "phon": "ahlan wa sahlan",
+              "emoji": "🤗",
+              "kid": true
+            },
+            {
+              "id": "ar_maassalama",
+              "text": "مَعَ السَّلَامَةِ",
+              "fr": "au revoir",
+              "phon": "maa assalama",
+              "emoji": "👋",
+              "kid": true
+            }
           ]
         },
         {
@@ -283,14 +561,67 @@
           "title": "Comment ça va ?",
           "kind": "vocab",
           "items": [
-            { "id": "ar_kayfa_halouk", "text": "كَيْفَ حَالُكَ؟", "fr": "comment vas-tu ? (à un homme)", "phon": "kayfa halouka", "emoji": "❓", "kid": true },
-            { "id": "ar_kayfa_halouki", "text": "كَيْفَ حَالُكِ؟", "fr": "comment vas-tu ? (à une femme)", "phon": "kayfa halouki", "emoji": "❓" },
-            { "id": "ar_ana_bikhayr", "text": "أَنَا بِخَيْرٍ", "fr": "je vais bien", "phon": "ana bikhayr", "emoji": "😊", "kid": true },
-            { "id": "ar_alhamdoulillah", "text": "الْحَمْدُ لِلَّهِ", "fr": "louange à Dieu (ça va)", "phon": "alhamdou lillah", "emoji": "🙏", "kid": true },
-            { "id": "ar_wa_anta", "text": "وَأَنْتَ؟", "fr": "et toi ? (à un homme)", "phon": "wa anta", "emoji": "👉" },
-            { "id": "ar_wa_anti", "text": "وَأَنْتِ؟", "fr": "et toi ? (à une femme)", "phon": "wa anti", "emoji": "👉" },
-            { "id": "ar_choukran", "text": "شُكْرًا", "fr": "merci", "phon": "choukran", "emoji": "🙏", "kid": true },
-            { "id": "ar_afwan", "text": "عَفْوًا", "fr": "de rien / je t'en prie", "phon": "afwan", "emoji": "😊", "kid": true }
+            {
+              "id": "ar_kayfa_halouk",
+              "text": "كَيْفَ حَالُكَ؟",
+              "fr": "comment vas-tu ? (à un homme)",
+              "phon": "kayfa halouka",
+              "emoji": "❓",
+              "kid": true
+            },
+            {
+              "id": "ar_kayfa_halouki",
+              "text": "كَيْفَ حَالُكِ؟",
+              "fr": "comment vas-tu ? (à une femme)",
+              "phon": "kayfa halouki",
+              "emoji": "❓"
+            },
+            {
+              "id": "ar_ana_bikhayr",
+              "text": "أَنَا بِخَيْرٍ",
+              "fr": "je vais bien",
+              "phon": "ana bikhayr",
+              "emoji": "😊",
+              "kid": true
+            },
+            {
+              "id": "ar_alhamdoulillah",
+              "text": "الْحَمْدُ لِلَّهِ",
+              "fr": "louange à Dieu (ça va)",
+              "phon": "alhamdou lillah",
+              "emoji": "🙏",
+              "kid": true
+            },
+            {
+              "id": "ar_wa_anta",
+              "text": "وَأَنْتَ؟",
+              "fr": "et toi ? (à un homme)",
+              "phon": "wa anta",
+              "emoji": "👉"
+            },
+            {
+              "id": "ar_wa_anti",
+              "text": "وَأَنْتِ؟",
+              "fr": "et toi ? (à une femme)",
+              "phon": "wa anti",
+              "emoji": "👉"
+            },
+            {
+              "id": "ar_choukran",
+              "text": "شُكْرًا",
+              "fr": "merci",
+              "phon": "choukran",
+              "emoji": "🙏",
+              "kid": true
+            },
+            {
+              "id": "ar_afwan",
+              "text": "عَفْوًا",
+              "fr": "de rien / je t'en prie",
+              "phon": "afwan",
+              "emoji": "😊",
+              "kid": true
+            }
           ]
         },
         {
@@ -298,14 +629,68 @@
           "title": "Faire connaissance",
           "kind": "vocab",
           "items": [
-            { "id": "ar_ma_ismouk", "text": "مَا اسْمُكَ؟", "fr": "comment t'appelles-tu ?", "phon": "ma ismouka", "emoji": "❓", "kid": true },
-            { "id": "ar_ismi", "text": "اِسْمِي...", "fr": "je m'appelle...", "phon": "ismi", "emoji": "🙋", "kid": true },
-            { "id": "ar_tacharrafna", "text": "تَشَرَّفْنَا", "fr": "enchanté", "phon": "tacharrafna", "emoji": "🤝" },
-            { "id": "ar_min_ayna_anta", "text": "مِنْ أَيْنَ أَنْتَ؟", "fr": "d'où viens-tu ?", "phon": "min ayna anta", "emoji": "🌍" },
-            { "id": "ar_ana_min_faransa", "text": "أَنَا مِنْ فَرَنْسَا", "fr": "je viens de France", "phon": "ana min faransa", "emoji": "🇫🇷", "kid": true },
-            { "id": "ar_naam", "text": "نَعَمْ", "fr": "oui", "phon": "naam", "emoji": "✅", "kid": true },
-            { "id": "ar_la", "text": "لَا", "fr": "non", "phon": "la", "emoji": "❌", "kid": true },
-            { "id": "ar_min_fadlik", "text": "مِنْ فَضْلِكَ", "fr": "s'il te plaît", "phon": "min fadlika", "emoji": "🙏", "kid": true }
+            {
+              "id": "ar_ma_ismouk",
+              "text": "مَا اسْمُكَ؟",
+              "fr": "comment t'appelles-tu ?",
+              "phon": "ma ismouka",
+              "emoji": "❓",
+              "kid": true
+            },
+            {
+              "id": "ar_ismi",
+              "text": "اِسْمِي...",
+              "fr": "je m'appelle...",
+              "phon": "ismi",
+              "emoji": "🙋",
+              "kid": true
+            },
+            {
+              "id": "ar_tacharrafna",
+              "text": "تَشَرَّفْنَا",
+              "fr": "enchanté",
+              "phon": "tacharrafna",
+              "emoji": "🤝"
+            },
+            {
+              "id": "ar_min_ayna_anta",
+              "text": "مِنْ أَيْنَ أَنْتَ؟",
+              "fr": "d'où viens-tu ?",
+              "phon": "min ayna anta",
+              "emoji": "🌍"
+            },
+            {
+              "id": "ar_ana_min_faransa",
+              "text": "أَنَا مِنْ فَرَنْسَا",
+              "fr": "je viens de France",
+              "phon": "ana min faransa",
+              "emoji": "🇫🇷",
+              "kid": true
+            },
+            {
+              "id": "ar_naam",
+              "text": "نَعَمْ",
+              "fr": "oui",
+              "phon": "naam",
+              "emoji": "✅",
+              "kid": true
+            },
+            {
+              "id": "ar_la",
+              "text": "لَا",
+              "fr": "non",
+              "phon": "la",
+              "emoji": "❌",
+              "kid": true
+            },
+            {
+              "id": "ar_min_fadlik",
+              "text": "مِنْ فَضْلِكَ",
+              "fr": "s'il te plaît",
+              "phon": "min fadlika",
+              "emoji": "🙏",
+              "kid": true
+            }
           ]
         }
       ]
@@ -320,14 +705,69 @@
           "title": "La famille proche",
           "kind": "vocab",
           "items": [
-            { "id": "ar_aila", "text": "عَائِلَة", "fr": "famille", "phon": "aaila", "emoji": "👨‍👩‍👧‍👦", "kid": true },
-            { "id": "ar_abi", "text": "أَبِي", "fr": "mon père", "phon": "abi", "emoji": "👨", "kid": true },
-            { "id": "ar_oummi", "text": "أُمِّي", "fr": "ma mère", "phon": "oummi", "emoji": "👩", "kid": true },
-            { "id": "ar_akh", "text": "أَخ", "fr": "frère", "phon": "akh", "emoji": "👦", "kid": true },
-            { "id": "ar_oukht", "text": "أُخْت", "fr": "sœur", "phon": "oukht", "emoji": "👧", "kid": true },
-            { "id": "ar_ibn", "text": "اِبْن", "fr": "fils", "phon": "ibn", "emoji": "👶" },
-            { "id": "ar_bint", "text": "بِنْت", "fr": "fille", "phon": "bint", "emoji": "👧", "kid": true },
-            { "id": "ar_tifl", "text": "طِفْل", "fr": "enfant", "phon": "tifl", "emoji": "👶", "kid": true }
+            {
+              "id": "ar_aila",
+              "text": "عَائِلَة",
+              "fr": "famille",
+              "phon": "aaila",
+              "emoji": "👨‍👩‍👧‍👦",
+              "kid": true
+            },
+            {
+              "id": "ar_abi",
+              "text": "أَبِي",
+              "fr": "mon père",
+              "phon": "abi",
+              "emoji": "👨",
+              "kid": true
+            },
+            {
+              "id": "ar_oummi",
+              "text": "أُمِّي",
+              "fr": "ma mère",
+              "phon": "oummi",
+              "emoji": "👩",
+              "kid": true
+            },
+            {
+              "id": "ar_akh",
+              "text": "أَخ",
+              "fr": "frère",
+              "phon": "akh",
+              "emoji": "👦",
+              "kid": true
+            },
+            {
+              "id": "ar_oukht",
+              "text": "أُخْت",
+              "fr": "sœur",
+              "phon": "oukht",
+              "emoji": "👧",
+              "kid": true
+            },
+            {
+              "id": "ar_ibn",
+              "text": "اِبْن",
+              "fr": "fils",
+              "phon": "ibn",
+              "emoji": "👶"
+            },
+            {
+              "id": "ar_bint",
+              "text": "بِنْت",
+              "fr": "fille",
+              "phon": "bint",
+              "emoji": "👧",
+              "kid": true
+            },
+            {
+              "id": "ar_tifl",
+              "text": "طِفْل",
+              "fr": "enfant",
+              "phon": "tifl",
+              "emoji": "👶",
+              "kid": true
+            }
           ]
         },
         {
@@ -335,14 +775,65 @@
           "title": "Grands-parents et proches",
           "kind": "vocab",
           "items": [
-            { "id": "ar_jadd", "text": "جَدّ", "fr": "grand-père", "phon": "jadd", "emoji": "👴", "kid": true },
-            { "id": "ar_jadda", "text": "جَدَّة", "fr": "grand-mère", "phon": "jadda", "emoji": "👵", "kid": true },
-            { "id": "ar_amm", "text": "عَمّ", "fr": "oncle (côté papa)", "phon": "amm", "emoji": "👨‍🦱", "kid": true },
-            { "id": "ar_amma", "text": "عَمَّة", "fr": "tante (côté papa)", "phon": "amma", "emoji": "👩‍🦱" },
-            { "id": "ar_khal", "text": "خَال", "fr": "oncle (côté maman)", "phon": "khal", "emoji": "👨" },
-            { "id": "ar_khala", "text": "خَالَة", "fr": "tante (côté maman)", "phon": "khala", "emoji": "👩" },
-            { "id": "ar_zawj", "text": "زَوْج", "fr": "mari", "phon": "zawj", "emoji": "🤵" },
-            { "id": "ar_zawja", "text": "زَوْجَة", "fr": "épouse", "phon": "zawja", "emoji": "👰" }
+            {
+              "id": "ar_jadd",
+              "text": "جَدّ",
+              "fr": "grand-père",
+              "phon": "jadd",
+              "emoji": "👴",
+              "kid": true
+            },
+            {
+              "id": "ar_jadda",
+              "text": "جَدَّة",
+              "fr": "grand-mère",
+              "phon": "jadda",
+              "emoji": "👵",
+              "kid": true
+            },
+            {
+              "id": "ar_amm",
+              "text": "عَمّ",
+              "fr": "oncle (côté papa)",
+              "phon": "amm",
+              "emoji": "👨‍🦱",
+              "kid": true
+            },
+            {
+              "id": "ar_amma",
+              "text": "عَمَّة",
+              "fr": "tante (côté papa)",
+              "phon": "amma",
+              "emoji": "👩‍🦱"
+            },
+            {
+              "id": "ar_khal",
+              "text": "خَال",
+              "fr": "oncle (côté maman)",
+              "phon": "khal",
+              "emoji": "👨"
+            },
+            {
+              "id": "ar_khala",
+              "text": "خَالَة",
+              "fr": "tante (côté maman)",
+              "phon": "khala",
+              "emoji": "👩"
+            },
+            {
+              "id": "ar_zawj",
+              "text": "زَوْج",
+              "fr": "mari",
+              "phon": "zawj",
+              "emoji": "🤵"
+            },
+            {
+              "id": "ar_zawja",
+              "text": "زَوْجَة",
+              "fr": "épouse",
+              "phon": "zawja",
+              "emoji": "👰"
+            }
           ]
         },
         {
@@ -350,15 +841,78 @@
           "title": "Parler de sa famille",
           "kind": "vocab",
           "items": [
-            { "id": "ar_hadha_abi", "text": "هَذَا أَبِي", "fr": "voici mon père", "phon": "hadha abi", "emoji": "👨", "kid": true },
-            { "id": "ar_hadhihi_oummi", "text": "هَذِهِ أُمِّي", "fr": "voici ma mère", "phon": "hadhihi oummi", "emoji": "👩", "kid": true },
-            { "id": "ar_indi_akh", "text": "عِنْدِي أَخ", "fr": "j'ai un frère", "phon": "indi akh", "emoji": "👦", "kid": true },
-            { "id": "ar_indi_oukht", "text": "عِنْدِي أُخْت", "fr": "j'ai une sœur", "phon": "indi oukht", "emoji": "👧", "kid": true },
-            { "id": "ar_ouhibbou_aailati", "text": "أُحِبُّ عَائِلَتِي", "fr": "j'aime ma famille", "phon": "ouhibbou aailati", "emoji": "❤️", "kid": true },
-            { "id": "ar_sadiq", "text": "صَدِيق", "fr": "ami", "phon": "sadiq", "emoji": "🧑‍🤝‍🧑", "kid": true },
-            { "id": "ar_bayt", "text": "بَيْت", "fr": "maison", "phon": "bayt", "emoji": "🏠", "kid": true },
-            { "id": "ar_kabir", "text": "كَبِير", "fr": "grand", "phon": "kabir", "emoji": "🐘", "kid": true },
-            { "id": "ar_saghir", "text": "صَغِير", "fr": "petit", "phon": "saghir", "emoji": "🐜", "kid": true }
+            {
+              "id": "ar_hadha_abi",
+              "text": "هَذَا أَبِي",
+              "fr": "voici mon père",
+              "phon": "hadha abi",
+              "emoji": "👨",
+              "kid": true
+            },
+            {
+              "id": "ar_hadhihi_oummi",
+              "text": "هَذِهِ أُمِّي",
+              "fr": "voici ma mère",
+              "phon": "hadhihi oummi",
+              "emoji": "👩",
+              "kid": true
+            },
+            {
+              "id": "ar_indi_akh",
+              "text": "عِنْدِي أَخ",
+              "fr": "j'ai un frère",
+              "phon": "indi akh",
+              "emoji": "👦",
+              "kid": true
+            },
+            {
+              "id": "ar_indi_oukht",
+              "text": "عِنْدِي أُخْت",
+              "fr": "j'ai une sœur",
+              "phon": "indi oukht",
+              "emoji": "👧",
+              "kid": true
+            },
+            {
+              "id": "ar_ouhibbou_aailati",
+              "text": "أُحِبُّ عَائِلَتِي",
+              "fr": "j'aime ma famille",
+              "phon": "ouhibbou aailati",
+              "emoji": "❤️",
+              "kid": true
+            },
+            {
+              "id": "ar_sadiq",
+              "text": "صَدِيق",
+              "fr": "ami",
+              "phon": "sadiq",
+              "emoji": "🧑‍🤝‍🧑",
+              "kid": true
+            },
+            {
+              "id": "ar_bayt",
+              "text": "بَيْت",
+              "fr": "maison",
+              "phon": "bayt",
+              "emoji": "🏠",
+              "kid": true
+            },
+            {
+              "id": "ar_kabir",
+              "text": "كَبِير",
+              "fr": "grand",
+              "phon": "kabir",
+              "emoji": "🐘",
+              "kid": true
+            },
+            {
+              "id": "ar_saghir",
+              "text": "صَغِير",
+              "fr": "petit",
+              "phon": "saghir",
+              "emoji": "🐜",
+              "kid": true
+            }
           ]
         }
       ]
@@ -373,16 +927,86 @@
           "title": "De 1 à 10",
           "kind": "vocab",
           "items": [
-            { "id": "ar_wahid", "text": "وَاحِد", "fr": "un (1)", "phon": "wahid", "emoji": "1️⃣", "kid": true },
-            { "id": "ar_ithnan", "text": "اِثْنَان", "fr": "deux (2)", "phon": "ithnan", "emoji": "2️⃣", "kid": true },
-            { "id": "ar_thalatha", "text": "ثَلَاثَة", "fr": "trois (3)", "phon": "thalatha", "emoji": "3️⃣", "kid": true },
-            { "id": "ar_arbaa", "text": "أَرْبَعَة", "fr": "quatre (4)", "phon": "arbaa", "emoji": "4️⃣", "kid": true },
-            { "id": "ar_khamsa", "text": "خَمْسَة", "fr": "cinq (5)", "phon": "khamsa", "emoji": "5️⃣", "kid": true },
-            { "id": "ar_sitta", "text": "سِتَّة", "fr": "six (6)", "phon": "sitta", "emoji": "6️⃣", "kid": true },
-            { "id": "ar_sabaa", "text": "سَبْعَة", "fr": "sept (7)", "phon": "sabaa", "emoji": "7️⃣", "kid": true },
-            { "id": "ar_thamaniya", "text": "ثَمَانِيَة", "fr": "huit (8)", "phon": "thamaniya", "emoji": "8️⃣", "kid": true },
-            { "id": "ar_tisaa", "text": "تِسْعَة", "fr": "neuf (9)", "phon": "tisaa", "emoji": "9️⃣", "kid": true },
-            { "id": "ar_achara", "text": "عَشَرَة", "fr": "dix (10)", "phon": "achara", "emoji": "🔟", "kid": true }
+            {
+              "id": "ar_wahid",
+              "text": "وَاحِد",
+              "fr": "un (1)",
+              "phon": "wahid",
+              "emoji": "1️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_ithnan",
+              "text": "اِثْنَان",
+              "fr": "deux (2)",
+              "phon": "ithnan",
+              "emoji": "2️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_thalatha",
+              "text": "ثَلَاثَة",
+              "fr": "trois (3)",
+              "phon": "thalatha",
+              "emoji": "3️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_arbaa",
+              "text": "أَرْبَعَة",
+              "fr": "quatre (4)",
+              "phon": "arbaa",
+              "emoji": "4️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_khamsa",
+              "text": "خَمْسَة",
+              "fr": "cinq (5)",
+              "phon": "khamsa",
+              "emoji": "5️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_sitta",
+              "text": "سِتَّة",
+              "fr": "six (6)",
+              "phon": "sitta",
+              "emoji": "6️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_sabaa",
+              "text": "سَبْعَة",
+              "fr": "sept (7)",
+              "phon": "sabaa",
+              "emoji": "7️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_thamaniya",
+              "text": "ثَمَانِيَة",
+              "fr": "huit (8)",
+              "phon": "thamaniya",
+              "emoji": "8️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_tisaa",
+              "text": "تِسْعَة",
+              "fr": "neuf (9)",
+              "phon": "tisaa",
+              "emoji": "9️⃣",
+              "kid": true
+            },
+            {
+              "id": "ar_achara",
+              "text": "عَشَرَة",
+              "fr": "dix (10)",
+              "phon": "achara",
+              "emoji": "🔟",
+              "kid": true
+            }
           ]
         },
         {
@@ -390,16 +1014,76 @@
           "title": "De 11 à 20",
           "kind": "vocab",
           "items": [
-            { "id": "ar_ahada_achar", "text": "أَحَدَ عَشَرَ", "fr": "onze (11)", "phon": "ahada achar", "emoji": "🔢" },
-            { "id": "ar_ithna_achar", "text": "اِثْنَا عَشَرَ", "fr": "douze (12)", "phon": "ithna achar", "emoji": "🔢" },
-            { "id": "ar_thalathata_achar", "text": "ثَلَاثَةَ عَشَرَ", "fr": "treize (13)", "phon": "thalathata achar", "emoji": "🔢" },
-            { "id": "ar_arbaata_achar", "text": "أَرْبَعَةَ عَشَرَ", "fr": "quatorze (14)", "phon": "arbaata achar", "emoji": "🔢" },
-            { "id": "ar_khamsata_achar", "text": "خَمْسَةَ عَشَرَ", "fr": "quinze (15)", "phon": "khamsata achar", "emoji": "🔢" },
-            { "id": "ar_sittata_achar", "text": "سِتَّةَ عَشَرَ", "fr": "seize (16)", "phon": "sittata achar", "emoji": "🔢" },
-            { "id": "ar_sabata_achar", "text": "سَبْعَةَ عَشَرَ", "fr": "dix-sept (17)", "phon": "sabata achar", "emoji": "🔢" },
-            { "id": "ar_thamaniyata_achar", "text": "ثَمَانِيَةَ عَشَرَ", "fr": "dix-huit (18)", "phon": "thamaniyata achar", "emoji": "🔢" },
-            { "id": "ar_tisata_achar", "text": "تِسْعَةَ عَشَرَ", "fr": "dix-neuf (19)", "phon": "tisata achar", "emoji": "🔢" },
-            { "id": "ar_ichroun", "text": "عِشْرُونَ", "fr": "vingt (20)", "phon": "ichroun", "emoji": "🔢" }
+            {
+              "id": "ar_ahada_achar",
+              "text": "أَحَدَ عَشَرَ",
+              "fr": "onze (11)",
+              "phon": "ahada achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_ithna_achar",
+              "text": "اِثْنَا عَشَرَ",
+              "fr": "douze (12)",
+              "phon": "ithna achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_thalathata_achar",
+              "text": "ثَلَاثَةَ عَشَرَ",
+              "fr": "treize (13)",
+              "phon": "thalathata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_arbaata_achar",
+              "text": "أَرْبَعَةَ عَشَرَ",
+              "fr": "quatorze (14)",
+              "phon": "arbaata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_khamsata_achar",
+              "text": "خَمْسَةَ عَشَرَ",
+              "fr": "quinze (15)",
+              "phon": "khamsata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_sittata_achar",
+              "text": "سِتَّةَ عَشَرَ",
+              "fr": "seize (16)",
+              "phon": "sittata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_sabata_achar",
+              "text": "سَبْعَةَ عَشَرَ",
+              "fr": "dix-sept (17)",
+              "phon": "sabata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_thamaniyata_achar",
+              "text": "ثَمَانِيَةَ عَشَرَ",
+              "fr": "dix-huit (18)",
+              "phon": "thamaniyata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_tisata_achar",
+              "text": "تِسْعَةَ عَشَرَ",
+              "fr": "dix-neuf (19)",
+              "phon": "tisata achar",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_ichroun",
+              "text": "عِشْرُونَ",
+              "fr": "vingt (20)",
+              "phon": "ichroun",
+              "emoji": "🔢"
+            }
           ]
         },
         {
@@ -407,15 +1091,74 @@
           "title": "Utiliser les chiffres",
           "kind": "vocab",
           "items": [
-            { "id": "ar_kam", "text": "كَمْ؟", "fr": "combien ?", "phon": "kam", "emoji": "❓", "kid": true },
-            { "id": "ar_kam_omrouk", "text": "كَمْ عُمْرُكَ؟", "fr": "quel âge as-tu ?", "phon": "kam omrouka", "emoji": "🎂", "kid": true },
-            { "id": "ar_omri_achr_sanawat", "text": "عُمْرِي عَشْرُ سَنَوَاتٍ", "fr": "j'ai dix ans", "phon": "omri achrou sanawat", "emoji": "🎂", "kid": true },
-            { "id": "ar_raqm", "text": "رَقْم", "fr": "chiffre / numéro", "phon": "raqm", "emoji": "🔢" },
-            { "id": "ar_awwal", "text": "أَوَّل", "fr": "premier", "phon": "awwal", "emoji": "🥇", "kid": true },
-            { "id": "ar_thani", "text": "ثَانِي", "fr": "deuxième", "phon": "thani", "emoji": "🥈" },
-            { "id": "ar_nisf", "text": "نِصْف", "fr": "moitié / demi", "phon": "nisf", "emoji": "🌗" },
-            { "id": "ar_kathir", "text": "كَثِير", "fr": "beaucoup", "phon": "kathir", "emoji": "➕", "kid": true },
-            { "id": "ar_qalil", "text": "قَلِيل", "fr": "peu", "phon": "qalil", "emoji": "➖" }
+            {
+              "id": "ar_kam",
+              "text": "كَمْ؟",
+              "fr": "combien ?",
+              "phon": "kam",
+              "emoji": "❓",
+              "kid": true
+            },
+            {
+              "id": "ar_kam_omrouk",
+              "text": "كَمْ عُمْرُكَ؟",
+              "fr": "quel âge as-tu ?",
+              "phon": "kam omrouka",
+              "emoji": "🎂",
+              "kid": true
+            },
+            {
+              "id": "ar_omri_achr_sanawat",
+              "text": "عُمْرِي عَشْرُ سَنَوَاتٍ",
+              "fr": "j'ai dix ans",
+              "phon": "omri achrou sanawat",
+              "emoji": "🎂",
+              "kid": true
+            },
+            {
+              "id": "ar_raqm",
+              "text": "رَقْم",
+              "fr": "chiffre / numéro",
+              "phon": "raqm",
+              "emoji": "🔢"
+            },
+            {
+              "id": "ar_awwal",
+              "text": "أَوَّل",
+              "fr": "premier",
+              "phon": "awwal",
+              "emoji": "🥇",
+              "kid": true
+            },
+            {
+              "id": "ar_thani",
+              "text": "ثَانِي",
+              "fr": "deuxième",
+              "phon": "thani",
+              "emoji": "🥈"
+            },
+            {
+              "id": "ar_nisf",
+              "text": "نِصْف",
+              "fr": "moitié / demi",
+              "phon": "nisf",
+              "emoji": "🌗"
+            },
+            {
+              "id": "ar_kathir",
+              "text": "كَثِير",
+              "fr": "beaucoup",
+              "phon": "kathir",
+              "emoji": "➕",
+              "kid": true
+            },
+            {
+              "id": "ar_qalil",
+              "text": "قَلِيل",
+              "fr": "peu",
+              "phon": "qalil",
+              "emoji": "➖"
+            }
           ]
         }
       ]
@@ -430,15 +1173,77 @@
           "title": "Les aliments de base",
           "kind": "vocab",
           "items": [
-            { "id": "ar_khoubz", "text": "خُبْز", "fr": "pain", "phon": "khoubz", "emoji": "🍞", "kid": true },
-            { "id": "ar_halib", "text": "حَلِيب", "fr": "lait", "phon": "halib", "emoji": "🥛", "kid": true },
-            { "id": "ar_bayd", "text": "بَيْض", "fr": "œufs", "phon": "bayd", "emoji": "🥚", "kid": true },
-            { "id": "ar_joubn", "text": "جُبْن", "fr": "fromage", "phon": "joubn", "emoji": "🧀", "kid": true },
-            { "id": "ar_arouzz", "text": "أَرُزّ", "fr": "riz", "phon": "arouzz", "emoji": "🍚", "kid": true },
-            { "id": "ar_lahm", "text": "لَحْم", "fr": "viande", "phon": "lahm", "emoji": "🥩" },
-            { "id": "ar_dajaj", "text": "دَجَاج", "fr": "poulet", "phon": "dajaj", "emoji": "🍗", "kid": true },
-            { "id": "ar_samak", "text": "سَمَك", "fr": "poisson", "phon": "samak", "emoji": "🐟", "kid": true },
-            { "id": "ar_soukkar", "text": "سُكَّر", "fr": "sucre", "phon": "soukkar", "emoji": "🍬", "kid": true }
+            {
+              "id": "ar_khoubz",
+              "text": "خُبْز",
+              "fr": "pain",
+              "phon": "khoubz",
+              "emoji": "🍞",
+              "kid": true
+            },
+            {
+              "id": "ar_halib",
+              "text": "حَلِيب",
+              "fr": "lait",
+              "phon": "halib",
+              "emoji": "🥛",
+              "kid": true
+            },
+            {
+              "id": "ar_bayd",
+              "text": "بَيْض",
+              "fr": "œufs",
+              "phon": "bayd",
+              "emoji": "🥚",
+              "kid": true
+            },
+            {
+              "id": "ar_joubn",
+              "text": "جُبْن",
+              "fr": "fromage",
+              "phon": "joubn",
+              "emoji": "🧀",
+              "kid": true
+            },
+            {
+              "id": "ar_arouzz",
+              "text": "أَرُزّ",
+              "fr": "riz",
+              "phon": "arouzz",
+              "emoji": "🍚",
+              "kid": true
+            },
+            {
+              "id": "ar_lahm",
+              "text": "لَحْم",
+              "fr": "viande",
+              "phon": "lahm",
+              "emoji": "🥩"
+            },
+            {
+              "id": "ar_dajaj",
+              "text": "دَجَاج",
+              "fr": "poulet",
+              "phon": "dajaj",
+              "emoji": "🍗",
+              "kid": true
+            },
+            {
+              "id": "ar_samak",
+              "text": "سَمَك",
+              "fr": "poisson",
+              "phon": "samak",
+              "emoji": "🐟",
+              "kid": true
+            },
+            {
+              "id": "ar_soukkar",
+              "text": "سُكَّر",
+              "fr": "sucre",
+              "phon": "soukkar",
+              "emoji": "🍬",
+              "kid": true
+            }
           ]
         },
         {
@@ -446,15 +1251,78 @@
           "title": "Fruits et légumes",
           "kind": "vocab",
           "items": [
-            { "id": "ar_touffaha", "text": "تُفَّاحَة", "fr": "pomme", "phon": "touffaha", "emoji": "🍎", "kid": true },
-            { "id": "ar_mawza", "text": "مَوْزَة", "fr": "banane", "phon": "mawza", "emoji": "🍌", "kid": true },
-            { "id": "ar_bourtouqal", "text": "بُرْتُقَال", "fr": "orange", "phon": "bourtouqal", "emoji": "🍊", "kid": true },
-            { "id": "ar_inab", "text": "عِنَب", "fr": "raisin", "phon": "inab", "emoji": "🍇", "kid": true },
-            { "id": "ar_tamr", "text": "تَمْر", "fr": "dattes", "phon": "tamr", "emoji": "🌴", "kid": true },
-            { "id": "ar_khoudar", "text": "خُضَار", "fr": "légumes", "phon": "khoudar", "emoji": "🥦", "kid": true },
-            { "id": "ar_tamatim", "text": "طَمَاطِم", "fr": "tomate", "phon": "tamatim", "emoji": "🍅", "kid": true },
-            { "id": "ar_batata", "text": "بَطَاطَا", "fr": "pomme de terre", "phon": "batata", "emoji": "🥔", "kid": true },
-            { "id": "ar_jazar", "text": "جَزَر", "fr": "carotte", "phon": "jazar", "emoji": "🥕", "kid": true }
+            {
+              "id": "ar_touffaha",
+              "text": "تُفَّاحَة",
+              "fr": "pomme",
+              "phon": "touffaha",
+              "emoji": "🍎",
+              "kid": true
+            },
+            {
+              "id": "ar_mawza",
+              "text": "مَوْزَة",
+              "fr": "banane",
+              "phon": "mawza",
+              "emoji": "🍌",
+              "kid": true
+            },
+            {
+              "id": "ar_bourtouqal",
+              "text": "بُرْتُقَال",
+              "fr": "orange",
+              "phon": "bourtouqal",
+              "emoji": "🍊",
+              "kid": true
+            },
+            {
+              "id": "ar_inab",
+              "text": "عِنَب",
+              "fr": "raisin",
+              "phon": "inab",
+              "emoji": "🍇",
+              "kid": true
+            },
+            {
+              "id": "ar_tamr",
+              "text": "تَمْر",
+              "fr": "dattes",
+              "phon": "tamr",
+              "emoji": "🌴",
+              "kid": true
+            },
+            {
+              "id": "ar_khoudar",
+              "text": "خُضَار",
+              "fr": "légumes",
+              "phon": "khoudar",
+              "emoji": "🥦",
+              "kid": true
+            },
+            {
+              "id": "ar_tamatim",
+              "text": "طَمَاطِم",
+              "fr": "tomate",
+              "phon": "tamatim",
+              "emoji": "🍅",
+              "kid": true
+            },
+            {
+              "id": "ar_batata",
+              "text": "بَطَاطَا",
+              "fr": "pomme de terre",
+              "phon": "batata",
+              "emoji": "🥔",
+              "kid": true
+            },
+            {
+              "id": "ar_jazar",
+              "text": "جَزَر",
+              "fr": "carotte",
+              "phon": "jazar",
+              "emoji": "🥕",
+              "kid": true
+            }
           ]
         },
         {
@@ -462,15 +1330,74 @@
           "title": "À table",
           "kind": "vocab",
           "items": [
-            { "id": "ar_ana_jai", "text": "أَنَا جَائِع", "fr": "j'ai faim", "phon": "ana jaï", "emoji": "😋", "kid": true },
-            { "id": "ar_ana_atchan", "text": "أَنَا عَطْشَان", "fr": "j'ai soif", "phon": "ana atchan", "emoji": "🥤", "kid": true },
-            { "id": "ar_ouridou_an_akoul", "text": "أُرِيدُ أَنْ آكُلَ", "fr": "je veux manger", "phon": "ouridou an akoul", "emoji": "🍽️", "kid": true },
-            { "id": "ar_akoul", "text": "آكُلُ", "fr": "je mange", "phon": "akoul", "emoji": "😋", "kid": true },
-            { "id": "ar_achrab", "text": "أَشْرَبُ", "fr": "je bois", "phon": "achrab", "emoji": "🥤" },
-            { "id": "ar_ladhidh", "text": "لَذِيذ", "fr": "délicieux", "phon": "ladhidh", "emoji": "😋", "kid": true },
-            { "id": "ar_fatour", "text": "فُطُور", "fr": "petit-déjeuner", "phon": "fatour", "emoji": "🥐" },
-            { "id": "ar_ghada", "text": "غَدَاء", "fr": "déjeuner", "phon": "ghada", "emoji": "🍽️" },
-            { "id": "ar_acha", "text": "عَشَاء", "fr": "dîner", "phon": "acha", "emoji": "🌙" }
+            {
+              "id": "ar_ana_jai",
+              "text": "أَنَا جَائِع",
+              "fr": "j'ai faim",
+              "phon": "ana jaï",
+              "emoji": "😋",
+              "kid": true
+            },
+            {
+              "id": "ar_ana_atchan",
+              "text": "أَنَا عَطْشَان",
+              "fr": "j'ai soif",
+              "phon": "ana atchan",
+              "emoji": "🥤",
+              "kid": true
+            },
+            {
+              "id": "ar_ouridou_an_akoul",
+              "text": "أُرِيدُ أَنْ آكُلَ",
+              "fr": "je veux manger",
+              "phon": "ouridou an akoul",
+              "emoji": "🍽️",
+              "kid": true
+            },
+            {
+              "id": "ar_akoul",
+              "text": "آكُلُ",
+              "fr": "je mange",
+              "phon": "akoul",
+              "emoji": "😋",
+              "kid": true
+            },
+            {
+              "id": "ar_achrab",
+              "text": "أَشْرَبُ",
+              "fr": "je bois",
+              "phon": "achrab",
+              "emoji": "🥤"
+            },
+            {
+              "id": "ar_ladhidh",
+              "text": "لَذِيذ",
+              "fr": "délicieux",
+              "phon": "ladhidh",
+              "emoji": "😋",
+              "kid": true
+            },
+            {
+              "id": "ar_fatour",
+              "text": "فُطُور",
+              "fr": "petit-déjeuner",
+              "phon": "fatour",
+              "emoji": "🥐"
+            },
+            {
+              "id": "ar_ghada",
+              "text": "غَدَاء",
+              "fr": "déjeuner",
+              "phon": "ghada",
+              "emoji": "🍽️"
+            },
+            {
+              "id": "ar_acha",
+              "text": "عَشَاء",
+              "fr": "dîner",
+              "phon": "acha",
+              "emoji": "🌙"
+            }
           ]
         }
       ]
@@ -485,14 +1412,68 @@
           "title": "Les mots interrogatifs",
           "kind": "vocab",
           "items": [
-            { "id": "ar_man", "text": "مَنْ؟", "fr": "qui ?", "phon": "man", "emoji": "🧐", "kid": true },
-            { "id": "ar_madha", "text": "مَاذَا؟", "fr": "quoi ? / que ?", "phon": "madha", "emoji": "❓", "kid": true },
-            { "id": "ar_ayna", "text": "أَيْنَ؟", "fr": "où ?", "phon": "ayna", "emoji": "📍", "kid": true },
-            { "id": "ar_mata", "text": "مَتَى؟", "fr": "quand ?", "phon": "mata", "emoji": "🕐", "kid": true },
-            { "id": "ar_limadha", "text": "لِمَاذَا؟", "fr": "pourquoi ?", "phon": "limadha", "emoji": "🤔", "kid": true },
-            { "id": "ar_kayfa", "text": "كَيْفَ؟", "fr": "comment ?", "phon": "kayfa", "emoji": "❓", "kid": true },
-            { "id": "ar_ayy", "text": "أَيّ؟", "fr": "quel ? / lequel ?", "phon": "ayy", "emoji": "❓" },
-            { "id": "ar_bikam", "text": "بِكَمْ؟", "fr": "combien ça coûte ?", "phon": "bikam", "emoji": "💰" }
+            {
+              "id": "ar_man",
+              "text": "مَنْ؟",
+              "fr": "qui ?",
+              "phon": "man",
+              "emoji": "🧐",
+              "kid": true
+            },
+            {
+              "id": "ar_madha",
+              "text": "مَاذَا؟",
+              "fr": "quoi ? / que ?",
+              "phon": "madha",
+              "emoji": "❓",
+              "kid": true
+            },
+            {
+              "id": "ar_ayna",
+              "text": "أَيْنَ؟",
+              "fr": "où ?",
+              "phon": "ayna",
+              "emoji": "📍",
+              "kid": true
+            },
+            {
+              "id": "ar_mata",
+              "text": "مَتَى؟",
+              "fr": "quand ?",
+              "phon": "mata",
+              "emoji": "🕐",
+              "kid": true
+            },
+            {
+              "id": "ar_limadha",
+              "text": "لِمَاذَا؟",
+              "fr": "pourquoi ?",
+              "phon": "limadha",
+              "emoji": "🤔",
+              "kid": true
+            },
+            {
+              "id": "ar_kayfa",
+              "text": "كَيْفَ؟",
+              "fr": "comment ?",
+              "phon": "kayfa",
+              "emoji": "❓",
+              "kid": true
+            },
+            {
+              "id": "ar_ayy",
+              "text": "أَيّ؟",
+              "fr": "quel ? / lequel ?",
+              "phon": "ayy",
+              "emoji": "❓"
+            },
+            {
+              "id": "ar_bikam",
+              "text": "بِكَمْ؟",
+              "fr": "combien ça coûte ?",
+              "phon": "bikam",
+              "emoji": "💰"
+            }
           ]
         },
         {
@@ -500,14 +1481,66 @@
           "title": "Questions utiles",
           "kind": "vocab",
           "items": [
-            { "id": "ar_ma_hadha", "text": "مَا هَذَا؟", "fr": "qu'est-ce que c'est ?", "phon": "ma hadha", "emoji": "👀", "kid": true },
-            { "id": "ar_man_hadha", "text": "مَنْ هَذَا؟", "fr": "qui est-ce ?", "phon": "man hadha", "emoji": "🧐" },
-            { "id": "ar_ayna_alhammam", "text": "أَيْنَ الْحَمَّامُ؟", "fr": "où sont les toilettes ?", "phon": "ayna al hammam", "emoji": "🚻", "kid": true },
-            { "id": "ar_ayna_anta", "text": "أَيْنَ أَنْتَ؟", "fr": "où es-tu ?", "phon": "ayna anta", "emoji": "📍" },
-            { "id": "ar_kam_assaa", "text": "كَمِ السَّاعَةُ؟", "fr": "quelle heure est-il ?", "phon": "kami assaa", "emoji": "🕐", "kid": true },
-            { "id": "ar_hal_tatakallam", "text": "هَلْ تَتَكَلَّمُ الْفَرَنْسِيَّةَ؟", "fr": "parles-tu français ?", "phon": "hal tatakallamou al faransiya", "emoji": "🇫🇷" },
-            { "id": "ar_madha_tourid", "text": "مَاذَا تُرِيدُ؟", "fr": "que veux-tu ?", "phon": "madha tourid", "emoji": "❓", "kid": true },
-            { "id": "ar_hal", "text": "هَلْ...؟", "fr": "est-ce que... ?", "phon": "hal", "emoji": "❓" }
+            {
+              "id": "ar_ma_hadha",
+              "text": "مَا هَذَا؟",
+              "fr": "qu'est-ce que c'est ?",
+              "phon": "ma hadha",
+              "emoji": "👀",
+              "kid": true
+            },
+            {
+              "id": "ar_man_hadha",
+              "text": "مَنْ هَذَا؟",
+              "fr": "qui est-ce ?",
+              "phon": "man hadha",
+              "emoji": "🧐"
+            },
+            {
+              "id": "ar_ayna_alhammam",
+              "text": "أَيْنَ الْحَمَّامُ؟",
+              "fr": "où sont les toilettes ?",
+              "phon": "ayna al hammam",
+              "emoji": "🚻",
+              "kid": true
+            },
+            {
+              "id": "ar_ayna_anta",
+              "text": "أَيْنَ أَنْتَ؟",
+              "fr": "où es-tu ?",
+              "phon": "ayna anta",
+              "emoji": "📍"
+            },
+            {
+              "id": "ar_kam_assaa",
+              "text": "كَمِ السَّاعَةُ؟",
+              "fr": "quelle heure est-il ?",
+              "phon": "kami assaa",
+              "emoji": "🕐",
+              "kid": true
+            },
+            {
+              "id": "ar_hal_tatakallam",
+              "text": "هَلْ تَتَكَلَّمُ الْفَرَنْسِيَّةَ؟",
+              "fr": "parles-tu français ?",
+              "phon": "hal tatakallamou al faransiya",
+              "emoji": "🇫🇷"
+            },
+            {
+              "id": "ar_madha_tourid",
+              "text": "مَاذَا تُرِيدُ؟",
+              "fr": "que veux-tu ?",
+              "phon": "madha tourid",
+              "emoji": "❓",
+              "kid": true
+            },
+            {
+              "id": "ar_hal",
+              "text": "هَلْ...؟",
+              "fr": "est-ce que... ?",
+              "phon": "hal",
+              "emoji": "❓"
+            }
           ]
         },
         {
@@ -515,14 +1548,68 @@
           "title": "Répondre",
           "kind": "vocab",
           "items": [
-            { "id": "ar_houna", "text": "هُنَا", "fr": "ici", "phon": "houna", "emoji": "📍", "kid": true },
-            { "id": "ar_hounak", "text": "هُنَاكَ", "fr": "là-bas", "phon": "hounak", "emoji": "👉", "kid": true },
-            { "id": "ar_alaan", "text": "الْآنَ", "fr": "maintenant", "phon": "al aan", "emoji": "⏰", "kid": true },
-            { "id": "ar_alyawm", "text": "الْيَوْمَ", "fr": "aujourd'hui", "phon": "al yawm", "emoji": "📅", "kid": true },
-            { "id": "ar_ghadan", "text": "غَدًا", "fr": "demain", "phon": "ghadan", "emoji": "🌄" },
-            { "id": "ar_ams", "text": "أَمْسِ", "fr": "hier", "phon": "amsi", "emoji": "📅" },
-            { "id": "ar_la_adri", "text": "لَا أَدْرِي", "fr": "je ne sais pas", "phon": "la adri", "emoji": "🤷", "kid": true },
-            { "id": "ar_tabaan", "text": "طَبْعًا", "fr": "bien sûr", "phon": "tabaan", "emoji": "👍", "kid": true }
+            {
+              "id": "ar_houna",
+              "text": "هُنَا",
+              "fr": "ici",
+              "phon": "houna",
+              "emoji": "📍",
+              "kid": true
+            },
+            {
+              "id": "ar_hounak",
+              "text": "هُنَاكَ",
+              "fr": "là-bas",
+              "phon": "hounak",
+              "emoji": "👉",
+              "kid": true
+            },
+            {
+              "id": "ar_alaan",
+              "text": "الْآنَ",
+              "fr": "maintenant",
+              "phon": "al aan",
+              "emoji": "⏰",
+              "kid": true
+            },
+            {
+              "id": "ar_alyawm",
+              "text": "الْيَوْمَ",
+              "fr": "aujourd'hui",
+              "phon": "al yawm",
+              "emoji": "📅",
+              "kid": true
+            },
+            {
+              "id": "ar_ghadan",
+              "text": "غَدًا",
+              "fr": "demain",
+              "phon": "ghadan",
+              "emoji": "🌄"
+            },
+            {
+              "id": "ar_ams",
+              "text": "أَمْسِ",
+              "fr": "hier",
+              "phon": "amsi",
+              "emoji": "📅"
+            },
+            {
+              "id": "ar_la_adri",
+              "text": "لَا أَدْرِي",
+              "fr": "je ne sais pas",
+              "phon": "la adri",
+              "emoji": "🤷",
+              "kid": true
+            },
+            {
+              "id": "ar_tabaan",
+              "text": "طَبْعًا",
+              "fr": "bien sûr",
+              "phon": "tabaan",
+              "emoji": "👍",
+              "kid": true
+            }
           ]
         }
       ]
@@ -537,14 +1624,68 @@
           "title": "Exprimer ses besoins",
           "kind": "vocab",
           "items": [
-            { "id": "ar_ourid", "text": "أُرِيدُ", "fr": "je veux", "phon": "ourid", "emoji": "🙋", "kid": true },
-            { "id": "ar_la_ourid", "text": "لَا أُرِيدُ", "fr": "je ne veux pas", "phon": "la ourid", "emoji": "🙅", "kid": true },
-            { "id": "ar_ouhibbou", "text": "أُحِبُّ", "fr": "j'aime", "phon": "ouhibbou", "emoji": "❤️", "kid": true },
-            { "id": "ar_la_ouhibbou", "text": "لَا أُحِبُّ", "fr": "je n'aime pas", "phon": "la ouhibbou", "emoji": "💔" },
-            { "id": "ar_saidni", "text": "سَاعِدْنِي", "fr": "aide-moi", "phon": "saidni", "emoji": "🆘", "kid": true },
-            { "id": "ar_ahtaj", "text": "أَحْتَاجُ إِلَى...", "fr": "j'ai besoin de...", "phon": "ahtajou ila", "emoji": "🙏" },
-            { "id": "ar_hayya_bina", "text": "هَيَّا بِنَا", "fr": "allons-y !", "phon": "hayya bina", "emoji": "🏃", "kid": true },
-            { "id": "ar_intazir", "text": "اِنْتَظِرْ", "fr": "attends", "phon": "intazir", "emoji": "✋", "kid": true }
+            {
+              "id": "ar_ourid",
+              "text": "أُرِيدُ",
+              "fr": "je veux",
+              "phon": "ourid",
+              "emoji": "🙋",
+              "kid": true
+            },
+            {
+              "id": "ar_la_ourid",
+              "text": "لَا أُرِيدُ",
+              "fr": "je ne veux pas",
+              "phon": "la ourid",
+              "emoji": "🙅",
+              "kid": true
+            },
+            {
+              "id": "ar_ouhibbou",
+              "text": "أُحِبُّ",
+              "fr": "j'aime",
+              "phon": "ouhibbou",
+              "emoji": "❤️",
+              "kid": true
+            },
+            {
+              "id": "ar_la_ouhibbou",
+              "text": "لَا أُحِبُّ",
+              "fr": "je n'aime pas",
+              "phon": "la ouhibbou",
+              "emoji": "💔"
+            },
+            {
+              "id": "ar_saidni",
+              "text": "سَاعِدْنِي",
+              "fr": "aide-moi",
+              "phon": "saidni",
+              "emoji": "🆘",
+              "kid": true
+            },
+            {
+              "id": "ar_ahtaj",
+              "text": "أَحْتَاجُ إِلَى...",
+              "fr": "j'ai besoin de...",
+              "phon": "ahtajou ila",
+              "emoji": "🙏"
+            },
+            {
+              "id": "ar_hayya_bina",
+              "text": "هَيَّا بِنَا",
+              "fr": "allons-y !",
+              "phon": "hayya bina",
+              "emoji": "🏃",
+              "kid": true
+            },
+            {
+              "id": "ar_intazir",
+              "text": "اِنْتَظِرْ",
+              "fr": "attends",
+              "phon": "intazir",
+              "emoji": "✋",
+              "kid": true
+            }
           ]
         },
         {
@@ -552,14 +1693,67 @@
           "title": "Communiquer",
           "kind": "vocab",
           "items": [
-            { "id": "ar_la_afham", "text": "لَا أَفْهَمُ", "fr": "je ne comprends pas", "phon": "la afham", "emoji": "🤔", "kid": true },
-            { "id": "ar_afham", "text": "أَفْهَمُ", "fr": "je comprends", "phon": "afham", "emoji": "💡", "kid": true },
-            { "id": "ar_takallam_bibout", "text": "تَكَلَّمْ بِبُطْءٍ", "fr": "parle lentement", "phon": "takallam bibout", "emoji": "🐢", "kid": true },
-            { "id": "ar_aid_min_fadlik", "text": "أَعِدْ مِنْ فَضْلِكَ", "fr": "répète s'il te plaît", "phon": "aid min fadlik", "emoji": "🔁", "kid": true },
-            { "id": "ar_madha_qoulta", "text": "مَاذَا قُلْتَ؟", "fr": "qu'as-tu dit ?", "phon": "madha qoulta", "emoji": "❓" },
-            { "id": "ar_kayfa_naqoul", "text": "كَيْفَ نَقُولُ...؟", "fr": "comment dit-on... ?", "phon": "kayfa naqoul", "emoji": "💬", "kid": true },
-            { "id": "ar_atakallam_qalilan", "text": "أَتَكَلَّمُ الْعَرَبِيَّةَ قَلِيلًا", "fr": "je parle un peu arabe", "phon": "atakallamou al arabiya qalilan", "emoji": "🗣️" },
-            { "id": "ar_ouktoub", "text": "اُكْتُبْ مِنْ فَضْلِكَ", "fr": "écris s'il te plaît", "phon": "ouktoub min fadlik", "emoji": "✍️" }
+            {
+              "id": "ar_la_afham",
+              "text": "لَا أَفْهَمُ",
+              "fr": "je ne comprends pas",
+              "phon": "la afham",
+              "emoji": "🤔",
+              "kid": true
+            },
+            {
+              "id": "ar_afham",
+              "text": "أَفْهَمُ",
+              "fr": "je comprends",
+              "phon": "afham",
+              "emoji": "💡",
+              "kid": true
+            },
+            {
+              "id": "ar_takallam_bibout",
+              "text": "تَكَلَّمْ بِبُطْءٍ",
+              "fr": "parle lentement",
+              "phon": "takallam bibout",
+              "emoji": "🐢",
+              "kid": true
+            },
+            {
+              "id": "ar_aid_min_fadlik",
+              "text": "أَعِدْ مِنْ فَضْلِكَ",
+              "fr": "répète s'il te plaît",
+              "phon": "aid min fadlik",
+              "emoji": "🔁",
+              "kid": true
+            },
+            {
+              "id": "ar_madha_qoulta",
+              "text": "مَاذَا قُلْتَ؟",
+              "fr": "qu'as-tu dit ?",
+              "phon": "madha qoulta",
+              "emoji": "❓"
+            },
+            {
+              "id": "ar_kayfa_naqoul",
+              "text": "كَيْفَ نَقُولُ...؟",
+              "fr": "comment dit-on... ?",
+              "phon": "kayfa naqoul",
+              "emoji": "💬",
+              "kid": true
+            },
+            {
+              "id": "ar_atakallam_qalilan",
+              "text": "أَتَكَلَّمُ الْعَرَبِيَّةَ قَلِيلًا",
+              "fr": "je parle un peu arabe",
+              "phon": "atakallamou al arabiya qalilan",
+              "emoji": "🗣️"
+            },
+            {
+              "id": "ar_ouktoub",
+              "text": "اُكْتُبْ مِنْ فَضْلِكَ",
+              "fr": "écris s'il te plaît",
+              "phon": "ouktoub min fadlik",
+              "emoji": "✍️"
+            }
           ]
         },
         {
@@ -567,14 +1761,68 @@
           "title": "Politesse et petits mots",
           "kind": "vocab",
           "items": [
-            { "id": "ar_asif", "text": "آسِف", "fr": "désolé", "phon": "asif", "emoji": "😔", "kid": true },
-            { "id": "ar_la_bas", "text": "لَا بَأْسَ", "fr": "ce n'est pas grave", "phon": "la bas", "emoji": "👌", "kid": true },
-            { "id": "ar_moumtaz", "text": "مُمْتَاز", "fr": "excellent !", "phon": "moumtaz", "emoji": "🌟", "kid": true },
-            { "id": "ar_jamil", "text": "جَمِيل", "fr": "beau / joli", "phon": "jamil", "emoji": "😍", "kid": true },
-            { "id": "ar_bisouraa", "text": "بِسُرْعَةٍ", "fr": "vite !", "phon": "bisouraa", "emoji": "🏃" },
-            { "id": "ar_ihtaris", "text": "اِحْتَرِسْ", "fr": "attention !", "phon": "ihtaris", "emoji": "⚠️", "kid": true },
-            { "id": "ar_tousbih_ala_khayr", "text": "تُصْبِحُ عَلَى خَيْرٍ", "fr": "bonne nuit", "phon": "tousbihou ala khayr", "emoji": "🌙", "kid": true },
-            { "id": "ar_in_cha_allah", "text": "إِنْ شَاءَ اللَّهُ", "fr": "si Dieu le veut", "phon": "in cha Allah", "emoji": "🤲" }
+            {
+              "id": "ar_asif",
+              "text": "آسِف",
+              "fr": "désolé",
+              "phon": "asif",
+              "emoji": "😔",
+              "kid": true
+            },
+            {
+              "id": "ar_la_bas",
+              "text": "لَا بَأْسَ",
+              "fr": "ce n'est pas grave",
+              "phon": "la bas",
+              "emoji": "👌",
+              "kid": true
+            },
+            {
+              "id": "ar_moumtaz",
+              "text": "مُمْتَاز",
+              "fr": "excellent !",
+              "phon": "moumtaz",
+              "emoji": "🌟",
+              "kid": true
+            },
+            {
+              "id": "ar_jamil",
+              "text": "جَمِيل",
+              "fr": "beau / joli",
+              "phon": "jamil",
+              "emoji": "😍",
+              "kid": true
+            },
+            {
+              "id": "ar_bisouraa",
+              "text": "بِسُرْعَةٍ",
+              "fr": "vite !",
+              "phon": "bisouraa",
+              "emoji": "🏃"
+            },
+            {
+              "id": "ar_ihtaris",
+              "text": "اِحْتَرِسْ",
+              "fr": "attention !",
+              "phon": "ihtaris",
+              "emoji": "⚠️",
+              "kid": true
+            },
+            {
+              "id": "ar_tousbih_ala_khayr",
+              "text": "تُصْبِحُ عَلَى خَيْرٍ",
+              "fr": "bonne nuit",
+              "phon": "tousbihou ala khayr",
+              "emoji": "🌙",
+              "kid": true
+            },
+            {
+              "id": "ar_in_cha_allah",
+              "text": "إِنْ شَاءَ اللَّهُ",
+              "fr": "si Dieu le veut",
+              "phon": "in cha Allah",
+              "emoji": "🤲"
+            }
           ]
         }
       ]

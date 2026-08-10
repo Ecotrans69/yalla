@@ -36,7 +36,8 @@ def collect_jobs():
                     text = item['arScript'] if cid == 'dz' else item['text']
                     jobs.append((item['id'], text, cid))
                 for letter in lesson.get('letters') or []:
-                    jobs.append((letter['id'], letter['char'], cid))
+                    # le NOM arabe de la lettre (بَاء) se prononce bien mieux que la lettre seule
+                    jobs.append((letter['id'], letter.get('arName') or letter['char'], cid))
     return jobs
 
 
