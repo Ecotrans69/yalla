@@ -13,7 +13,6 @@ import {
   MAX_HEARTS,
 } from './gamification'
 
-const DAY = 86_400_000
 // 2026-08-10 12:00 UTC → 14:00 à Paris (été)
 const NOON = Date.UTC(2026, 7, 10, 12, 0, 0)
 

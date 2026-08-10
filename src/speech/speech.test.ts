@@ -56,14 +56,14 @@ describe('tts', () => {
   })
 
   it('speakItem darija utilise arScript + ralenti', async () => {
-    const course = {
+    const course: import('../content/types').Course = {
       id: 'dz',
       title: '',
       flag: '',
       ttsLang: 'ar-SA',
       sttLang: 'ar-DZ',
       units: [],
-    } as const
+    }
     await speakItem({ id: 'x', text: 'salam', fr: 'salut', arScript: 'سلام' }, course, true)
     expect(spoken[0].text).toBe('سلام')
     expect(spoken[0].rate).toBe(0.6)

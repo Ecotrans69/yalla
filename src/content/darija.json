@@ -7,7 +7,7 @@
   "units": [
     {
       "id": "dz-u1",
-      "title": "Salutations",
+      "title": "Salutations et politesse",
       "icon": "👋",
       "lessons": [
         {
@@ -17,12 +17,328 @@
           "items": [
             { "id": "dz_salam", "text": "salam", "fr": "salut", "arScript": "سلام", "emoji": "👋", "kid": true },
             { "id": "dz_sbah_khir", "text": "sbah el khir", "fr": "bonjour (le matin)", "arScript": "صباح الخير", "emoji": "🌅", "kid": true },
-            { "id": "dz_labas", "text": "labas?", "fr": "ça va ?", "arScript": "لاباس", "emoji": "🙂", "kid": true },
-            { "id": "dz_hamdoullah", "text": "hamdoullah", "fr": "ça va bien (Dieu merci)", "arScript": "الحمد لله", "emoji": "😊", "kid": true },
-            { "id": "dz_saha", "text": "saha", "fr": "merci / santé", "arScript": "صحة", "emoji": "🙏", "kid": true },
+            { "id": "dz_msa_khir", "text": "msa el khir", "fr": "bonsoir", "arScript": "مساء الخير", "emoji": "🌇", "kid": true },
+            { "id": "dz_labas", "text": "labas ?", "fr": "ça va ?", "arScript": "لاباس", "emoji": "🙂", "kid": true },
+            { "id": "dz_hamdoullah_labas", "text": "hamdoullah labas", "fr": "ça va bien, Dieu merci", "arScript": "الحمد لله لاباس", "emoji": "😊", "kid": true },
+            { "id": "dz_wach_rak", "text": "wach rak ?", "fr": "comment vas-tu ? (à un homme)", "arScript": "واش راك", "emoji": "🧔" },
+            { "id": "dz_wach_raki", "text": "wach raki ?", "fr": "comment vas-tu ? (à une femme)", "arScript": "واش راكي", "emoji": "👩" },
+            { "id": "dz_mlih", "text": "mlih", "fr": "bien", "arScript": "مليح", "emoji": "👍", "kid": true },
             { "id": "dz_beslama", "text": "beslama", "fr": "au revoir", "arScript": "بالسلامة", "emoji": "🚪", "kid": true },
-            { "id": "dz_wach_rak", "text": "wach rak?", "fr": "comment vas-tu ? (à un homme)", "arScript": "واش راك" },
-            { "id": "dz_mlih", "text": "mlih", "fr": "bien", "arScript": "مليح", "emoji": "👍", "kid": true }
+            { "id": "dz_tesbah_ala_khir", "text": "tesbah ala khir", "fr": "bonne nuit", "arScript": "تصبح على خير", "emoji": "🌙", "kid": true }
+          ]
+        },
+        {
+          "id": "dz-u1-l2",
+          "title": "La politesse",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_choukran", "text": "choukran", "fr": "merci", "arScript": "شكرا", "emoji": "🙏", "kid": true },
+            { "id": "dz_saha", "text": "saha", "fr": "merci / santé", "arScript": "صحة", "emoji": "🤗", "kid": true },
+            { "id": "dz_smahli", "text": "smahli", "fr": "pardon, excuse-moi", "arScript": "اسمحلي", "emoji": "🙇", "kid": true },
+            { "id": "dz_men_fadlek", "text": "men fadlek", "fr": "s'il te plaît", "arScript": "من فضلك", "emoji": "🥺", "kid": true },
+            { "id": "dz_ysalmek", "text": "ysalmek", "fr": "merci à toi (réponse)", "arScript": "يسلمك", "emoji": "😊" },
+            { "id": "dz_la_choukra", "text": "la choukra ala wadjib", "fr": "de rien", "arScript": "لا شكر على واجب", "emoji": "🤲" },
+            { "id": "dz_marhba_bik", "text": "marhba bik", "fr": "bienvenue", "arScript": "مرحبا بيك", "emoji": "🏡", "kid": true },
+            { "id": "dz_tfaddal", "text": "tfaddal", "fr": "je t'en prie, vas-y", "arScript": "تفضل", "emoji": "🫴" },
+            { "id": "dz_maalich", "text": "maalich", "fr": "ce n'est pas grave", "arScript": "معليش", "emoji": "🙂", "kid": true }
+          ]
+        },
+        {
+          "id": "dz-u1-l3",
+          "title": "Faire connaissance",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_wach_esmek", "text": "wach esmek ?", "fr": "comment tu t'appelles ?", "arScript": "واش اسمك", "emoji": "❓", "kid": true },
+            { "id": "dz_esmi", "text": "esmi...", "fr": "je m'appelle...", "arScript": "اسمي", "emoji": "🙋", "kid": true },
+            { "id": "dz_chhal_fi_amrek", "text": "chhal fi amrek ?", "fr": "quel âge as-tu ?", "arScript": "شحال في عمرك", "emoji": "🎂" },
+            { "id": "dz_andi_aachra_snin", "text": "andi aachra snin", "fr": "j'ai dix ans", "arScript": "عندي عشرة سنين", "emoji": "🔟", "kid": true },
+            { "id": "dz_mnin_nta", "text": "mnin nta ?", "fr": "d'où viens-tu ?", "arScript": "منين نتا", "emoji": "🌍" },
+            { "id": "dz_ana_men_fransa", "text": "ana men Fransa", "fr": "je viens de France", "arScript": "أنا من فرنسا", "emoji": "🇫🇷", "kid": true },
+            { "id": "dz_ana_dzairi", "text": "ana dzaïri", "fr": "je suis algérien", "arScript": "أنا جزائري", "emoji": "🇩🇿", "kid": true },
+            { "id": "dz_metcharfin", "text": "metcharfin", "fr": "enchanté", "arScript": "متشرفين", "emoji": "🤝" },
+            { "id": "dz_wach_khbarek", "text": "wach khbarek ?", "fr": "quoi de neuf ?", "arScript": "واش خبارك", "emoji": "🗞️" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dz-u2",
+      "title": "La famille",
+      "icon": "👨‍👩‍👧‍👦",
+      "lessons": [
+        {
+          "id": "dz-u2-l1",
+          "title": "La famille proche",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_yemma", "text": "yemma", "fr": "maman", "arScript": "يما", "emoji": "👩", "kid": true },
+            { "id": "dz_baba", "text": "baba", "fr": "papa", "arScript": "بابا", "emoji": "👨", "kid": true },
+            { "id": "dz_khouya", "text": "khouya", "fr": "mon frère", "arScript": "خويا", "emoji": "👦", "kid": true },
+            { "id": "dz_khti", "text": "khti", "fr": "ma sœur", "arScript": "ختي", "emoji": "👧", "kid": true },
+            { "id": "dz_weldi", "text": "weldi", "fr": "mon fils", "arScript": "ولدي", "emoji": "👶" },
+            { "id": "dz_benti", "text": "benti", "fr": "ma fille", "arScript": "بنتي", "emoji": "👧" },
+            { "id": "dz_radjel", "text": "radjel", "fr": "homme / mari", "arScript": "راجل", "emoji": "🧔" },
+            { "id": "dz_mra", "text": "mra", "fr": "femme", "arScript": "مرا", "emoji": "👩" },
+            { "id": "dz_el_aila", "text": "el aïla", "fr": "la famille", "arScript": "العايلة", "emoji": "👨‍👩‍👧‍👦", "kid": true },
+            { "id": "dz_edrari", "text": "edrari", "fr": "les enfants", "arScript": "الدراري", "emoji": "🧒", "kid": true }
+          ]
+        },
+        {
+          "id": "dz-u2-l2",
+          "title": "Tontons, tatas et grands-parents",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_djeddi", "text": "djeddi", "fr": "mon grand-père", "arScript": "جدي", "emoji": "👴", "kid": true },
+            { "id": "dz_djedda", "text": "djedda", "fr": "ma grand-mère", "arScript": "جدة", "emoji": "👵", "kid": true },
+            { "id": "dz_ammi", "text": "ammi", "fr": "mon oncle (côté papa)", "arScript": "عمي", "emoji": "👨", "kid": true },
+            { "id": "dz_amti", "text": "amti", "fr": "ma tante (côté papa)", "arScript": "عمتي", "emoji": "👩" },
+            { "id": "dz_khali", "text": "khali", "fr": "mon oncle (côté maman)", "arScript": "خالي", "emoji": "👨", "kid": true },
+            { "id": "dz_khalti", "text": "khalti", "fr": "ma tante (côté maman)", "arScript": "خالتي", "emoji": "👩", "kid": true },
+            { "id": "dz_weld_ammi", "text": "weld ammi", "fr": "mon cousin", "arScript": "ولد عمي", "emoji": "👦" },
+            { "id": "dz_bent_ammi", "text": "bent ammi", "fr": "ma cousine", "arScript": "بنت عمي", "emoji": "👧" },
+            { "id": "dz_el_bled", "text": "el bled", "fr": "le pays / le bled", "arScript": "البلاد", "emoji": "🏡", "kid": true }
+          ]
+        },
+        {
+          "id": "dz-u2-l3",
+          "title": "Parler de la famille",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_hadi_yemma", "text": "hadi yemma", "fr": "c'est ma maman", "arScript": "هذي يما", "emoji": "👩", "kid": true },
+            { "id": "dz_hada_baba", "text": "hada baba", "fr": "c'est mon papa", "arScript": "هذا بابا", "emoji": "👨", "kid": true },
+            { "id": "dz_nhebbek_bezaf", "text": "nhebbek bezaf", "fr": "je t'aime beaucoup", "arScript": "نحبك بزاف", "emoji": "❤️", "kid": true },
+            { "id": "dz_twahachtek", "text": "twahachtek", "fr": "tu m'as manqué", "arScript": "توحشتك", "emoji": "🥹" },
+            { "id": "dz_andi_zoudj_khawa", "text": "andi zoudj khawa", "fr": "j'ai deux frères", "arScript": "عندي زوج خاوة", "emoji": "👦👦", "kid": true },
+            { "id": "dz_wach_rahom", "text": "wach rahom ?", "fr": "comment vont-ils ?", "arScript": "واش راهم", "emoji": "🤔" },
+            { "id": "dz_sellem_ala_djeddi", "text": "sellem ala djeddi", "fr": "passe le bonjour à grand-père", "arScript": "سلم على جدي", "emoji": "👴" },
+            { "id": "dz_sghir", "text": "sghir", "fr": "petit", "arScript": "صغير", "emoji": "🐣", "kid": true },
+            { "id": "dz_kbir", "text": "kbir", "fr": "grand", "arScript": "كبير", "emoji": "🦒", "kid": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dz-u3",
+      "title": "Manger et boire",
+      "icon": "🍽️",
+      "lessons": [
+        {
+          "id": "dz-u3-l1",
+          "title": "À table",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_khobz", "text": "khobz", "fr": "pain", "arScript": "خبز", "emoji": "🍞", "kid": true },
+            { "id": "dz_el_ma", "text": "el ma", "fr": "l'eau", "arScript": "الما", "emoji": "💧", "kid": true },
+            { "id": "dz_atay", "text": "atay", "fr": "thé", "arScript": "أتاي", "emoji": "🍵", "kid": true },
+            { "id": "dz_qahwa", "text": "qahwa", "fr": "café", "arScript": "قهوة", "emoji": "☕" },
+            { "id": "dz_hlib", "text": "hlib", "fr": "lait", "arScript": "حليب", "emoji": "🥛", "kid": true },
+            { "id": "dz_taam", "text": "taam", "fr": "couscous", "arScript": "طعام", "emoji": "🍲", "kid": true },
+            { "id": "dz_chorba", "text": "chorba", "fr": "soupe", "arScript": "شوربة", "emoji": "🍜", "kid": true },
+            { "id": "dz_lham", "text": "lham", "fr": "viande", "arScript": "لحم", "emoji": "🥩" },
+            { "id": "dz_khodra", "text": "khodra", "fr": "légumes", "arScript": "خضرة", "emoji": "🥕", "kid": true },
+            { "id": "dz_fakia", "text": "fakia", "fr": "fruits", "arScript": "فاكية", "emoji": "🍎", "kid": true }
+          ]
+        },
+        {
+          "id": "dz-u3-l2",
+          "title": "J'ai faim !",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_rani_djiaan", "text": "rani djiaan", "fr": "j'ai faim", "arScript": "راني جيعان", "emoji": "😋", "kid": true },
+            { "id": "dz_rani_atchan", "text": "rani atchan", "fr": "j'ai soif", "arScript": "راني عطشان", "emoji": "🥤", "kid": true },
+            { "id": "dz_bnin", "text": "bnin", "fr": "c'est délicieux", "arScript": "بنين", "emoji": "🤤", "kid": true },
+            { "id": "dz_koul", "text": "koul !", "fr": "mange !", "arScript": "كول", "emoji": "🍽️", "kid": true },
+            { "id": "dz_ochrob", "text": "ochrob !", "fr": "bois !", "arScript": "اشرب", "emoji": "🥛", "kid": true },
+            { "id": "dz_chbaat", "text": "chbaat", "fr": "je n'ai plus faim", "arScript": "شبعت", "emoji": "😌" },
+            { "id": "dz_atini_el_khobz", "text": "atini el khobz", "fr": "donne-moi le pain", "arScript": "عطيني الخبز", "emoji": "🍞" },
+            { "id": "dz_bessahtek", "text": "bessahtek", "fr": "bon appétit !", "arScript": "بصحتك", "emoji": "😊", "kid": true },
+            { "id": "dz_nheb_atay", "text": "nheb atay", "fr": "je veux du thé", "arScript": "نحب أتاي", "emoji": "🍵", "kid": true },
+            { "id": "dz_el_makla", "text": "el makla", "fr": "la nourriture", "arScript": "الماكلة", "emoji": "🍲" }
+          ]
+        },
+        {
+          "id": "dz-u3-l3",
+          "title": "Les plats du bled",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_bourek", "text": "bourek", "fr": "bourek (feuilleté frit)", "arScript": "بوراك", "emoji": "🥟", "kid": true },
+            { "id": "dz_mhadjeb", "text": "mhadjeb", "fr": "mhadjeb (crêpes farcies)", "arScript": "محاجب", "emoji": "🫓", "kid": true },
+            { "id": "dz_rechta", "text": "rechta", "fr": "rechta (nouilles en sauce)", "arScript": "رشتة", "emoji": "🍝" },
+            { "id": "dz_chakhchoukha", "text": "chakhchoukha", "fr": "chakhchoukha (plat de galette émiettée)", "arScript": "شخشوخة", "emoji": "🍲" },
+            { "id": "dz_dolma", "text": "dolma", "fr": "dolma (légumes farcis)", "arScript": "دولمة", "emoji": "🍆" },
+            { "id": "dz_zlabia", "text": "zlabia", "fr": "zlabia (gâteau au miel)", "arScript": "زلابية", "emoji": "🍯", "kid": true },
+            { "id": "dz_makroud", "text": "makroud", "fr": "makroud (gâteau aux dattes)", "arScript": "مقروض", "emoji": "🍪", "kid": true },
+            { "id": "dz_tmar", "text": "tmar", "fr": "dattes", "arScript": "تمر", "emoji": "🌴", "kid": true },
+            { "id": "dz_kesra", "text": "kesra", "fr": "galette de semoule", "arScript": "كسرة", "emoji": "🫓", "kid": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dz-u4",
+      "title": "Au bled : marché et taxi",
+      "icon": "🚕",
+      "lessons": [
+        {
+          "id": "dz-u4-l1",
+          "title": "Au marché",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_chhal", "text": "chhal ?", "fr": "combien ?", "arScript": "شحال", "emoji": "💰", "kid": true },
+            { "id": "dz_chhal_hada", "text": "chhal hada ?", "fr": "c'est combien, ça ?", "arScript": "شحال هذا", "emoji": "🤔", "kid": true },
+            { "id": "dz_ghali", "text": "ghali", "fr": "cher", "arScript": "غالي", "emoji": "💸", "kid": true },
+            { "id": "dz_ghali_bezaf", "text": "ghali bezaf !", "fr": "trop cher !", "arScript": "غالي بزاف", "emoji": "😱", "kid": true },
+            { "id": "dz_rkhis", "text": "rkhis", "fr": "pas cher", "arScript": "رخيص", "emoji": "🪙", "kid": true },
+            { "id": "dz_essouq", "text": "essouq", "fr": "le marché", "arScript": "السوق", "emoji": "🛒", "kid": true },
+            { "id": "dz_nheb_nechri", "text": "nheb nechri...", "fr": "je veux acheter...", "arScript": "نحب نشري", "emoji": "🛍️" },
+            { "id": "dz_atini_kilo", "text": "atini kilo", "fr": "donne-moi un kilo", "arScript": "عطيني كيلو", "emoji": "⚖️" },
+            { "id": "dz_edrahem", "text": "edrahem", "fr": "l'argent", "arScript": "الدراهم", "emoji": "💵" },
+            { "id": "dz_neqqes_chwiya", "text": "neqqes chwiya", "fr": "baisse un peu (le prix)", "arScript": "نقص شوية", "emoji": "🤝" }
+          ]
+        },
+        {
+          "id": "dz-u4-l2",
+          "title": "En taxi",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_taxi", "text": "taxi", "fr": "taxi", "arScript": "طاكسي", "emoji": "🚕", "kid": true },
+            { "id": "dz_win_rayeh", "text": "win rayeh ?", "fr": "où vas-tu ?", "arScript": "وين رايح", "emoji": "🚗" },
+            { "id": "dz_ddini_el", "text": "ddini el...", "fr": "emmène-moi à...", "arScript": "ديني ل", "emoji": "🧳" },
+            { "id": "dz_oqef_hna", "text": "oqef hna", "fr": "arrête-toi ici", "arScript": "أوقف هنا", "emoji": "🛑", "kid": true },
+            { "id": "dz_estenna", "text": "estenna !", "fr": "attends !", "arScript": "استنى", "emoji": "✋", "kid": true },
+            { "id": "dz_zid_qoddam", "text": "zid qoddam", "fr": "continue tout droit", "arScript": "زيد قدام", "emoji": "⬆️" },
+            { "id": "dz_dour_ala_limin", "text": "dour ala limin", "fr": "tourne à droite", "arScript": "دور على اليمين", "emoji": "➡️" },
+            { "id": "dz_dour_ala_lisar", "text": "dour ala lisar", "fr": "tourne à gauche", "arScript": "دور على اليسار", "emoji": "⬅️" },
+            { "id": "dz_qrib_wella_baid", "text": "qrib wella baid ?", "fr": "c'est près ou loin ?", "arScript": "قريب ولا بعيد", "emoji": "📍" }
+          ]
+        },
+        {
+          "id": "dz-u4-l3",
+          "title": "Se débrouiller au bled",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_win_kayen", "text": "win kayen... ?", "fr": "où est-ce qu'il y a... ?", "arScript": "وين كاين", "emoji": "🔍" },
+            { "id": "dz_rani_talef", "text": "rani talef", "fr": "je suis perdu", "arScript": "راني تالف", "emoji": "🧭" },
+            { "id": "dz_aawenni", "text": "aawenni", "fr": "aide-moi", "arScript": "عاوني", "emoji": "🆘", "kid": true },
+            { "id": "dz_el_car", "text": "el car", "fr": "le bus", "arScript": "الكار", "emoji": "🚌", "kid": true },
+            { "id": "dz_el_hanout", "text": "el hanout", "fr": "l'épicerie", "arScript": "الحانوت", "emoji": "🏪", "kid": true },
+            { "id": "dz_esbitar", "text": "esbitar", "fr": "l'hôpital", "arScript": "السبيطار", "emoji": "🏥" },
+            { "id": "dz_el_djamaa", "text": "el djamaa", "fr": "la mosquée", "arScript": "الجامع", "emoji": "🕌", "kid": true },
+            { "id": "dz_el_bhar", "text": "el bhar", "fr": "la mer / la plage", "arScript": "البحر", "emoji": "🌊", "kid": true },
+            { "id": "dz_kayna_skhana", "text": "kayna skhana", "fr": "il fait chaud", "arScript": "كاينة سخانة", "emoji": "🥵", "kid": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dz-u5",
+      "title": "Questions et réponses",
+      "icon": "❓",
+      "lessons": [
+        {
+          "id": "dz-u5-l1",
+          "title": "Les mots pour demander",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_wach", "text": "wach ?", "fr": "quoi ?", "arScript": "واش", "emoji": "❓", "kid": true },
+            { "id": "dz_win", "text": "win ?", "fr": "où ?", "arScript": "وين", "emoji": "📍", "kid": true },
+            { "id": "dz_weqtach", "text": "weqtach ?", "fr": "quand ?", "arScript": "وقتاش", "emoji": "⏰", "kid": true },
+            { "id": "dz_alach", "text": "alach ?", "fr": "pourquoi ?", "arScript": "علاش", "emoji": "🤔", "kid": true },
+            { "id": "dz_kifach", "text": "kifach ?", "fr": "comment ?", "arScript": "كيفاش", "emoji": "🤷", "kid": true },
+            { "id": "dz_chkoun", "text": "chkoun ?", "fr": "qui ?", "arScript": "شكون", "emoji": "👤", "kid": true },
+            { "id": "dz_chhal_men", "text": "chhal men... ?", "fr": "combien de... ?", "arScript": "شحال من", "emoji": "🔢" },
+            { "id": "dz_wach_hada", "text": "wach hada ?", "fr": "qu'est-ce que c'est ?", "arScript": "واش هذا", "emoji": "🤨", "kid": true },
+            { "id": "dz_wach_qolt", "text": "wach qolt ?", "fr": "qu'est-ce que tu as dit ?", "arScript": "واش قلت", "emoji": "👂" },
+            { "id": "dz_win_rak", "text": "win rak ?", "fr": "où es-tu ?", "arScript": "وين راك", "emoji": "📱" }
+          ]
+        },
+        {
+          "id": "dz-u5-l2",
+          "title": "Oui, non, peut-être",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_ih", "text": "ih", "fr": "oui", "arScript": "إيه", "emoji": "✅", "kid": true },
+            { "id": "dz_lala", "text": "lala", "fr": "non", "arScript": "لالا", "emoji": "❌", "kid": true },
+            { "id": "dz_ma_naarefch", "text": "ma naarefch", "fr": "je ne sais pas", "arScript": "ما نعرفش", "emoji": "🤷", "kid": true },
+            { "id": "dz_fhemt", "text": "fhemt", "fr": "j'ai compris", "arScript": "فهمت", "emoji": "💡", "kid": true },
+            { "id": "dz_ma_fhemtch", "text": "ma fhemtch", "fr": "je n'ai pas compris", "arScript": "ما فهمتش", "emoji": "😕", "kid": true },
+            { "id": "dz_aawed", "text": "aawed men fadlek", "fr": "répète, s'il te plaît", "arScript": "عاود من فضلك", "emoji": "🔁" },
+            { "id": "dz_balak", "text": "balak", "fr": "peut-être", "arScript": "بالاك", "emoji": "🎲" },
+            { "id": "dz_kayen", "text": "kayen", "fr": "il y a", "arScript": "كاين", "emoji": "👌" },
+            { "id": "dz_makanch", "text": "makanch", "fr": "il n'y a pas", "arScript": "ماكانش", "emoji": "🚫" }
+          ]
+        },
+        {
+          "id": "dz-u5-l3",
+          "title": "Petites conversations",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_wach_teddir", "text": "wach teddir ?", "fr": "qu'est-ce que tu fais ?", "arScript": "واش تدير", "emoji": "🎨", "kid": true },
+            { "id": "dz_walou", "text": "walou", "fr": "rien", "arScript": "والو", "emoji": "🫥", "kid": true },
+            { "id": "dz_win_rahi_yemma", "text": "win rahi yemma ?", "fr": "où est maman ?", "arScript": "وين راهي يما", "emoji": "👩", "kid": true },
+            { "id": "dz_rahi_feddar", "text": "rahi feddar", "fr": "elle est à la maison", "arScript": "راهي في الدار", "emoji": "🏠", "kid": true },
+            { "id": "dz_weqtach_nakoulou", "text": "weqtach nakoulou ?", "fr": "quand est-ce qu'on mange ?", "arScript": "وقتاش ناكلو", "emoji": "🍽️", "kid": true },
+            { "id": "dz_derwak", "text": "derwak", "fr": "maintenant", "arScript": "دروك", "emoji": "⏱️", "kid": true },
+            { "id": "dz_ghedwa", "text": "ghedwa", "fr": "demain", "arScript": "غدوة", "emoji": "📅", "kid": true },
+            { "id": "dz_el_youm", "text": "el youm", "fr": "aujourd'hui", "arScript": "اليوم", "emoji": "📆", "kid": true },
+            { "id": "dz_el_bareh", "text": "el bareh", "fr": "hier", "arScript": "البارح", "emoji": "⏪" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dz-u6",
+      "title": "Expressions du quotidien",
+      "icon": "💬",
+      "lessons": [
+        {
+          "id": "dz-u6-l1",
+          "title": "Les mots magiques",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_inchallah", "text": "inchallah", "fr": "si Dieu le veut", "arScript": "إن شاء الله", "emoji": "🤲", "kid": true },
+            { "id": "dz_hamdoullah", "text": "hamdoullah", "fr": "Dieu merci", "arScript": "الحمد لله", "emoji": "🙏", "kid": true },
+            { "id": "dz_bismillah", "text": "bismillah", "fr": "au nom de Dieu (avant de manger)", "arScript": "بسم الله", "emoji": "🍽️", "kid": true },
+            { "id": "dz_machallah", "text": "machallah", "fr": "machallah (admiration)", "arScript": "ما شاء الله", "emoji": "✨", "kid": true },
+            { "id": "dz_yalla", "text": "yalla !", "fr": "allez, on y va !", "arScript": "يلا", "emoji": "🏃", "kid": true },
+            { "id": "dz_bezaf", "text": "bezaf", "fr": "beaucoup", "arScript": "بزاف", "emoji": "💯", "kid": true },
+            { "id": "dz_chwiya", "text": "chwiya", "fr": "un peu / doucement", "arScript": "شوية", "emoji": "🤏", "kid": true },
+            { "id": "dz_saha_ftourek", "text": "saha ftourek", "fr": "bon ftour (pendant le ramadan)", "arScript": "صحة فطورك", "emoji": "🌙" },
+            { "id": "dz_saha_aidek", "text": "saha aïdek", "fr": "bonne fête de l'Aïd", "arScript": "صحة عيدك", "emoji": "🎉", "kid": true },
+            { "id": "dz_rabbi_yehafdek", "text": "rabbi yehafdek", "fr": "que Dieu te protège", "arScript": "ربي يحفظك", "emoji": "💚" }
+          ]
+        },
+        {
+          "id": "dz-u6-l2",
+          "title": "Tous les jours",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_eddar", "text": "eddar", "fr": "la maison", "arScript": "الدار", "emoji": "🏠", "kid": true },
+            { "id": "dz_nrouh_norqod", "text": "nrouh norqod", "fr": "je vais dormir", "arScript": "نروح نرقد", "emoji": "😴", "kid": true },
+            { "id": "dz_noud", "text": "noud !", "fr": "lève-toi !", "arScript": "نوض", "emoji": "⏰", "kid": true },
+            { "id": "dz_arwah_lehna", "text": "arwah lehna", "fr": "viens ici", "arScript": "أرواح لهنا", "emoji": "👈", "kid": true },
+            { "id": "dz_rouh", "text": "rouh !", "fr": "va, pars !", "arScript": "روح", "emoji": "🚶" },
+            { "id": "dz_rani_nekhdem", "text": "rani nekhdem", "fr": "je travaille", "arScript": "راني نخدم", "emoji": "💼" },
+            { "id": "dz_aya_bina", "text": "aya bina", "fr": "allez, viens, on y va", "arScript": "أيا بينا", "emoji": "🚶‍♂️" },
+            { "id": "dz_thalla_fi_rouhek", "text": "thalla fi rouhek", "fr": "prends soin de toi", "arScript": "تهلى في روحك", "emoji": "💚" },
+            { "id": "dz_kolch_mlih", "text": "kolch mlih", "fr": "tout va bien", "arScript": "كلش مليح", "emoji": "👍", "kid": true }
+          ]
+        },
+        {
+          "id": "dz-u6-l3",
+          "title": "Parler comme au bled",
+          "kind": "vocab",
+          "items": [
+            { "id": "dz_wallah", "text": "wallah", "fr": "je te jure", "arScript": "والله", "emoji": "🤞" },
+            { "id": "dz_bessah", "text": "bessah ?", "fr": "c'est vrai ?", "arScript": "بالصح", "emoji": "😮", "kid": true },
+            { "id": "dz_andek_el_haq", "text": "andek el haq", "fr": "tu as raison", "arScript": "عندك الحق", "emoji": "👌" },
+            { "id": "dz_ya_khouya", "text": "ya khouya !", "fr": "hé mon frère !", "arScript": "يا خويا", "emoji": "🗣️" },
+            { "id": "dz_zaama", "text": "zaama", "fr": "genre, soi-disant", "arScript": "زعما", "emoji": "😏" },
+            { "id": "dz_gaa", "text": "gaa", "fr": "tous / tout", "arScript": "قاع", "emoji": "🌐" },
+            { "id": "dz_wach_bik", "text": "wach bik ?", "fr": "qu'est-ce que tu as ?", "arScript": "واش بيك", "emoji": "😟" },
+            { "id": "dz_bravo_alik", "text": "bravo alik !", "fr": "bravo, bien joué !", "arScript": "برافو عليك", "emoji": "👏", "kid": true },
+            { "id": "dz_ma_tkhafch", "text": "ma tkhafch", "fr": "n'aie pas peur", "arScript": "ما تخافش", "emoji": "💪", "kid": true },
+            { "id": "dz_ya_omri", "text": "ya omri", "fr": "mon chéri (mot tendre)", "arScript": "يا عمري", "emoji": "❤️", "kid": true }
           ]
         }
       ]
