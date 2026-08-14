@@ -146,7 +146,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
     }
     if (correct) {
       if (DIRECT_TYPES.has(ex.type)) advance(queue)
-      else setFeedback({ correct: true, note })
+      else setFeedback({ correct: true, note, item: ex.item, course })
     } else {
       setMistakes((m) => m + 1)
       let newQueue = queue
@@ -158,7 +158,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
         spendHeart()
         setHeartsLost((h) => h + 1)
       }
-      setFeedback({ correct: false, correction: correctionOf(ex), note })
+      setFeedback({ correct: false, correction: correctionOf(ex), note, item: ex.item, course })
     }
   }
 

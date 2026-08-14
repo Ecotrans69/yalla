@@ -17,6 +17,15 @@ vi.mock('../speech/stt', () => ({
   recognize: () => Promise.reject(new Error('non dispo')),
   abortRecognition: () => {},
 }))
+const playItemMock = vi.fn(() => Promise.resolve())
+vi.mock('../speech/audio', () => ({
+  playItem: (...args: unknown[]) => playItemMock(...(args as [])),
+  stopAudio: () => {},
+  effectiveRate: (r: number) => r,
+  pickVariant: () => 'h',
+  audioUrl: (id: string) => `/audio/${id}.h.mp3`,
+  VOICE_LABELS: [],
+}))
 
 // File d'exercices contrôlée
 const HELLO = { id: 'en_hello', text: 'hello', fr: 'bonjour', emoji: '👋' }
@@ -126,6 +135,23 @@ describe('LessonScreen', () => {
     // le premier essai raté compte pour le SRS
     expect(saved.data.p1.srs.en!.find((e) => e.itemId === 'en_hello')!.strength).toBe(0)
     expect(saved.data.p1.srs.en!.find((e) => e.itemId === 'en_yes')!.strength).toBe(1)
+  })
+
+  it('après une erreur : bouton pour réécouter la bonne réponse', async () => {
+    seedProfile()
+    playItemMock.mockClear()
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(await screen.findByText('no')) // mauvaise réponse
+    await user.click(screen.getByText('Vérifier'))
+
+    expect(await screen.findByText(/Écoute la bonne réponse/)).toBeInTheDocument()
+    const replay = screen.getAllByLabelText('Écouter').at(-1)!
+    await user.click(replay)
+    expect(playItemMock).toHaveBeenCalled()
+    // c'est bien l'item de la bonne réponse qui est rejoué
+    expect((playItemMock.mock.calls.at(-1) as unknown as [{ id: string }])[0].id).toBe('en_hello')
   })
 
   it('profil enfant : pas de perte de cœur', async () => {
