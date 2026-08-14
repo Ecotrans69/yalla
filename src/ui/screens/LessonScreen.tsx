@@ -1,10 +1,11 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { getCourse, findLesson, allLessons } from '../../content'
-import { buildLesson, type Exercise } from '../../engine/lessonBuilder'
+import { buildLesson, reviewableIds, type Exercise } from '../../engine/lessonBuilder'
 import { dueItems } from '../../engine/srs'
 import { BADGES, currentHearts, displayStreak } from '../../engine/gamification'
 import { sttAvailable } from '../../speech/stt'
-import { ttsAvailable, stopSpeaking } from '../../speech/tts'
+import { ttsAvailable } from '../../speech/tts'
+import { stopAudio } from '../../speech/audio'
 import { useApp } from '../../store/state'
 import { useRouter } from '../Router'
 import { CheckFooter, type Feedback } from '../components/CheckFooter'
@@ -51,8 +52,13 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
     data && !kid ? currentHearts(data.hearts, Date.now()).count : Infinity
   )
 
+  // On FILTRE avant de tronquer : les lettres, souvent les plus faibles, sont
+  // en tête de dueItems et évinceraient tout le vocabulaire d'une session.
   const reviewIds = useMemo(
-    () => (review && data ? dueItems(data.srs[course?.id ?? 'en'] ?? [], Date.now()).slice(0, 10) : []),
+    () =>
+      review && data && course
+        ? reviewableIds(course, dueItems(data.srs[course.id] ?? [], Date.now())).slice(0, 10)
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [review]
   )
@@ -60,7 +66,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
   const [queue, setQueue] = useState<Exercise[]>(() => {
     if (!course) return []
     const carrier = review
-      ? allLessons(course).find((l) => l.kind === 'vocab')
+      ? (allLessons(course).find((l) => l.kind === 'vocab') ?? allLessons(course)[0])
       : findLesson(course, lessonId ?? '')?.lesson
     if (!carrier) return []
     if (review && reviewIds.length === 0) return []
@@ -84,6 +90,25 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
     null
   )
   const completedRef = useRef(false)
+  const [footerH, setFooterH] = useState(0)
+
+  // on coupe la voix quand on quitte la leçon (retour arrière, navigation…)
+  useEffect(() => stopAudio, [])
+
+  // remonter en haut à chaque nouvel exercice, et amener la correction à l'écran
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [idx])
+
+  useEffect(() => {
+    if (!feedback) return
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth'
+    const marks = document.querySelectorAll('.btn-choice.correct')
+    const target = marks[marks.length - 1]
+    if (target && !feedback.correct) target.scrollIntoView({ block: 'center', behavior })
+    else window.scrollTo({ top: document.documentElement.scrollHeight, behavior })
+  }, [feedback])
 
   if (!course || !profile || !data) return null
 
@@ -128,7 +153,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
   }
 
   const advance = (nextQueue: Exercise[]) => {
-    stopSpeaking()
+    stopAudio()
     setFeedback(null)
     if (!review && !kid && initialHearts.current - heartsLost <= 0) {
       setOutOfHearts(true)
@@ -241,13 +266,16 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
   const progress = Math.round((idx / queue.length) * 100)
 
   return (
-    <div className="screen" style={{ paddingBottom: 140 }}>
+    <div
+      className="screen"
+      style={{ paddingBottom: feedback ? footerH + 24 : 140, transition: 'padding-bottom .15s' }}
+    >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
         <button
           aria-label="Quitter la leçon"
           onClick={() => {
             if (window.confirm('Quitter la leçon ? Ta progression sera perdue.')) {
-              stopSpeaking()
+              stopAudio()
               navigate(backPath)
             }
           }}
@@ -282,7 +310,13 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
         {ex.type === 'letter_forms' && <LetterForms {...common} />}
       </div>
 
-      {feedback && <CheckFooter feedback={feedback} onContinue={() => advance(queue)} />}
+      {feedback && (
+        <CheckFooter
+          feedback={feedback}
+          onContinue={() => advance(queue)}
+          onHeight={setFooterH}
+        />
+      )}
     </div>
   )
 }

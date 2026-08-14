@@ -6,9 +6,12 @@ import { currentHearts, loseHeart } from '../engine/gamification'
 import {
   applyLessonCompletion,
   defaultProfileData,
+  dropFromTrash,
   exportProfile,
   importProfile,
   loadState,
+  loadTrash,
+  pushTrash,
   saveState,
   type AppState,
   type LessonResult,
@@ -23,6 +26,7 @@ interface AppApi {
   addProfile(name: string, avatar: string, kid: boolean): void
   selectProfile(id: string | undefined): void
   deleteProfile(id: string): void
+  restoreProfile(id: string): void
   completeLesson(
     courseId: CourseId,
     lessonId: string,
@@ -86,6 +90,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       },
       deleteProfile(id) {
         update((s) => {
+          const prof = s.profiles.find((p) => p.id === id)
+          const d = s.data[id]
+          // filet : on peut toujours restaurer une suppression (3 dernières)
+          if (prof && d) pushTrash(prof, d, Date.now())
           const data = { ...s.data }
           delete data[id]
           return {
@@ -95,6 +103,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
             data,
           }
         })
+      },
+      restoreProfile(id) {
+        const entry = loadTrash().find((e) => e.profile.id === id)
+        if (!entry) return
+        update((s) => ({
+          ...s,
+          profiles: [...s.profiles.filter((p) => p.id !== id), entry.profile],
+          data: { ...s.data, [id]: entry.data },
+        }))
+        dropFromTrash(id)
       },
       completeLesson(courseId, lessonId, exCount, mistakes, itemResults) {
         let result: LessonResult = { xp: 0, newBadges: [] }

@@ -19,9 +19,12 @@ export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props
   const played = useRef(false)
 
   useEffect(() => {
-    if (autoPlay && !played.current) {
-      played.current = true
-      void playItem(item, course, false, voice, rate)
+    if (!autoPlay || played.current) return
+    played.current = true
+    void playItem(item, course, false, voice, rate)
+    // StrictMode (dev) démonte/remonte : on se ré-arme pour ne pas rester muet
+    return () => {
+      played.current = false
     }
   }, [autoPlay, item, course, voice, rate])
 

@@ -2,7 +2,7 @@
   "id": "dz",
   "title": "Darija algérienne",
   "flag": "🇩🇿",
-  "ttsLang": "ar-SA",
+  "ttsLang": "ar-DZ",
   "sttLang": "ar-DZ",
   "units": [
     {
@@ -17,7 +17,7 @@
           "items": [
             { "id": "dz_salam", "text": "salam", "fr": "salut", "arScript": "سَلَامْ", "emoji": "👋", "kid": true },
             { "id": "dz_sbah_khir", "text": "sbah el khir", "fr": "bonjour (le matin)", "arScript": "صْبَاحْ الْخِيرْ", "emoji": "🌅", "kid": true },
-            { "id": "dz_msa_khir", "text": "msa el khir", "fr": "bonsoir", "arScript": "مْسَاء الْخِيرْ", "emoji": "🌇", "kid": true },
+            { "id": "dz_msa_khir", "text": "msa el khir", "fr": "bonsoir", "arScript": "مْسَا الْخِيرْ", "emoji": "🌇", "kid": true },
             { "id": "dz_labas", "text": "labas ?", "fr": "ça va ?", "arScript": "لَابَاسْ", "emoji": "🙂", "kid": true },
             { "id": "dz_hamdoullah_labas", "text": "hamdoullah labas", "fr": "ça va bien, Dieu merci", "arScript": "الْحَمْدُ لِله لَابَاسْ", "emoji": "😊", "kid": true },
             { "id": "dz_wach_rak", "text": "wach rak ?", "fr": "comment vas-tu ? (à un homme)", "arScript": "وَاشْ رَاكْ", "emoji": "🧔" },
@@ -203,7 +203,7 @@
           "items": [
             { "id": "dz_taxi", "text": "taxi", "fr": "taxi", "arScript": "طَاكْسِي", "emoji": "🚕", "kid": true },
             { "id": "dz_win_rayeh", "text": "win rayeh ?", "fr": "où vas-tu ?", "arScript": "وِينْ رَايَحْ", "emoji": "🚗" },
-            { "id": "dz_ddini_el", "text": "ddini l...", "fr": "emmène-moi à...", "arScript": "دِّينِي لِ", "emoji": "🧳" },
+            { "id": "dz_ddini_el", "text": "ddini l...", "fr": "emmène-moi à...", "arScript": "ادِّينِي لِ", "emoji": "🧳" },
             { "id": "dz_oqef_hna", "text": "oqef hna", "fr": "arrête-toi ici", "arScript": "أُوقَفْ هْنَا", "emoji": "🛑", "kid": true },
             { "id": "dz_estenna", "text": "estenna !", "fr": "attends !", "arScript": "اسْتَنَّى", "emoji": "✋", "kid": true },
             { "id": "dz_zid_qoddam", "text": "zid qoddam", "fr": "continue tout droit", "arScript": "زِيدْ قُدَّامْ", "emoji": "⬆️" },
@@ -225,7 +225,7 @@
             { "id": "dz_esbitar", "text": "esbitar", "fr": "l'hôpital", "arScript": "السْبِيطَارْ", "emoji": "🏥" },
             { "id": "dz_el_djamaa", "text": "el djamaa", "fr": "la mosquée", "arScript": "الْجَامَعْ", "emoji": "🕌", "kid": true },
             { "id": "dz_el_bhar", "text": "el bhar", "fr": "la mer / la plage", "arScript": "الْبْحَرْ", "emoji": "🌊", "kid": true },
-            { "id": "dz_kayna_skhana", "text": "kayna skhana", "fr": "il fait chaud", "arScript": "كَايْنَة سْخَانَة", "emoji": "🥵", "kid": true }
+            { "id": "dz_kayna_skhana", "text": "el hal skhoun", "fr": "il fait chaud", "arScript": "الْحَالْ سْخُونْ", "emoji": "🥵", "kid": true }
           ]
         }
       ]
@@ -276,7 +276,7 @@
             { "id": "dz_wach_teddir", "text": "wach teddir ?", "fr": "qu'est-ce que tu fais ?", "arScript": "وَاشْ تِدِّيرْ", "emoji": "🎨", "kid": true },
             { "id": "dz_walou", "text": "walou", "fr": "rien", "arScript": "وَالُو", "emoji": "🫥", "kid": true },
             { "id": "dz_win_rahi_yemma", "text": "win rahi yemma ?", "fr": "où est maman ?", "arScript": "وِينْ رَاهِي يَمَّا", "emoji": "👩", "kid": true },
-            { "id": "dz_rahi_feddar", "text": "rahi feddar", "fr": "elle est à la maison", "arScript": "رَاهِي فِي الدَّارْ", "emoji": "🏠", "kid": true },
+            { "id": "dz_rahi_feddar", "text": "rahi feddar", "fr": "elle est à la maison", "arScript": "رَاهِي فَالدَّارْ", "emoji": "🏠", "kid": true },
             { "id": "dz_weqtach_nakoulou", "text": "weqtach naklou ?", "fr": "quand est-ce qu'on mange ?", "arScript": "وَقْتَاشْ نَاكْلُو", "emoji": "🍽️", "kid": true },
             { "id": "dz_derwak", "text": "derwak", "fr": "maintenant", "arScript": "دَرْوَكْ", "emoji": "⏱️", "kid": true },
             { "id": "dz_ghedwa", "text": "ghedwa", "fr": "demain", "arScript": "غَدْوَة", "emoji": "📅", "kid": true },

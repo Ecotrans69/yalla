@@ -18,6 +18,9 @@
   --text-dim: #8a8a8a;
   --locked: #e5e5e5;
   --overlay: rgba(0, 0, 0, 0.45);
+  /* encres de texte sur fonds soft (contraste AA) */
+  --green-ink: #2f6f00;
+  --red-ink: #b3261e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +34,8 @@
     --green-soft: #1f3a12;
     --red-soft: #4a1f1f;
     --overlay: rgba(0, 0, 0, 0.6);
+    --green-ink: #8ee04e;
+    --red-ink: #ff9c9c;
   }
 }
 
@@ -44,6 +49,8 @@
   --green-soft: #d7ffb8;
   --red-soft: #ffdfe0;
   --overlay: rgba(0, 0, 0, 0.45);
+  --green-ink: #2f6f00;
+  --red-ink: #b3261e;
 }
 
 :root[data-theme='dark'] {
@@ -56,6 +63,8 @@
   --green-soft: #1f3a12;
   --red-soft: #4a1f1f;
   --overlay: rgba(0, 0, 0, 0.6);
+  --green-ink: #8ee04e;
+  --red-ink: #ff9c9c;
 }
 
 * {
@@ -187,13 +196,13 @@ button {
 .btn-choice.correct {
   border-color: var(--green);
   background: var(--green-soft);
-  color: var(--green-dark);
+  color: var(--green-ink);
 }
 
 .btn-choice.wrong {
   border-color: var(--red);
   background: var(--red-soft);
-  color: var(--red-dark);
+  color: var(--red-ink);
 }
 
 .pill {

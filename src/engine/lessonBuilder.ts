@@ -40,7 +40,7 @@ export interface BuildOpts {
   reviewIds?: string[]
 }
 
-function shuffle<T>(arr: T[], rng: () => number): T[] {
+export function shuffle<T>(arr: T[], rng: () => number): T[] {
   const a = arr.slice()
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
@@ -56,14 +56,90 @@ export function coursePool(course: Course): VocabItem[] {
   )
 }
 
+/** Toutes les lettres d'un cours */
+export function courseLetters(course: Course): Letter[] {
+  return course.units.flatMap((u) =>
+    u.lessons.flatMap((l) => (l.kind === 'letters' ? (l.letters ?? []) : []))
+  )
+}
+
+/**
+ * Anneaux de distracteurs d'un item : sa leçon d'origine, puis son unité, puis
+ * tout le cours. On pioche au plus près pour que les QCM restent cohérents
+ * (« bonjour » face à « merci », pas face à un mot jamais vu).
+ */
+export type RingsFn = (item: VocabItem) => VocabItem[][]
+
+export function buildRings(course: Course): RingsFn {
+  const lessonOf = new Map<string, VocabItem[]>()
+  const unitOf = new Map<string, VocabItem[]>()
+  for (const u of course.units) {
+    const unitItems = u.lessons.flatMap((l) => (l.kind === 'vocab' ? (l.items ?? []) : []))
+    for (const l of u.lessons) {
+      if (l.kind !== 'vocab') continue
+      const li = l.items ?? []
+      for (const it of li) {
+        lessonOf.set(it.id, li)
+        unitOf.set(it.id, unitItems)
+      }
+    }
+  }
+  const all = coursePool(course)
+  return (item) => [lessonOf.get(item.id) ?? [], unitOf.get(item.id) ?? [], all]
+}
+
+/** Sens français d'un item, éclaté sur « / » et sans les parenthèses de précision */
+function glosses(fr: string): string[] {
+  return fr
+    .split('/')
+    .map((s) => s.replace(/\([^)]*\)/g, '').trim().toLowerCase())
+    .filter(Boolean)
+}
+
+/** Deux items qui veulent dire la même chose ne doivent jamais s'opposer dans un QCM */
+function tooClose(a: VocabItem, b: VocabItem): boolean {
+  for (const ga of glosses(a.fr)) {
+    for (const gb of glosses(b.fr)) {
+      if (ga === gb) return true
+      if (ga.startsWith(gb + ' ') || gb.startsWith(ga + ' ')) return true
+    }
+  }
+  return false
+}
+
 function distractorItems(
-  pool: VocabItem[],
+  rings: VocabItem[][],
   item: VocabItem,
   n: number,
   rng: () => number
 ): VocabItem[] {
-  const candidates = pool.filter((p) => p.id !== item.id && p.text !== item.text && p.fr !== item.fr)
-  return shuffle(candidates, rng).slice(0, n)
+  const out: VocabItem[] = []
+  const ids = new Set([item.id])
+  const texts = new Set([item.text])
+  const relaxed: VocabItem[] = []
+  for (const ring of rings) {
+    for (const p of shuffle(ring, rng)) {
+      if (out.length >= n) break
+      if (ids.has(p.id) || texts.has(p.text)) continue
+      if (tooClose(p, item)) {
+        relaxed.push(p)
+        continue
+      }
+      ids.add(p.id)
+      texts.add(p.text)
+      out.push(p)
+    }
+    if (out.length >= n) break
+  }
+  // dernier recours : on préfère un distracteur proche à un QCM à 2 choix
+  for (const p of relaxed) {
+    if (out.length >= n) break
+    if (ids.has(p.id) || texts.has(p.text)) continue
+    ids.add(p.id)
+    texts.add(p.text)
+    out.push(p)
+  }
+  return out
 }
 
 function toChoice(i: VocabItem, showPhon: boolean): Choice {
@@ -76,9 +152,9 @@ function exNewWord(item: VocabItem): Exercise {
   return { type: 'new_word', item }
 }
 
-function exSelect(item: VocabItem, pool: VocabItem[], rng: () => number, ar: boolean): Exercise {
+function exSelect(item: VocabItem, rings: RingsFn, rng: () => number, ar: boolean): Exercise {
   const choices = shuffle(
-    [toChoice(item, ar), ...distractorItems(pool, item, 3, rng).map((d) => toChoice(d, ar))],
+    [toChoice(item, ar), ...distractorItems(rings(item), item, 3, rng).map((d) => toChoice(d, ar))],
     rng
   )
   return {
@@ -92,12 +168,12 @@ function exSelect(item: VocabItem, pool: VocabItem[], rng: () => number, ar: boo
 
 function exListenChoose(
   item: VocabItem,
-  pool: VocabItem[],
+  rings: RingsFn,
   rng: () => number,
   ar: boolean
 ): Exercise {
   const choices = shuffle(
-    [toChoice(item, ar), ...distractorItems(pool, item, 3, rng).map((d) => toChoice(d, ar))],
+    [toChoice(item, ar), ...distractorItems(rings(item), item, 3, rng).map((d) => toChoice(d, ar))],
     rng
   )
   return {
@@ -121,43 +197,46 @@ function words(s: string): string[] {
   return s.split(/\s+/).filter(Boolean)
 }
 
-function exTiles(item: VocabItem, pool: VocabItem[], rng: () => number): Exercise {
+/** Mots-pièges pris d'abord dans la leçon, puis l'unité, puis le cours */
+function distractorWords(
+  rings: VocabItem[][],
+  exclude: Set<string>,
+  n: number,
+  rng: () => number
+): string[] {
+  const out: string[] = []
+  for (const ring of rings) {
+    for (const p of shuffle(ring, rng)) {
+      for (const w of words(p.text)) {
+        if (out.length >= n) break
+        if (!exclude.has(normalize(w, 'fr')) && !out.includes(w)) out.push(w)
+      }
+      if (out.length >= n) break
+    }
+    if (out.length >= n) break
+  }
+  return out
+}
+
+function exTiles(item: VocabItem, rings: RingsFn, rng: () => number): Exercise {
   const target = words(item.text)
   const targetNorm = new Set(target.map((w) => normalize(w, 'fr')))
-  const distractorWords: string[] = []
-  for (const p of shuffle(pool, rng)) {
-    for (const w of words(p.text)) {
-      if (!targetNorm.has(normalize(w, 'fr')) && !distractorWords.includes(w)) {
-        distractorWords.push(w)
-        if (distractorWords.length >= 3) break
-      }
-    }
-    if (distractorWords.length >= 3) break
-  }
+  const distractorWords_ = distractorWords(rings(item), targetNorm, 3, rng)
   return {
     type: 'translate_tiles',
     item,
     question: `Traduis : « ${item.fr} »`,
-    tiles: shuffle([...target, ...distractorWords], rng),
+    tiles: shuffle([...target, ...distractorWords_], rng),
   }
 }
 
-function exFillBlank(item: VocabItem, pool: VocabItem[], rng: () => number): Exercise {
+function exFillBlank(item: VocabItem, rings: RingsFn, rng: () => number): Exercise {
   const target = words(item.text)
   const idx = Math.floor(rng() * target.length)
   const missing = target[idx]
   const sentence = target.map((w, i) => (i === idx ? '____' : w)).join(' ')
-  const distractorWords: string[] = []
   const missingNorm = normalize(missing, 'fr')
-  for (const p of shuffle(pool, rng)) {
-    for (const w of words(p.text)) {
-      if (normalize(w, 'fr') !== missingNorm && !distractorWords.includes(w)) {
-        distractorWords.push(w)
-        if (distractorWords.length >= 3) break
-      }
-    }
-    if (distractorWords.length >= 3) break
-  }
+  const distractorWords_ = distractorWords(rings(item), new Set([missingNorm]), 3, rng)
   return {
     type: 'fill_blank',
     item,
@@ -165,7 +244,7 @@ function exFillBlank(item: VocabItem, pool: VocabItem[], rng: () => number): Exe
     choices: shuffle(
       [
         { id: missing, label: missing },
-        ...distractorWords.map((w) => ({ id: w, label: w })),
+        ...distractorWords_.map((w) => ({ id: w, label: w })),
       ],
       rng
     ),
@@ -265,7 +344,7 @@ function buildLettersLesson(lesson: Lesson, opts: BuildOpts): Exercise[] {
 function dedicatedExercise(
   item: VocabItem,
   course: Course,
-  pool: VocabItem[],
+  rings: RingsFn,
   opts: BuildOpts,
   forceSpeak: boolean
 ): Exercise {
@@ -277,34 +356,81 @@ function dedicatedExercise(
 
   type Maker = () => Exercise
   const eligible: Maker[] = []
-  eligible.push(() => exSelect(item, pool, opts.rng, ar))
-  if (opts.ttsAvailable) eligible.push(() => exListenChoose(item, pool, opts.rng, ar))
+  eligible.push(() => exSelect(item, rings, opts.rng, ar))
+  if (opts.ttsAvailable) eligible.push(() => exListenChoose(item, rings, opts.rng, ar))
   if (opts.ttsAvailable && latinScript && !opts.kid) eligible.push(() => exListenType(item))
-  if (multiword) eligible.push(() => exTiles(item, pool, opts.rng))
-  if (multiword && !opts.kid) eligible.push(() => exFillBlank(item, pool, opts.rng))
+  if (multiword) eligible.push(() => exTiles(item, rings, opts.rng))
+  if (multiword && !opts.kid) eligible.push(() => exFillBlank(item, rings, opts.rng))
   if (opts.sttAvailable && opts.ttsAvailable) eligible.push(() => exSpeak(item))
 
   return eligible[Math.floor(opts.rng() * eligible.length)]()
 }
 
-export function buildLesson(course: Course, lesson: Lesson, opts: BuildOpts): Exercise[] {
-  if (lesson.kind === 'letters') return buildLettersLesson(lesson, opts)
+/**
+ * Ids réellement révisables : ceux qui donneront au moins un exercice.
+ * À appliquer AVANT de tronquer la liste des items dus — sinon une file de
+ * lettres en tête (ce sont les plus faibles) évince tout le vocabulaire.
+ */
+export function reviewableIds(course: Course, ids: string[]): string[] {
+  const known = new Set([
+    ...coursePool(course).map((i) => i.id),
+    ...courseLetters(course).map((l) => l.id),
+  ])
+  return ids.filter((id) => known.has(id))
+}
 
+export function buildLesson(course: Course, lesson: Lesson, opts: BuildOpts): Exercise[] {
   const pool = coursePool(course)
+  const rings = buildRings(course)
   const out: Exercise[] = []
 
-  // Mode révision : on drille les items donnés, sans découverte
+  // Mode révision : on drille les items donnés, sans découverte.
+  // Placé AVANT la branche « lettres » : la révision ne dépend pas du porteur.
   if (opts.reviewIds?.length) {
     const byId = new Map(pool.map((i) => [i.id, i]))
+    const letterById = new Map(courseLetters(course).map((l) => [l.id, l]))
+    const allLetters = courseLetters(course)
+    const ar = course.id === 'ar'
+
     const items = opts.reviewIds.map((id) => byId.get(id)).filter((i): i is VocabItem => !!i)
-    for (const item of shuffle(items, opts.rng)) {
-      out.push(exSelect(item, pool, opts.rng, course.id === 'ar'))
-      if (opts.ttsAvailable) out.push(exListenChoose(item, pool, opts.rng, course.id === 'ar'))
+    const letters = opts.reviewIds
+      .map((id) => letterById.get(id))
+      .filter((l): l is Letter => !!l)
+
+    // Tour 1 : reconnaissance
+    for (const item of shuffle(items, opts.rng)) out.push(exSelect(item, rings, opts.rng, ar))
+    for (const letter of shuffle(letters, opts.rng)) {
+      out.push(exLetterForms(letter, allLetters, opts.rng))
+    }
+
+    // Tour 2 : écoute — entrelacé, jamais collé à la 1re rencontre du même item
+    if (opts.ttsAvailable) {
+      const firstRound = out.map((e) => e.item?.id)
+      const last = firstRound[firstRound.length - 1]
+      const t2 = shuffle(items, opts.rng)
+      if (t2.length > 1 && t2[0].id === last) {
+        const j = 1 + Math.floor(opts.rng() * (t2.length - 1))
+        ;[t2[0], t2[j]] = [t2[j], t2[0]]
+      }
+      for (const item of t2) out.push(exListenChoose(item, rings, opts.rng, ar))
+      // les lettres : on réécoute leur nom (sans micro, pas de speak_repeat :
+      // le bouton « je ne peux pas parler » vaudrait un succès non vérifié)
+      const l2 = shuffle(letters, opts.rng)
+      for (const letter of l2) {
+        if (opts.sttAvailable) out.push(exSpeak(letterToItem(letter)))
+        else out.push(exLetterForms(letter, allLetters, opts.rng))
+      }
     }
     return out
   }
 
-  const items = shuffle(lesson.items ?? [], opts.rng)
+  if (lesson.kind === 'letters') return buildLettersLesson(lesson, opts)
+
+  // Mode enfant : on ne sert que les items marqués « kid » (repli sur tout
+  // si la leçon n'en contient pas assez pour tenir un exercice)
+  const source = lesson.items ?? []
+  const kidItems = source.filter((i) => i.kid)
+  const items = shuffle(opts.kid && kidItems.length >= 4 ? kidItems : source, opts.rng)
   const introCount = Math.min(4, items.length)
   const intro = items.slice(0, introCount)
   const rest = items.slice(introCount)
@@ -322,8 +448,8 @@ export function buildLesson(course: Course, lesson: Lesson, opts: BuildOpts): Ex
   for (const leftover of rest.slice(i)) {
     out.push(
       opts.ttsAvailable
-        ? exListenChoose(leftover, pool, opts.rng, course.id === 'ar')
-        : exSelect(leftover, pool, opts.rng, course.id === 'ar')
+        ? exListenChoose(leftover, rings, opts.rng, course.id === 'ar')
+        : exSelect(leftover, rings, opts.rng, course.id === 'ar')
     )
   }
 
@@ -332,7 +458,7 @@ export function buildLesson(course: Course, lesson: Lesson, opts: BuildOpts): Ex
   const speakIdx =
     opts.sttAvailable && opts.ttsAvailable ? Math.floor(opts.rng() * drillOrder.length) : -1
   drillOrder.forEach((item, idx) => {
-    out.push(dedicatedExercise(item, course, pool, opts, idx === speakIdx))
+    out.push(dedicatedExercise(item, course, rings, opts, idx === speakIdx))
   })
 
   return out

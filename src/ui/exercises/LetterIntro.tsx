@@ -13,7 +13,7 @@ export function LetterIntro({ ex, course, onAnswer }: ExerciseProps) {
   const letter = ex.letter!
   return (
     <div style={{ textAlign: 'center' }}>
-      <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-dark)' }}>
+      <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-ink)' }}>
         ✨ Nouvelle lettre
       </div>
       <div className="card pop" style={{ margin: '20px 0', padding: 24 }}>

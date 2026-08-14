@@ -180,6 +180,47 @@ export function exportProfile(s: AppState, profileId: string): string {
   return JSON.stringify(payload, null, 2)
 }
 
+// ===== Corbeille : une suppression de profil doit toujours être rattrapable =====
+
+const TRASH_KEY = 'yalla.v1.corbeille'
+
+export interface TrashEntry {
+  profile: Profile
+  data: ProfileData
+  deletedAt: number
+}
+
+export function loadTrash(): TrashEntry[] {
+  try {
+    const raw = localStorage.getItem(TRASH_KEY)
+    const parsed = raw ? (JSON.parse(raw) as TrashEntry[]) : []
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
+/** Garde les 3 dernières suppressions */
+export function pushTrash(profile: Profile, data: ProfileData, now: number): void {
+  try {
+    const next = [{ profile, data, deletedAt: now }, ...loadTrash()].slice(0, 3)
+    localStorage.setItem(TRASH_KEY, JSON.stringify(next))
+  } catch {
+    // stockage plein : la suppression reste possible, sans filet
+  }
+}
+
+export function dropFromTrash(profileId: string): void {
+  try {
+    localStorage.setItem(
+      TRASH_KEY,
+      JSON.stringify(loadTrash().filter((e) => e.profile.id !== profileId))
+    )
+  } catch {
+    // rien à faire
+  }
+}
+
 export function importProfile(s: AppState, json: string): AppState {
   let parsed: ProfileExport
   try {

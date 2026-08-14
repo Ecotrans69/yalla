@@ -60,11 +60,17 @@ export function playItem(
     audio.playbackRate = effectiveRate(rate, slow)
     current = audio
     const fallback = () => {
+      // stoppé ou supersédé (double-tap, exercice suivant) : ne JAMAIS parler
+      // par-dessus l'audio en cours
+      if (current !== audio) {
+        resolve()
+        return
+      }
       current = null
       void speakItem(item, course, slow, rate).then(resolve)
     }
     audio.onended = () => {
-      current = null
+      if (current === audio) current = null
       resolve()
     }
     audio.onerror = fallback

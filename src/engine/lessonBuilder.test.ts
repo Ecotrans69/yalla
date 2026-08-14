@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { buildLesson, coursePool, type BuildOpts, type Exercise } from './lessonBuilder'
+import {
+  buildLesson,
+  courseLetters,
+  coursePool,
+  reviewableIds,
+  type BuildOpts,
+  type Exercise,
+} from './lessonBuilder'
 import { getCourse } from '../content'
 
 function makeRng(seed = 42): () => number {
@@ -129,5 +136,102 @@ describe('buildLesson révision', () => {
     const exs = buildLesson(en, lesson1, opts({ reviewIds: ids }))
     expect(exs.length).toBe(6) // select + listen_choose par item
     expect(exs.every((e) => e.type !== 'new_word')).toBe(true)
+  })
+
+  it('jamais deux rencontres du même item collées', () => {
+    const ids = coursePool(en).slice(0, 5).map((i) => i.id)
+    for (let seed = 1; seed <= 30; seed++) {
+      const exs = buildLesson(en, lesson1, opts({ reviewIds: ids, rng: makeRng(seed) }))
+      const seq = exs.map((e) => e.item?.id)
+      for (let k = 1; k < seq.length; k++) {
+        expect(seq[k], `seed ${seed}, position ${k}`).not.toBe(seq[k - 1])
+      }
+    }
+  })
+
+  it('les LETTRES sont révisables (plus de session vide)', () => {
+    const letters = courseLetters(ar)
+    const ids = letters.slice(0, 3).map((l) => l.id)
+    const exs = buildLesson(ar, ar.units[0].lessons[0], opts({ reviewIds: ids }))
+    expect(exs.length).toBeGreaterThan(0)
+    expect(exs.some((e) => e.type === 'letter_forms')).toBe(true)
+  })
+
+  it('sans micro, une lettre révisée ne donne jamais de speak_repeat', () => {
+    const ids = courseLetters(ar).slice(0, 3).map((l) => l.id)
+    const exs = buildLesson(
+      ar,
+      ar.units[0].lessons[0],
+      opts({ reviewIds: ids, sttAvailable: false })
+    )
+    expect(exs.every((e) => e.type !== 'speak_repeat')).toBe(true)
+  })
+
+  it('reviewableIds écarte les ids inconnus, garde lettres et mots', () => {
+    const known = [coursePool(ar)[0].id, courseLetters(ar)[0].id]
+    expect(reviewableIds(ar, [...known, 'id_inexistant'])).toEqual(known)
+  })
+})
+
+describe('mode enfant', () => {
+  it('ne sert que des items marqués kid quand il y en a assez', () => {
+    const lesson = {
+      id: 'l-kid',
+      title: 't',
+      kind: 'vocab' as const,
+      items: [
+        { id: 'k1', text: 'cat', fr: 'chat', emoji: '🐱', kid: true },
+        { id: 'k2', text: 'dog', fr: 'chien', emoji: '🐶', kid: true },
+        { id: 'k3', text: 'bird', fr: 'oiseau', emoji: '🐦', kid: true },
+        { id: 'k4', text: 'fish', fr: 'poisson', emoji: '🐟', kid: true },
+        { id: 'a1', text: 'invoice', fr: 'facture' },
+        { id: 'a2', text: 'quarterly report', fr: 'rapport trimestriel' },
+      ],
+    }
+    const exs = buildLesson(en, lesson, opts({ kid: true }))
+    const vus = new Set(exs.flatMap((e) => (e.item ? [e.item.id] : [])))
+    expect(vus.has('a1')).toBe(false)
+    expect(vus.has('a2')).toBe(false)
+    expect(vus.size).toBeGreaterThan(0)
+  })
+
+  it('repli sur tous les items si la leçon manque d’items enfants', () => {
+    const lesson = {
+      id: 'l-mixte',
+      title: 't',
+      kind: 'vocab' as const,
+      items: [
+        { id: 'm1', text: 'cat', fr: 'chat', kid: true },
+        { id: 'm2', text: 'invoice', fr: 'facture' },
+        { id: 'm3', text: 'meeting', fr: 'réunion' },
+        { id: 'm4', text: 'deadline', fr: 'échéance' },
+      ],
+    }
+    const exs = buildLesson(en, lesson, opts({ kid: true }))
+    expect(exs.length).toBeGreaterThan(0)
+  })
+})
+
+describe('distracteurs', () => {
+  it('viennent en priorité de la même leçon', () => {
+    const lessonIds = new Set(lesson1.items!.map((i) => i.id))
+    const exs = buildLesson(en, lesson1, opts({ sttAvailable: false }))
+    const qcm = exs.filter((e) => e.choices && e.correctId && e.type === 'select_image')
+    expect(qcm.length).toBeGreaterThan(0)
+    for (const ex of qcm) {
+      const proches = ex.choices!.filter((c) => lessonIds.has(c.id)).length
+      expect(proches, `QCM ${ex.item?.id}`).toBe(ex.choices!.length)
+    }
+  })
+
+  it('jamais deux choix qui veulent dire la même chose', () => {
+    for (let seed = 1; seed <= 20; seed++) {
+      const exs = buildLesson(en, lesson1, opts({ rng: makeRng(seed) }))
+      for (const ex of exs) {
+        if (!ex.choices) continue
+        const labels = ex.choices.map((c) => c.label)
+        expect(new Set(labels).size).toBe(labels.length)
+      }
+    }
   })
 })

@@ -76,6 +76,36 @@ describe('playItem', () => {
     vi.unstubAllGlobals()
   })
 
+  it('double-tap : l’audio supersédé ne repart JAMAIS en voix du téléphone', async () => {
+    // play() reste en attente puis rejette (AbortError) quand pause() arrive
+    const rejets: ((e: Error) => void)[] = []
+    class PendingAudio {
+      src = ''
+      playbackRate = 1
+      onended: (() => void) | null = null
+      onerror: (() => void) | null = null
+      play() {
+        return new Promise<void>((_, reject) => rejets.push(reject))
+      }
+      pause() {
+        // le navigateur rejette le play() en attente : on laisse le test le déclencher
+      }
+    }
+    vi.stubGlobal('Audio', PendingAudio)
+    const item = { id: 'en_hello', text: 'hello', fr: 'bonjour' }
+    const premier = playItem(item, EN, false, 'h')
+    const second = playItem(item, EN, false, 'f') // stopAudio() interne → supersède le 1er
+    // le play() du 1er rejette après coup
+    rejets[0]?.(new Error('AbortError'))
+    await premier
+    expect(speakItem).not.toHaveBeenCalled()
+    // le 2e reste maître : son propre échec, lui, a le droit de basculer
+    rejets[1]?.(new Error('404'))
+    await second
+    expect(speakItem).toHaveBeenCalledOnce()
+    vi.unstubAllGlobals()
+  })
+
   it('fichier introuvable → fallback voix du téléphone', async () => {
     class FailAudio {
       src = ''

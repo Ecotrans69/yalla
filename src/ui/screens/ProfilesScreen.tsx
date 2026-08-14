@@ -5,7 +5,7 @@ import { useRouter } from '../Router'
 const AVATARS = ['🦁', '🐯', '🐼', '🐸', '🦊', '🐰', '🦄', '🐢', '🐬', '🦉', '🐥', '🐨']
 
 export function ProfilesScreen() {
-  const { state, addProfile, selectProfile, deleteProfile } = useApp()
+  const { state, addProfile, selectProfile } = useApp()
   const { navigate } = useRouter()
   const [creating, setCreating] = useState(state.profiles.length === 0)
   const [name, setName] = useState('')
@@ -51,26 +51,7 @@ export function ProfilesScreen() {
                 >
                   <div style={{ fontSize: 48 }}>{p.avatar}</div>
                   <div style={{ fontWeight: 800, fontSize: 18 }}>{p.name}</div>
-                  {p.kid && <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-dark)' }}>enfant</div>}
-                </button>
-                <button
-                  aria-label={`Supprimer ${p.name}`}
-                  onClick={() => {
-                    if (window.confirm(`Supprimer le profil ${p.name} et toute sa progression ?`))
-                      deleteProfile(p.id)
-                  }}
-                  style={{
-                    position: 'absolute',
-                    top: 6,
-                    right: 8,
-                    background: 'none',
-                    border: 'none',
-                    color: 'var(--text-dim)',
-                    cursor: 'pointer',
-                    fontSize: 14,
-                  }}
-                >
-                  ✕
+                  {p.kid && <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-ink)' }}>enfant</div>}
                 </button>
               </div>
             ))}

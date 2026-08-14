@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import type { Course, VocabItem } from '../../content/types'
 import { AudioButton } from './AudioButton'
 
@@ -15,15 +16,29 @@ export interface Feedback {
 interface Props {
   feedback: Feedback
   onContinue(): void
+  /** Remonte la hauteur réelle du bandeau pour que l'exercice reste atteignable */
+  onHeight?(h: number): void
 }
 
 /** Bandeau de résultat + bouton CONTINUER, fixé en bas pendant une leçon */
-export function CheckFooter({ feedback, onContinue }: Props) {
+export function CheckFooter({ feedback, onContinue, onHeight }: Props) {
   const ok = feedback.correct
   const canReplay = !!feedback.item && !!feedback.course
+  const boxRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = boxRef.current
+    if (!el || !onHeight) return
+    onHeight(el.offsetHeight)
+    if (typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => onHeight(el.offsetHeight))
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [onHeight])
 
   return (
     <div
+      ref={boxRef}
       className="pop"
       style={{
         position: 'fixed',
@@ -41,19 +56,19 @@ export function CheckFooter({ feedback, onContinue }: Props) {
           style={{
             fontWeight: 800,
             fontSize: 18,
-            color: ok ? 'var(--green-dark)' : 'var(--red-dark)',
+            color: ok ? 'var(--green-ink)' : 'var(--red-ink)',
             marginBottom: 4,
           }}
         >
           {ok ? '✅ Bien joué !' : '❌ Pas tout à fait…'}
         </div>
         {!ok && feedback.correction && (
-          <div style={{ color: 'var(--red-dark)', marginBottom: 8 }}>
+          <div style={{ color: 'var(--red-ink)', marginBottom: 8 }}>
             La bonne réponse : <strong>{feedback.correction}</strong>
           </div>
         )}
         {feedback.note && (
-          <div style={{ color: ok ? 'var(--green-dark)' : 'var(--red-dark)', marginBottom: 8 }}>
+          <div style={{ color: ok ? 'var(--green-ink)' : 'var(--red-ink)', marginBottom: 8 }}>
             {feedback.note}
           </div>
         )}
@@ -67,7 +82,7 @@ export function CheckFooter({ feedback, onContinue }: Props) {
               flexWrap: 'wrap',
             }}
           >
-            <span style={{ fontWeight: 700, color: ok ? 'var(--green-dark)' : 'var(--red-dark)' }}>
+            <span style={{ fontWeight: 700, color: ok ? 'var(--green-ink)' : 'var(--red-ink)' }}>
               {ok ? 'Réécouter :' : 'Écoute la bonne réponse :'}
             </span>
             <AudioButton item={feedback.item!} course={feedback.course!} size={24} />

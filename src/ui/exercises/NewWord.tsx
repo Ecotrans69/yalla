@@ -7,7 +7,7 @@ export function NewWord({ ex, course, onAnswer }: ExerciseProps) {
   const item = ex.item!
   return (
     <div style={{ textAlign: 'center' }}>
-      <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-dark)' }}>
+      <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-ink)' }}>
         ✨ Nouveau mot
       </div>
       <div className="card pop" style={{ margin: '24px 0', padding: 28 }}>

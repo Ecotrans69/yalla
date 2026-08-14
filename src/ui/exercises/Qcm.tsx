@@ -27,7 +27,9 @@ export function Qcm({ ex, header, labelClass = '', onAnswer }: QcmProps) {
     return ''
   }
 
-  const hasEmoji = ex.choices?.some((c) => c.emoji)
+  // Tout-ou-rien : si un seul choix n'a pas d'image, on n'en montre aucune —
+  // sinon l'intrus visuel donne la bonne réponse sans connaître le mot.
+  const hasEmoji = !!ex.choices?.length && ex.choices.every((c) => c.emoji)
 
   return (
     <div>
@@ -50,7 +52,7 @@ export function Qcm({ ex, header, labelClass = '', onAnswer }: QcmProps) {
             onClick={() => !revealed && setSel(c.id)}
             style={{ minHeight: hasEmoji ? 96 : 56 }}
           >
-            {c.emoji && <div style={{ fontSize: 34 }}>{c.emoji}</div>}
+            {hasEmoji && c.emoji && <div style={{ fontSize: 34 }}>{c.emoji}</div>}
             <div className={labelClass}>{c.label}</div>
             {c.sub && <div style={{ fontSize: 13, color: 'var(--text-dim)' }}>{c.sub}</div>}
           </button>

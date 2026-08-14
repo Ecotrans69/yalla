@@ -1,26 +1,39 @@
 import { useMemo, useState } from 'react'
+import { shuffle } from '../../engine/lessonBuilder'
 import { targetClass } from './types'
 import type { ExerciseProps } from './types'
 
-/** Associe les paires français ↔ langue cible (les erreurs ne coûtent pas de cœur) */
+interface Entry {
+  i: number
+  label: string
+}
+
+/**
+ * Associe les paires français ↔ langue cible.
+ * L'appariement se fait par INDEX, jamais par texte : sinon un mot identique
+ * dans les deux langues (bus, pizza, taxi…) rendait l'exercice insoluble.
+ */
 export function MatchPairs({ ex, course, onAnswer }: ExerciseProps) {
   const pairs = ex.pairs ?? []
-  const left = useMemo(() => pairs.map((p) => p.a).sort(() => Math.random() - 0.5), [pairs])
-  const right = useMemo(() => pairs.map((p) => p.b).sort(() => Math.random() - 0.5), [pairs])
-  const [selLeft, setSelLeft] = useState<string | null>(null)
-  const [selRight, setSelRight] = useState<string | null>(null)
-  const [matched, setMatched] = useState<Set<string>>(new Set())
+  const left = useMemo(
+    () => shuffle(pairs.map((p, i) => ({ i, label: p.a })), Math.random),
+    [pairs]
+  )
+  const right = useMemo(
+    () => shuffle(pairs.map((p, i) => ({ i, label: p.b })), Math.random),
+    [pairs]
+  )
+  const [selLeft, setSelLeft] = useState<number | null>(null)
+  const [selRight, setSelRight] = useState<number | null>(null)
+  const [matched, setMatched] = useState<Set<number>>(new Set())
   const [shake, setShake] = useState(false)
 
-  const tryMatch = (l: string | null, r: string | null) => {
+  const tryMatch = (l: number | null, r: number | null) => {
     if (l === null || r === null) return
-    const isPair = pairs.some((p) => p.a === l && p.b === r)
-    if (isPair) {
-      const next = new Set(matched)
-      next.add(l)
-      next.add(r)
+    if (l === r) {
+      const next = new Set(matched).add(l)
       setMatched(next)
-      if (next.size === pairs.length * 2) onAnswer(true)
+      if (next.size === pairs.length) onAnswer(true)
     } else {
       setShake(true)
       setTimeout(() => setShake(false), 400)
@@ -29,26 +42,26 @@ export function MatchPairs({ ex, course, onAnswer }: ExerciseProps) {
     setSelRight(null)
   }
 
-  const btn = (label: string, side: 'l' | 'r') => {
-    const isMatched = matched.has(label)
-    const isSel = side === 'l' ? selLeft === label : selRight === label
+  const btn = (entry: Entry, side: 'l' | 'r') => {
+    const isMatched = matched.has(entry.i)
+    const isSel = side === 'l' ? selLeft === entry.i : selRight === entry.i
     return (
       <button
-        key={side + label}
+        key={side + entry.i}
         className={`btn-choice ${isSel ? 'selected' : ''} ${isMatched ? 'correct' : ''} ${side === 'r' ? targetClass(course) : ''}`}
         disabled={isMatched}
         style={{ width: '100%', opacity: isMatched ? 0.5 : 1 }}
         onClick={() => {
           if (side === 'l') {
-            setSelLeft(label)
-            tryMatch(label, selRight)
+            setSelLeft(entry.i)
+            tryMatch(entry.i, selRight)
           } else {
-            setSelRight(label)
-            tryMatch(selLeft, label)
+            setSelRight(entry.i)
+            tryMatch(selLeft, entry.i)
           }
         }}
       >
-        {label}
+        {entry.label}
       </button>
     )
   }
