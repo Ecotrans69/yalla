@@ -333,8 +333,11 @@ function buildLettersLesson(lesson: Lesson, opts: BuildOpts): Exercise[] {
   for (const letter of shuffle(letters, opts.rng)) {
     out.push(exLetterForms(letter, letters, opts.rng))
   }
+  // On ne fait répéter au micro que les VRAIES lettres : une voyelle brève
+  // seule ne se prononce pas isolément, la reconnaissance validerait à tort.
   if (opts.sttAvailable && opts.ttsAvailable) {
-    for (const letter of shuffle(letters, opts.rng).slice(0, 2)) {
+    const prononcables = letters.filter((l) => !l.sign)
+    for (const letter of shuffle(prononcables, opts.rng).slice(0, 2)) {
       out.push(exSpeak(letterToItem(letter)))
     }
   }

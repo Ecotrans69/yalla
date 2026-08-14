@@ -1,6 +1,13 @@
 import { describe, it, expect } from 'vitest'
 import { getCourse, getCourses, validateCourse } from './index'
 
+/** Les 28 lettres de l'alphabet arabe (hors harakat et signes orthographiques) */
+const ALPHABET_AR = [
+  'ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر',
+  'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف',
+  'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي',
+]
+
 /** Garde-fous de volume du contenu v1 (T13) */
 describe('contenu complet', () => {
   it('tous les cours valides', () => {
@@ -14,12 +21,20 @@ describe('contenu complet', () => {
     expect(items.length).toBeGreaterThanOrEqual(256)
   })
 
-  it('arabe : 28 lettres uniques + ≥144 items vocab', () => {
+  it("arabe : les 28 lettres de l'alphabet + ≥144 items vocab", () => {
     const ar = getCourse('ar')!
     const letters = ar.units.flatMap((u) =>
       u.lessons.flatMap((l) => (l.kind === 'letters' ? (l.letters ?? []) : []))
     )
-    expect(new Set(letters.map((l) => l.char)).size).toBe(28)
+    // Les 28 lettres doivent TOUTES être enseignées. Les leçons "letters"
+    // contiennent aussi les harakat (ـَ ـُ ـِ ـْ ـّ ـً) et les signes
+    // orthographiques (ء أ إ آ ئ ة ى) : on ne compte donc plus les entrées,
+    // on vérifie la couverture de l'alphabet.
+    const chars = new Set(letters.map((l) => l.char))
+    expect(ALPHABET_AR.length).toBe(28)
+    for (const c of ALPHABET_AR) expect(chars.has(c), `lettre ${c} jamais enseignée`).toBe(true)
+    // arName = source de l'audio : obligatoire sur chaque entrée (lettre ou signe)
+    for (const l of letters) expect(!!l.arName, `${l.id} sans arName`).toBe(true)
     const items = ar.units.flatMap((u) => u.lessons.flatMap((l) => l.items ?? []))
     expect(items.length).toBeGreaterThanOrEqual(144)
     // phonétique partout

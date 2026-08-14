@@ -182,9 +182,22 @@
         },
         {
           "id": "ar-alpha-l3",
-          "title": "Lettres qui ne s'attachent pas",
+          "title": "Lettres qui ne s'attachent pas à la suivante",
           "kind": "letters",
           "letters": [
+            {
+              "id": "ar_alif_rev",
+              "char": "ا",
+              "name": "alif",
+              "phon": "a",
+              "forms": {
+                "isolated": "ا",
+                "initial": "ا",
+                "medial": "ـا",
+                "final": "ـا"
+              },
+              "arName": "أَلِف"
+            },
             {
               "id": "ar_dal",
               "char": "د",
@@ -249,19 +262,6 @@
                 "final": "ـو"
               },
               "arName": "وَاو"
-            },
-            {
-              "id": "ar_kaf",
-              "char": "ك",
-              "name": "kaf",
-              "phon": "k",
-              "forms": {
-                "isolated": "ك",
-                "initial": "كـ",
-                "medial": "ـكـ",
-                "final": "ـك"
-              },
-              "arName": "كَاف"
             }
           ]
         },
@@ -406,6 +406,215 @@
                 "final": "ـغ"
               },
               "arName": "غَيْن"
+            },
+            {
+              "id": "ar_kaf",
+              "char": "ك",
+              "name": "kaf",
+              "phon": "k",
+              "forms": {
+                "isolated": "ك",
+                "initial": "كـ",
+                "medial": "ـكـ",
+                "final": "ـك"
+              },
+              "arName": "كَاف"
+            }
+          ]
+        },
+        {
+          "id": "ar-alpha-l5b",
+          "title": "Les voyelles",
+          "kind": "letters",
+          "letters": [
+            {
+              "id": "ar_fatha",
+              "char": "ـَ",
+              "name": "fatha",
+              "phon": "a",
+              "forms": {
+                "isolated": "بَ",
+                "initial": "بَ",
+                "medial": "بَ",
+                "final": "بَ"
+              },
+              "arName": "فَتْحَة",
+              "sign": true
+            },
+            {
+              "id": "ar_damma",
+              "char": "ـُ",
+              "name": "damma",
+              "phon": "ou",
+              "forms": {
+                "isolated": "بُ",
+                "initial": "بُ",
+                "medial": "بُ",
+                "final": "بُ"
+              },
+              "arName": "ضَمَّة",
+              "sign": true
+            },
+            {
+              "id": "ar_kasra",
+              "char": "ـِ",
+              "name": "kasra",
+              "phon": "i",
+              "forms": {
+                "isolated": "بِ",
+                "initial": "بِ",
+                "medial": "بِ",
+                "final": "بِ"
+              },
+              "arName": "كَسْرَة",
+              "sign": true
+            },
+            {
+              "id": "ar_soukoun",
+              "char": "ـْ",
+              "name": "soukoun",
+              "phon": "rien (pas de voyelle)",
+              "forms": {
+                "isolated": "مِنْ",
+                "initial": "مِنْ",
+                "medial": "مِنْ",
+                "final": "مِنْ"
+              },
+              "arName": "سُكُون",
+              "sign": true
+            },
+            {
+              "id": "ar_chadda",
+              "char": "ـّ",
+              "name": "chadda",
+              "phon": "la lettre doublée",
+              "forms": {
+                "isolated": "جَدّ",
+                "initial": "جَدّ",
+                "medial": "جَدّ",
+                "final": "جَدّ"
+              },
+              "arName": "شَدَّة",
+              "sign": true
+            },
+            {
+              "id": "ar_tanwin",
+              "char": "ـً",
+              "name": "tanwin",
+              "phon": "an / in (un n à la fin)",
+              "forms": {
+                "isolated": "شُكْرًا",
+                "initial": "شُكْرًا",
+                "medial": "شُكْرًا",
+                "final": "شُكْرًا"
+              },
+              "arName": "تَنْوِين",
+              "sign": true
+            }
+          ]
+        },
+        {
+          "id": "ar-alpha-l5c",
+          "title": "Les signes en plus",
+          "kind": "letters",
+          "letters": [
+            {
+              "id": "ar_hamza",
+              "char": "ء",
+              "name": "hamza",
+              "phon": "petit stop (coup de glotte)",
+              "forms": {
+                "isolated": "ء",
+                "initial": "ء",
+                "medial": "ء",
+                "final": "ء"
+              },
+              "arName": "هَمْزَة",
+              "sign": true
+            },
+            {
+              "id": "ar_alif_hamza",
+              "char": "أ",
+              "name": "alif avec hamza",
+              "phon": "a / ou (au début)",
+              "forms": {
+                "isolated": "أ",
+                "initial": "أ",
+                "medial": "ـأ",
+                "final": "ـأ"
+              },
+              "arName": "أَلِف بِهَمْزَة",
+              "sign": true
+            },
+            {
+              "id": "ar_alif_hamza_kasra",
+              "char": "إ",
+              "name": "alif avec hamza dessous",
+              "phon": "i",
+              "forms": {
+                "isolated": "إ",
+                "initial": "إ",
+                "medial": "إ",
+                "final": "إ"
+              },
+              "arName": "أَلِف بِهَمْزَة تَحْت",
+              "sign": true
+            },
+            {
+              "id": "ar_alif_madda",
+              "char": "آ",
+              "name": "alif madda",
+              "phon": "â (a long)",
+              "forms": {
+                "isolated": "آ",
+                "initial": "آ",
+                "medial": "ـآ",
+                "final": "ـآ"
+              },
+              "arName": "أَلِف مَمْدُودَة",
+              "sign": true
+            },
+            {
+              "id": "ar_ya_hamza",
+              "char": "ئ",
+              "name": "hamza sur ya",
+              "phon": "' (hamza posé sur ya)",
+              "forms": {
+                "isolated": "ئ",
+                "initial": "ئـ",
+                "medial": "ـئـ",
+                "final": "ـئ"
+              },
+              "arName": "هَمْزَة عَلَى يَاء",
+              "sign": true
+            },
+            {
+              "id": "ar_ta_marbouta",
+              "char": "ة",
+              "name": "ta marbouta",
+              "phon": "a / at (marque du féminin)",
+              "forms": {
+                "isolated": "ة",
+                "initial": "ة",
+                "medial": "ـة",
+                "final": "ـة"
+              },
+              "arName": "تَاء مَرْبُوطَة",
+              "sign": true
+            },
+            {
+              "id": "ar_alif_maqsoura",
+              "char": "ى",
+              "name": "alif maqsoura",
+              "phon": "a (en fin de mot)",
+              "forms": {
+                "isolated": "ى",
+                "initial": "ى",
+                "medial": "ـى",
+                "final": "ـى"
+              },
+              "arName": "أَلِف مَقْصُورَة",
+              "sign": true
             }
           ]
         },

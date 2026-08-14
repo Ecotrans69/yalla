@@ -27,9 +27,13 @@ export function CourseScreen({ courseId }: { courseId: string }) {
     navigate(`/lecon/${course.id}/${lessonId}`)
   }
 
-  // une leçon est débloquée si c'est la 1re ou si la précédente a été faite au moins une fois
+  // Une leçon est ouverte si c'est la 1re, si la précédente a été faite,
+  // ou si elle-même a déjà été terminée — sinon un réordonnancement du cours
+  // re-verrouillerait des leçons déjà acquises.
   const unlocked = (globalIdx: number) =>
-    globalIdx === 0 || (data.lessonsCompleted[lessons[globalIdx - 1].id] ?? 0) > 0
+    globalIdx === 0 ||
+    (data.lessonsCompleted[lessons[globalIdx].id] ?? 0) > 0 ||
+    (data.lessonsCompleted[lessons[globalIdx - 1].id] ?? 0) > 0
 
   let globalIdx = -1
 

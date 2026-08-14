@@ -11,6 +11,9 @@ const FORM_LABELS: [keyof import('../../content/types').Letter['forms'], string]
 /** Découverte d'une lettre arabe : caractère géant + 4 formes + son */
 export function LetterIntro({ ex, course, onAnswer }: ExerciseProps) {
   const letter = ex.letter!
+  // une voyelle brève n'a pas 4 formes : on n'affiche la grille que si elles diffèrent
+  const formesDistinctes = new Set(Object.values(letter.forms)).size
+  const montrerFormes = formesDistinctes >= 2
   return (
     <div style={{ textAlign: 'center' }}>
       <div className="pill" style={{ background: 'var(--green-soft)', color: 'var(--green-ink)' }}>
@@ -25,7 +28,14 @@ export function LetterIntro({ ex, course, onAnswer }: ExerciseProps) {
             <AudioButton item={ex.item} course={course} autoPlay />
           </div>
         )}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginTop: 8 }}>
+        <div
+          style={{
+            display: montrerFormes ? 'grid' : 'none',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 8,
+            marginTop: 8,
+          }}
+        >
           {FORM_LABELS.map(([key, label]) => (
             <div key={key} className="card" style={{ padding: 8 }}>
               <div className="arabic" style={{ fontSize: 34 }}>{letter.forms[key]}</div>

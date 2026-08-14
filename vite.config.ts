@@ -33,7 +33,9 @@ export default defineConfig({
             urlPattern: /\/audio\/.+\.mp3$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'yalla-audio',
+              // v2 : les mp3 régénérés (prononciations corrigées) doivent
+              // remplacer ceux déjà mis en cache pour un an
+              cacheName: 'yalla-audio-v2',
               expiration: { maxEntries: 2500, maxAgeSeconds: 31536000 },
               cacheableResponse: { statuses: [0, 200] }
             }

@@ -22,6 +22,8 @@ export interface Letter {
   phon: string
   /** Nom arabe vocalisé de la lettre (ex بَاء) — utilisé pour l'audio */
   arName?: string
+  /** true pour une voyelle brève / un signe orthographique (pas une des 28 lettres) */
+  sign?: boolean
   forms: {
     isolated: string
     initial: string
