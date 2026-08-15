@@ -30,12 +30,12 @@
           "title": "Je me présente",
           "kind": "vocab",
           "items": [
-            { "id": "en_my_name_is", "text": "my name is Sofian", "fr": "je m'appelle Sofian", "emoji": "🙋‍♂️", "kid": true },
+            { "id": "en_my_name_is", "text": "my name is", "fr": "je m'appelle…", "emoji": "🪪", "kid": true },
             { "id": "en_how_are_you", "text": "how are you?", "fr": "comment vas-tu ?", "emoji": "🙂", "kid": true },
             { "id": "en_im_fine", "text": "I am fine", "fr": "je vais bien", "emoji": "😄", "kid": true },
             { "id": "en_nice_to_meet", "text": "nice to meet you", "fr": "enchanté", "emoji": "🤝", "kid": true },
-            { "id": "en_i_am", "text": "I am", "fr": "je suis" },
-            { "id": "en_you_are", "text": "you are", "fr": "tu es" },
+            { "id": "en_i_am", "text": "I am", "fr": "je suis", "emoji": "🙋" },
+            { "id": "en_you_are", "text": "you are", "fr": "tu es", "emoji": "👉" },
             { "id": "en_welcome", "text": "welcome", "fr": "bienvenue", "emoji": "🤗", "kid": true },
             { "id": "en_see_you", "text": "see you later", "fr": "à plus tard", "emoji": "👋", "kid": true }
           ]
@@ -60,13 +60,13 @@
           "title": "Premières questions",
           "kind": "vocab",
           "items": [
-            { "id": "en_whats_your_name", "text": "what is your name?", "fr": "comment tu t'appelles ?", "emoji": "❓", "kid": true },
+            { "id": "en_whats_your_name", "text": "what is your name?", "fr": "comment tu t'appelles ?", "emoji": "🏷️", "kid": true },
             { "id": "en_where_from", "text": "where are you from?", "fr": "d'où viens-tu ?", "emoji": "🌍", "kid": true },
             { "id": "en_from_france", "text": "I am from France", "fr": "je viens de France", "emoji": "🇫🇷", "kid": true },
             { "id": "en_speak_english", "text": "do you speak English?", "fr": "parles-tu anglais ?", "emoji": "🗣️", "kid": true },
             { "id": "en_speak_little", "text": "I speak a little", "fr": "je parle un peu", "emoji": "🤏", "kid": true },
             { "id": "en_what", "text": "what?", "fr": "quoi ?", "emoji": "❓", "kid": true },
-            { "id": "en_who", "text": "who?", "fr": "qui ?", "emoji": "🤷", "kid": true },
+            { "id": "en_who", "text": "who?", "fr": "qui ?", "emoji": "🧑", "kid": true },
             { "id": "en_where", "text": "where?", "fr": "où ?", "emoji": "📍", "kid": true }
           ]
         }
@@ -99,16 +99,16 @@
           "title": "Les nombres jusqu'à 20",
           "kind": "vocab",
           "items": [
-            { "id": "en_eleven", "text": "eleven", "fr": "onze", "emoji": "🕚", "kid": true },
-            { "id": "en_twelve", "text": "twelve", "fr": "douze", "emoji": "🕛", "kid": true },
+            { "id": "en_eleven", "text": "eleven", "fr": "onze", "emoji": "1️⃣1️⃣", "kid": true },
+            { "id": "en_twelve", "text": "twelve", "fr": "douze", "emoji": "1️⃣2️⃣", "kid": true },
             { "id": "en_thirteen", "text": "thirteen", "fr": "treize", "emoji": "1️⃣3️⃣", "kid": true },
             { "id": "en_fourteen", "text": "fourteen", "fr": "quatorze", "emoji": "1️⃣4️⃣", "kid": true },
-            { "id": "en_fifteen", "text": "fifteen", "fr": "quinze", "emoji": "🔢", "kid": true },
+            { "id": "en_fifteen", "text": "fifteen", "fr": "quinze", "emoji": "1️⃣5️⃣", "kid": true },
             { "id": "en_sixteen", "text": "sixteen", "fr": "seize", "emoji": "1️⃣6️⃣", "kid": true },
             { "id": "en_seventeen", "text": "seventeen", "fr": "dix-sept", "emoji": "1️⃣7️⃣", "kid": true },
             { "id": "en_eighteen", "text": "eighteen", "fr": "dix-huit", "emoji": "1️⃣8️⃣", "kid": true },
             { "id": "en_nineteen", "text": "nineteen", "fr": "dix-neuf", "emoji": "1️⃣9️⃣", "kid": true },
-            { "id": "en_twenty", "text": "twenty", "fr": "vingt", "emoji": "🧮", "kid": true }
+            { "id": "en_twenty", "text": "twenty", "fr": "vingt", "emoji": "2️⃣0️⃣", "kid": true }
           ]
         },
         {
@@ -132,13 +132,13 @@
           "title": "Les jours de la semaine",
           "kind": "vocab",
           "items": [
-            { "id": "en_monday", "text": "Monday", "fr": "lundi", "emoji": "📅", "kid": true },
-            { "id": "en_tuesday", "text": "Tuesday", "fr": "mardi", "emoji": "📅", "kid": true },
-            { "id": "en_wednesday", "text": "Wednesday", "fr": "mercredi", "emoji": "📅", "kid": true },
-            { "id": "en_thursday", "text": "Thursday", "fr": "jeudi", "emoji": "📅", "kid": true },
-            { "id": "en_friday", "text": "Friday", "fr": "vendredi", "emoji": "🎊", "kid": true },
-            { "id": "en_saturday", "text": "Saturday", "fr": "samedi", "emoji": "🎮", "kid": true },
-            { "id": "en_sunday", "text": "Sunday", "fr": "dimanche", "emoji": "🥐", "kid": true },
+            { "id": "en_monday", "text": "Monday", "fr": "lundi", "kid": true },
+            { "id": "en_tuesday", "text": "Tuesday", "fr": "mardi", "kid": true },
+            { "id": "en_wednesday", "text": "Wednesday", "fr": "mercredi", "kid": true },
+            { "id": "en_thursday", "text": "Thursday", "fr": "jeudi", "kid": true },
+            { "id": "en_friday", "text": "Friday", "fr": "vendredi", "kid": true },
+            { "id": "en_saturday", "text": "Saturday", "fr": "samedi", "kid": true },
+            { "id": "en_sunday", "text": "Sunday", "fr": "dimanche", "kid": true },
             { "id": "en_today", "text": "today", "fr": "aujourd'hui", "emoji": "📆", "kid": true },
             { "id": "en_tomorrow", "text": "tomorrow", "fr": "demain", "emoji": "➡️", "kid": true }
           ]
@@ -148,9 +148,9 @@
           "title": "Dizaines et centaines",
           "kind": "vocab",
           "items": [
-            { "id": "en_thirty", "text": "thirty", "fr": "trente", "emoji": "🔢", "kid": true },
-            { "id": "en_forty", "text": "forty", "fr": "quarante", "emoji": "🧮", "kid": true },
-            { "id": "en_fifty", "text": "fifty", "fr": "cinquante", "emoji": "💶", "kid": true },
+            { "id": "en_thirty", "text": "thirty", "fr": "trente", "emoji": "3️⃣0️⃣", "kid": true },
+            { "id": "en_forty", "text": "forty", "fr": "quarante", "emoji": "4️⃣0️⃣", "kid": true },
+            { "id": "en_fifty", "text": "fifty", "fr": "cinquante", "emoji": "5️⃣0️⃣", "kid": true },
             { "id": "en_sixty", "text": "sixty", "fr": "soixante", "emoji": "6️⃣0️⃣", "kid": true },
             { "id": "en_seventy", "text": "seventy", "fr": "soixante-dix", "emoji": "7️⃣0️⃣", "kid": true },
             { "id": "en_eighty", "text": "eighty", "fr": "quatre-vingts", "emoji": "8️⃣0️⃣", "kid": true },
@@ -217,7 +217,7 @@
             { "id": "en_she_is_nice", "text": "she is nice", "fr": "elle est gentille", "emoji": "😊", "kid": true },
             { "id": "en_he_is_funny", "text": "he is funny", "fr": "il est drôle", "emoji": "😂", "kid": true },
             { "id": "en_tall", "text": "tall", "fr": "grand", "emoji": "📏", "kid": true },
-            { "id": "en_short", "text": "short", "fr": "petit", "emoji": "🐜", "kid": true },
+            { "id": "en_short", "text": "short", "fr": "petit", "emoji": "🤏", "kid": true },
             { "id": "en_my_mom_is_kind", "text": "my mom is kind", "fr": "ma maman est gentille", "emoji": "💕", "kid": true },
             { "id": "en_i_love_my_family", "text": "I love my family", "fr": "j'aime ma famille", "emoji": "❤️", "kid": true },
             { "id": "en_we_are_four", "text": "there are four of us", "fr": "nous sommes quatre", "emoji": "4️⃣" }
@@ -232,11 +232,11 @@
             { "id": "en_i_am_ten", "text": "I am ten years old", "fr": "j'ai dix ans", "emoji": "🔟", "kid": true },
             { "id": "en_my_sister_is_five", "text": "my sister is five", "fr": "ma sœur a cinq ans", "emoji": "🖐️", "kid": true },
             { "id": "en_young", "text": "young", "fr": "jeune", "emoji": "🌱", "kid": true },
-            { "id": "en_old", "text": "old", "fr": "vieux", "emoji": "👴", "kid": true },
-            { "id": "en_birthday", "text": "birthday", "fr": "anniversaire", "emoji": "🎂", "kid": true },
+            { "id": "en_old", "text": "old", "fr": "vieux", "emoji": "🧓", "kid": true },
+            { "id": "en_birthday", "text": "birthday", "fr": "anniversaire", "emoji": "🎁", "kid": true },
             { "id": "en_happy_birthday", "text": "happy birthday!", "fr": "joyeux anniversaire !", "emoji": "🎉", "kid": true },
             { "id": "en_i_am_young", "text": "I am young", "fr": "je suis jeune", "emoji": "🧒", "kid": true },
-            { "id": "en_birthday_in_june", "text": "my birthday is in June", "fr": "mon anniversaire est en juin", "emoji": "🎂", "kid": true }
+            { "id": "en_birthday_in_june", "text": "my birthday is in June", "fr": "mon anniversaire est en juin", "emoji": "🎈", "kid": true }
           ]
         },
         {
@@ -286,9 +286,9 @@
             { "id": "en_orange_juice", "text": "orange juice", "fr": "jus d'orange", "emoji": "🧃", "kid": true },
             { "id": "en_tea", "text": "tea", "fr": "thé", "emoji": "🍵", "kid": true },
             { "id": "en_coffee", "text": "coffee", "fr": "café", "emoji": "☕" },
-            { "id": "en_glass_of_water", "text": "a glass of water", "fr": "un verre d'eau", "emoji": "🥤", "kid": true },
-            { "id": "en_im_thirsty", "text": "I am thirsty", "fr": "j'ai soif", "emoji": "🥵", "kid": true },
-            { "id": "en_hot_chocolate", "text": "hot chocolate", "fr": "chocolat chaud", "emoji": "☕", "kid": true }
+            { "id": "en_glass_of_water", "text": "a glass of water", "fr": "un verre d'eau", "emoji": "🚰", "kid": true },
+            { "id": "en_im_thirsty", "text": "I am thirsty", "fr": "j'ai soif", "emoji": "🥤", "kid": true },
+            { "id": "en_hot_chocolate", "text": "hot chocolate", "fr": "chocolat chaud", "emoji": "🍫", "kid": true }
           ]
         },
         {
@@ -347,7 +347,7 @@
           "title": "Les objets de la maison",
           "kind": "vocab",
           "items": [
-            { "id": "en_table", "text": "table", "fr": "table", "emoji": "🪵", "kid": true },
+            { "id": "en_table", "text": "table", "fr": "table", "emoji": "🍽️", "kid": true },
             { "id": "en_chair", "text": "chair", "fr": "chaise", "emoji": "🪑", "kid": true },
             { "id": "en_bed", "text": "bed", "fr": "lit", "emoji": "🛏️", "kid": true },
             { "id": "en_lamp", "text": "lamp", "fr": "lampe", "emoji": "💡", "kid": true },
@@ -378,7 +378,7 @@
           "kind": "vocab",
           "items": [
             { "id": "en_i_clean_my_room", "text": "I clean my room", "fr": "je range ma chambre", "emoji": "🧹", "kid": true },
-            { "id": "en_i_do_the_dishes", "text": "I do the dishes", "fr": "je fais la vaisselle", "emoji": "🍽️", "kid": true },
+            { "id": "en_i_do_the_dishes", "text": "I do the dishes", "fr": "je fais la vaisselle", "emoji": "🧽", "kid": true },
             { "id": "en_the_laundry", "text": "the laundry", "fr": "la lessive", "emoji": "🧺" },
             { "id": "en_take_out_the_trash", "text": "take out the trash", "fr": "sortir la poubelle", "emoji": "🗑️", "kid": true },
             { "id": "en_i_set_the_table", "text": "I set the table", "fr": "je mets la table", "emoji": "🍴", "kid": true },
@@ -429,9 +429,9 @@
           "title": "Les directions",
           "kind": "vocab",
           "items": [
-            { "id": "en_left", "text": "left", "fr": "à gauche", "emoji": "⬅️", "kid": true },
-            { "id": "en_right", "text": "right", "fr": "à droite", "emoji": "➡️", "kid": true },
-            { "id": "en_go_straight", "text": "go straight", "fr": "tout droit", "emoji": "⬆️", "kid": true },
+            { "id": "en_left", "text": "turn left", "fr": "tourne à gauche", "emoji": "⬅️", "kid": true },
+            { "id": "en_right", "text": "turn right", "fr": "tourne à droite", "emoji": "➡️", "kid": true },
+            { "id": "en_go_straight", "text": "go straight", "fr": "va tout droit", "emoji": "⬆️", "kid": true },
             { "id": "en_stop", "text": "stop!", "fr": "stop !", "emoji": "🛑", "kid": true },
             { "id": "en_where_is_the_station", "text": "where is the station?", "fr": "où est la gare ?", "emoji": "🚉", "kid": true },
             { "id": "en_it_is_near", "text": "it is near", "fr": "c'est près d'ici", "emoji": "📍", "kid": true },
@@ -489,7 +489,7 @@
             { "id": "en_cook", "text": "cook", "fr": "cuisinier", "emoji": "🧑‍🍳", "kid": true },
             { "id": "en_firefighter", "text": "firefighter", "fr": "pompier", "emoji": "🧑‍🚒", "kid": true },
             { "id": "en_police_officer", "text": "police officer", "fr": "policier", "emoji": "👮", "kid": true },
-            { "id": "en_nurse", "text": "nurse", "fr": "infirmière", "emoji": "💉", "kid": true },
+            { "id": "en_nurse", "text": "nurse", "fr": "infirmier / infirmière", "emoji": "💉", "kid": true },
             { "id": "en_i_am_a_driver", "text": "I am a driver", "fr": "je suis chauffeur", "emoji": "🚚" }
           ]
         },
