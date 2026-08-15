@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { Course, VocabItem } from '../../content/types'
 import { AudioButton } from './AudioButton'
+import { Mascotte } from './Mascotte'
 
 export interface Feedback {
   correct: boolean
@@ -55,15 +56,17 @@ export function CheckFooter({ feedback, onContinue, onHeight }: Props) {
       }}
     >
       <div style={{ maxWidth: 640, margin: '0 auto' }}>
-        <div
-          style={{
-            fontWeight: 800,
-            fontSize: 18,
-            color: ok ? 'var(--green-ink)' : 'var(--red-ink)',
-            marginBottom: 4,
-          }}
-        >
-          {ok ? '✅ Bien joué !' : '❌ Pas tout à fait…'}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+          <Mascotte humeur={ok ? 'content' : 'triste'} taille={46} />
+          <div
+            style={{
+              fontWeight: 800,
+              fontSize: 18,
+              color: ok ? 'var(--green-ink)' : 'var(--red-ink)',
+            }}
+          >
+            {ok ? 'Bien joué !' : 'Pas tout à fait…'}
+          </div>
         </div>
         {!ok && feedback.correction && (
           <div style={{ color: 'var(--red-ink)', marginBottom: 8 }}>

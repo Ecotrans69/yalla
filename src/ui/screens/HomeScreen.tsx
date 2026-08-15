@@ -4,6 +4,17 @@ import { parisDay } from '../../engine/gamification'
 import { useApp } from '../../store/state'
 import { useRouter } from '../Router'
 import { InstallHint } from '../components/InstallHint'
+import { Mascotte, type MascotteHumeur } from '../components/Mascotte'
+import { etatDuJour } from '../../engine/reminders'
+import { displayStreak } from '../../engine/gamification'
+
+/** L'humeur de Fenek raconte l'état de la journée d'un coup d'œil. */
+const HUMEUR_PAR_RAISON: Record<string, MascotteHumeur> = {
+  objectif_atteint: 'fete',
+  serie_en_danger: 'triste',
+  rien_a_faire: 'content',
+  jamais_joue: 'curieux',
+}
 
 export function HomeScreen() {
   const { profile, data } = useApp()
@@ -14,11 +25,27 @@ export function HomeScreen() {
   const xpToday = data.xpByDay[parisDay(now)] ?? 0
   const goalPct = Math.min(100, Math.round((xpToday / data.dailyGoal) * 100))
 
+  const etat = etatDuJour({
+    xpAujourdhui: xpToday,
+    objectif: data.dailyGoal,
+    serie: displayStreak(data.streak, now),
+    heure: new Date(now).getHours(),
+  })
+
   return (
     <div className="screen">
       <h1 style={{ fontSize: 24 }}>
         Salut {profile.name} {profile.avatar}
       </h1>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '4px 0 18px' }}>
+        <Mascotte
+          humeur={HUMEUR_PAR_RAISON[etat.raison] ?? 'neutre'}
+          taille={104}
+          bulle={etat.message}
+        />
+      </div>
+
       <InstallHint />
 
       <div className="card" style={{ marginBottom: 16 }}>

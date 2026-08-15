@@ -40,6 +40,7 @@ interface AppApi {
   setTheme(t: 'light' | 'dark' | undefined): void
   setVoice(v: import('../speech/audio').VoiceChoice): void
   setRate(r: number): void
+  setRappel(p: import('../engine/reminders').ReminderPrefs): void
   exportActive(): string
   importJson(json: string): void
 }
@@ -151,6 +152,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
       },
       setRate(r) {
         patchData((d) => ({ ...d, rate: r }))
+      },
+      setRappel(p) {
+        patchData((d) => ({ ...d, rappel: p }))
       },
       exportActive() {
         if (!state.activeProfileId) throw new Error('Aucun profil actif')

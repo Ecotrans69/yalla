@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { AppProvider, useApp } from './store/state'
+import { delaiAvantRappel, etatDuJour, notifier, PREFS_DEFAUT } from './engine/reminders'
+import { displayStreak, parisDay } from './engine/gamification'
 import { RouterProvider, useRouter } from './ui/Router'
 import { BottomNav } from './ui/components/BottomNav'
 import { TopBar } from './ui/components/TopBar'
@@ -30,6 +32,25 @@ function Shell() {
     if (data?.theme) document.documentElement.dataset.theme = data.theme
     else delete document.documentElement.dataset.theme
   }, [data?.theme])
+
+  // Rappel « app ouverte » : une notification au moment choisi, si elle est
+  // autorisée. Le rappel qui marche app fermée, lui, passe par le calendrier.
+  useEffect(() => {
+    const prefs = data?.rappel ?? PREFS_DEFAUT
+    if (!prefs.actif || !data) return
+    const delai = delaiAvantRappel(prefs, Date.now())
+    if (delai === null) return
+    const t = setTimeout(() => {
+      const etat = etatDuJour({
+        xpAujourdhui: data.xpByDay[parisDay(Date.now())] ?? 0,
+        objectif: data.dailyGoal,
+        serie: displayStreak(data.streak, Date.now()),
+        heure: new Date().getHours(),
+      })
+      if (etat.doitRappeler) notifier('Yalla !', etat.message)
+    }, delai)
+    return () => clearTimeout(t)
+  }, [data])
 
   if (!profile) return <ProfilesScreen />
 

@@ -9,6 +9,7 @@ import { stopAudio } from '../../speech/audio'
 import { useApp } from '../../store/state'
 import { useRouter } from '../Router'
 import { CheckFooter, type Feedback } from '../components/CheckFooter'
+import { Mascotte } from '../components/Mascotte'
 import { FillBlank } from '../exercises/FillBlank'
 import { LetterForms } from '../exercises/LetterForms'
 import { LetterIntro } from '../exercises/LetterIntro'
@@ -117,7 +118,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
   if (review && reviewIds.length === 0) {
     return (
       <div className="screen" style={{ textAlign: 'center', paddingTop: 60 }}>
-        <div style={{ fontSize: 64 }}>🎉</div>
+        <Mascotte humeur="dodo" taille={130} />
         <h2>Rien à réviser, bravo !</h2>
         <button className="btn btn-primary" onClick={() => navigate(backPath)}>
           Retour
@@ -204,7 +205,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
             }}
           />
         ))}
-        <div style={{ fontSize: 72 }}>🎉</div>
+        <Mascotte humeur="fete" taille={150} />
         <h1>Leçon terminée !</h1>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 12, margin: '20px 0' }}>
           <div className="card" style={{ minWidth: 90 }}>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { getCourse } from '../../content'
 import { loadTrash, type Profile, type TrashEntry } from '../../store/storage'
 import { ImportButton } from '../components/ImportButton'
+import { RappelSettings } from '../components/RappelSettings'
 import { playItem, VOICE_LABELS } from '../../speech/audio'
 import { sttAvailable } from '../../speech/stt'
 import { useApp } from '../../store/state'
@@ -281,6 +282,8 @@ export function SettingsScreen() {
           </p>
         )}
       </div>
+
+      <RappelSettings />
 
       {/* Section parents : masquée sur un profil enfant (un import écrase
           la progression, et « changer de profil » mène à la suppression) */}

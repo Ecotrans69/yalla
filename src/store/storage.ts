@@ -1,5 +1,6 @@
 import type { Course, CourseId } from '../content/types'
 import type { VoiceChoice } from '../speech/audio'
+import type { ReminderPrefs } from '../engine/reminders'
 import { onResult, type SrsEntry } from '../engine/srs'
 import {
   earnedBadges,
@@ -34,6 +35,8 @@ export interface ProfileData {
   voice?: VoiceChoice
   /** Vitesse de lecture des audios (0.7 à 1.15, défaut 1) */
   rate?: number
+  /** Rappel quotidien (heure locale de l'appareil) */
+  rappel?: ReminderPrefs
 }
 
 export interface AppState {
