@@ -40,6 +40,8 @@ export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props
           boxShadow: '0 3px 0 var(--blue-dark)',
           fontSize: size,
           padding: '6px 14px',
+          minWidth: 44,
+          minHeight: 44,
           cursor: 'pointer',
         }}
       >
@@ -54,6 +56,8 @@ export function AudioButton({ item, course, autoPlay = false, size = 28 }: Props
           borderRadius: 12,
           fontSize: Math.round(size * 0.7),
           padding: '4px 10px',
+          minWidth: 44,
+          minHeight: 44,
           cursor: 'pointer',
         }}
       >

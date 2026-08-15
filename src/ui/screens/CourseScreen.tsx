@@ -11,6 +11,7 @@ export function CourseScreen({ courseId }: { courseId: string }) {
   const { profile, data } = useApp()
   const { navigate } = useRouter()
   const [noHearts, setNoHearts] = useState(false)
+  const [lockedMsg, setLockedMsg] = useState<string | null>(null)
   const course = getCourse(courseId)
   if (!course || !profile || !data) return null
 
@@ -41,7 +42,16 @@ export function CourseScreen({ courseId }: { courseId: string }) {
     <div className="screen">
       <button
         onClick={() => navigate('/')}
-        style={{ background: 'none', border: 'none', color: 'var(--text-dim)', cursor: 'pointer', fontSize: 16, padding: 0 }}
+        style={{
+          background: 'none',
+          border: 'none',
+          color: 'var(--text-dim)',
+          cursor: 'pointer',
+          fontSize: 16,
+          padding: '12px 8px',
+          margin: '0 0 0 -8px',
+          minHeight: 44,
+        }}
       >
         ‹ Retour
       </button>
@@ -92,16 +102,20 @@ export function CourseScreen({ courseId }: { courseId: string }) {
                 return (
                   <button
                     key={lesson.id}
-                    disabled={!isUnlocked}
-                    onClick={() => openLesson(lesson.id)}
-                    aria-label={`Leçon ${lesson.title}`}
+                    aria-disabled={!isUnlocked}
+                    onClick={() =>
+                      isUnlocked
+                        ? openLesson(lesson.id)
+                        : setLockedMsg(lessons[globalIdx - 1]?.title ?? '')
+                    }
+                    aria-label={`Leçon ${lesson.title}${isUnlocked ? '' : ' (verrouillée)'}`}
                     style={{
                       transform: `translateX(${offset}px)`,
                       width: 72,
                       height: 72,
                       borderRadius: '50%',
                       border: 'none',
-                      cursor: isUnlocked ? 'pointer' : 'default',
+                      cursor: 'pointer',
                       fontSize: 26,
                       fontWeight: 800,
                       color: '#fff',
@@ -121,7 +135,7 @@ export function CourseScreen({ courseId }: { courseId: string }) {
         )
       })}
 
-      {noHearts && (
+      {(noHearts || lockedMsg !== null) && (
         <div
           style={{
             position: 'fixed',
@@ -133,25 +147,62 @@ export function CourseScreen({ courseId }: { courseId: string }) {
             zIndex: 30,
             padding: 16,
           }}
-          onClick={() => setNoHearts(false)}
+          onClick={() => {
+            setNoHearts(false)
+            setLockedMsg(null)
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+              setNoHearts(false)
+              setLockedMsg(null)
+            }
+          }}
         >
-          <div className="card pop" style={{ maxWidth: 360, textAlign: 'center' }} onClick={(e) => e.stopPropagation()}>
-            <div style={{ fontSize: 48 }}>💔</div>
-            <h2>Plus de cœurs !</h2>
-            <p style={{ color: 'var(--text-dim)' }}>
-              Prochain cœur dans {Math.ceil(nextHeartIn(data.hearts, now) / 60000)} min. En
-              attendant, les révisions sont gratuites !
-            </p>
-            {due > 0 && (
-              <button
-                className="btn btn-blue"
-                style={{ width: '100%', marginBottom: 8 }}
-                onClick={() => navigate(`/revision/${course.id}`)}
-              >
-                📝 Réviser
-              </button>
+          <div
+            className="card pop"
+            role="dialog"
+            aria-modal="true"
+            style={{ maxWidth: 360, textAlign: 'center' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {lockedMsg !== null ? (
+              <>
+                <div style={{ fontSize: 48 }}>🔒</div>
+                <h2>Pas encore ouverte</h2>
+                <p style={{ color: 'var(--text-dim)' }}>
+                  {lockedMsg
+                    ? `Termine d'abord « ${lockedMsg} » pour débloquer cette leçon.`
+                    : 'Termine la leçon précédente pour débloquer celle-ci.'}
+                </p>
+              </>
+            ) : (
+              <>
+                <div style={{ fontSize: 48 }}>💔</div>
+                <h2>Plus de cœurs !</h2>
+                <p style={{ color: 'var(--text-dim)' }}>
+                  Prochain cœur dans {Math.ceil(nextHeartIn(data.hearts, now) / 60000)} min. En
+                  attendant, les révisions sont gratuites !
+                </p>
+                {due > 0 && (
+                  <button
+                    className="btn btn-blue"
+                    style={{ width: '100%', marginBottom: 8 }}
+                    onClick={() => navigate(`/revision/${course.id}`)}
+                  >
+                    📝 Réviser
+                  </button>
+                )}
+              </>
             )}
-            <button className="btn btn-ghost" style={{ width: '100%' }} onClick={() => setNoHearts(false)}>
+            <button
+              className="btn btn-ghost"
+              style={{ width: '100%' }}
+              autoFocus
+              onClick={() => {
+                setNoHearts(false)
+                setLockedMsg(null)
+              }}
+            >
               OK
             </button>
           </div>

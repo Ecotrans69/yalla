@@ -1,5 +1,5 @@
 import { AudioButton } from '../components/AudioButton'
-import { targetClass } from './types'
+import { AR_ATTRS, targetAttrs, targetClass } from './types'
 import type { ExerciseProps } from './types'
 
 /** Présentation d'un nouveau mot avec audio */
@@ -12,11 +12,17 @@ export function NewWord({ ex, course, onAnswer }: ExerciseProps) {
       </div>
       <div className="card pop" style={{ margin: '24px 0', padding: 28 }}>
         {item.emoji && <div style={{ fontSize: 64 }}>{item.emoji}</div>}
-        <div className={targetClass(course)} style={{ fontSize: course.id === 'ar' ? undefined : 30, fontWeight: 800, margin: '8px 0' }}>
+        <div
+          className={targetClass(course)}
+          {...targetAttrs(course)}
+          style={{ fontSize: course.id === 'ar' ? undefined : 30, fontWeight: 800, margin: '8px 0' }}
+        >
           {item.text}
         </div>
         {course.id === 'dz' && item.arScript && (
-          <div className="arabic" style={{ color: 'var(--text-dim)' }}>{item.arScript}</div>
+          <div className="arabic" {...AR_ATTRS} style={{ color: 'var(--text-dim)' }}>
+            {item.arScript}
+          </div>
         )}
         {item.phon && <div style={{ color: 'var(--text-dim)' }}>[{item.phon}]</div>}
         <div style={{ fontSize: 20, marginTop: 8 }}>{item.fr}</div>

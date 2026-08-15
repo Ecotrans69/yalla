@@ -40,6 +40,9 @@ export function CheckFooter({ feedback, onContinue, onHeight }: Props) {
     <div
       ref={boxRef}
       className="pop"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
       style={{
         position: 'fixed',
         bottom: 0,
@@ -88,12 +91,8 @@ export function CheckFooter({ feedback, onContinue, onHeight }: Props) {
             <AudioButton item={feedback.item!} course={feedback.course!} size={24} />
           </div>
         )}
-        <button
-          className="btn btn-primary"
-          style={{ width: '100%' }}
-          onClick={onContinue}
-          autoFocus
-        >
+        {/* pas d'autoFocus : il coupe l'annonce du résultat par le lecteur d'écran */}
+        <button className="btn btn-primary" style={{ width: '100%' }} onClick={onContinue}>
           Continuer
         </button>
       </div>

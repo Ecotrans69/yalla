@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { normalize } from '../../engine/normalize'
-import { targetClass } from './types'
+import { targetAttrs, targetClass } from './types'
 import type { ExerciseProps } from './types'
 
 /** Assemble la traduction avec des tuiles de mots */
@@ -30,6 +30,7 @@ export function TranslateTiles({ ex, course, onAnswer }: ExerciseProps) {
   } as const
 
   const cls = targetClass(course)
+  const attrs = targetAttrs(course)
 
   return (
     <div>
@@ -50,6 +51,7 @@ export function TranslateTiles({ ex, course, onAnswer }: ExerciseProps) {
           <button
             key={`${tileIdx}-${pos}`}
             className={cls}
+            {...attrs}
             style={tileStyle}
             onClick={() => !done && setChosen(chosen.filter((_, i) => i !== pos))}
           >
@@ -64,6 +66,7 @@ export function TranslateTiles({ ex, course, onAnswer }: ExerciseProps) {
             <button
               key={i}
               className={cls}
+              {...attrs}
               disabled={used || done}
               style={{ ...tileStyle, opacity: used ? 0.25 : 1 }}
               onClick={() => setChosen([...chosen, i])}

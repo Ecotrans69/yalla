@@ -359,8 +359,12 @@ function dedicatedExercise(
 
   type Maker = () => Exercise
   const eligible: Maker[] = []
-  eligible.push(() => exSelect(item, rings, opts.rng, ar))
-  if (opts.ttsAvailable) eligible.push(() => exListenChoose(item, rings, opts.rng, ar))
+  // un QCM n'a de sens qu'avec 4 choix : sous 4 items disponibles, il
+  // tomberait à un pile ou face qui ferait quand même monter le SRS
+  const assezDeChoix = rings(item).some((ring) => ring.length >= 4)
+  if (assezDeChoix) eligible.push(() => exSelect(item, rings, opts.rng, ar))
+  if (opts.ttsAvailable && assezDeChoix)
+    eligible.push(() => exListenChoose(item, rings, opts.rng, ar))
   if (opts.ttsAvailable && latinScript && !opts.kid) eligible.push(() => exListenType(item))
   if (multiword) eligible.push(() => exTiles(item, rings, opts.rng))
   if (multiword && !opts.kid) eligible.push(() => exFillBlank(item, rings, opts.rng))

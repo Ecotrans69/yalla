@@ -295,3 +295,19 @@ button {
   pointer-events: none;
   z-index: 50;
 }
+
+/* ===== Accessibilité : respect du réglage système « moins d'animations » ===== */
+@media (prefers-reduced-motion: reduce) {
+  .confetti {
+    display: none;
+  }
+
+  .pulse,
+  .pop {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}

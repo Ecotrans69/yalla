@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 import type { ExerciseProps } from './types'
 
 interface QcmProps extends ExerciseProps {
+  /** Attributs de langue du libellé (lang/dir) */
+  labelAttrs?: { lang?: string; dir?: 'rtl' }
   /** Contenu affiché au-dessus des choix (bouton audio…) */
   header?: ReactNode
   /** Classe appliquée au label des choix (ex 'arabic') */
@@ -10,7 +12,7 @@ interface QcmProps extends ExerciseProps {
 }
 
 /** Base QCM : question, grille de choix, bouton VÉRIFIER, révélation */
-export function Qcm({ ex, header, labelClass = '', onAnswer }: QcmProps) {
+export function Qcm({ ex, header, labelClass = '', labelAttrs = {}, onAnswer }: QcmProps) {
   const [sel, setSel] = useState<string | null>(null)
   const [revealed, setRevealed] = useState(false)
 
@@ -53,7 +55,9 @@ export function Qcm({ ex, header, labelClass = '', onAnswer }: QcmProps) {
             style={{ minHeight: hasEmoji ? 96 : 56 }}
           >
             {hasEmoji && c.emoji && <div style={{ fontSize: 34 }}>{c.emoji}</div>}
-            <div className={labelClass}>{c.label}</div>
+            <div className={labelClass} {...labelAttrs}>
+              {c.label}
+            </div>
             {c.sub && <div style={{ fontSize: 13, color: 'var(--text-dim)' }}>{c.sub}</div>}
           </button>
         ))}

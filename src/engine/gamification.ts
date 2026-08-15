@@ -1,7 +1,5 @@
 /** XP, streak (heure de France), cœurs, couronnes, badges */
 
-const DAY_MS = 86_400_000
-
 /** Jour 'YYYY-MM-DD' en Europe/Paris */
 export function parisDay(now: number): string {
   return new Intl.DateTimeFormat('fr-CA', {
@@ -10,6 +8,18 @@ export function parisDay(now: number): string {
     month: '2-digit',
     day: '2-digit',
   }).format(new Date(now))
+}
+
+/**
+ * Veille CIVILE d'un jour 'YYYY-MM-DD'.
+ * Surtout pas « moins 24 h » : aux changements d'heure, Paris a un jour de 23 h
+ * et un de 25 h — la série des enfants sautait deux fois par an.
+ */
+export function prevDay(day: string): string {
+  const [y, m, d] = day.split('-').map(Number)
+  const dt = new Date(Date.UTC(y, m - 1, d))
+  dt.setUTCDate(dt.getUTCDate() - 1)
+  return dt.toISOString().slice(0, 10)
 }
 
 /** XP d'une leçon : 10 par exercice + 20 de bonus si zéro faute */
@@ -26,7 +36,7 @@ export function updateStreak(s: Streak | undefined, now: number): Streak {
   const today = parisDay(now)
   if (!s || !s.count) return { count: 1, lastDay: today }
   if (s.lastDay === today) return s
-  const yesterday = parisDay(now - DAY_MS)
+  const yesterday = prevDay(today)
   return { count: s.lastDay === yesterday ? s.count + 1 : 1, lastDay: today }
 }
 
@@ -34,8 +44,7 @@ export function updateStreak(s: Streak | undefined, now: number): Streak {
 export function displayStreak(s: Streak | undefined, now: number): number {
   if (!s) return 0
   const today = parisDay(now)
-  const yesterday = parisDay(now - DAY_MS)
-  return s.lastDay === today || s.lastDay === yesterday ? s.count : 0
+  return s.lastDay === today || s.lastDay === prevDay(today) ? s.count : 0
 }
 
 export interface Hearts {

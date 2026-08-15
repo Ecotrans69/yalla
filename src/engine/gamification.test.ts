@@ -45,6 +45,18 @@ describe('updateStreak', () => {
   it('série cassée → repart à 1', () => {
     expect(updateStreak({ count: 9, lastDay: '2026-08-07' }, NOON).count).toBe(1)
   })
+  it('survit aux changements d’heure (jour de 23 h et de 25 h à Paris)', () => {
+    // 25/10/2026 23h30 Paris : le jour précédent dure 25 h
+    const finOctobre = Date.UTC(2026, 9, 25, 22, 30)
+    expect(parisDay(finOctobre)).toBe('2026-10-25')
+    expect(updateStreak({ count: 12, lastDay: '2026-10-24' }, finOctobre).count).toBe(13)
+    expect(displayStreak({ count: 12, lastDay: '2026-10-24' }, finOctobre)).toBe(12)
+    // 30/03/2026 00h30 Paris : le jour précédent dure 23 h
+    const finMars = Date.UTC(2026, 2, 29, 23, 30)
+    expect(parisDay(finMars)).toBe('2026-03-30')
+    expect(updateStreak({ count: 12, lastDay: '2026-03-29' }, finMars).count).toBe(13)
+  })
+
   it('displayStreak à 0 si cassée', () => {
     expect(displayStreak({ count: 9, lastDay: '2026-08-07' }, NOON)).toBe(0)
     expect(displayStreak({ count: 9, lastDay: '2026-08-09' }, NOON)).toBe(9)

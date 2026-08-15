@@ -73,6 +73,24 @@ export function validateCourse(c: Course): string[] {
         }
       } else {
         if (!lesson.items?.length) errors.push(`${lesson.id}: leçon "vocab" sans items`)
+        // Deux items d'une MÊME leçon ne doivent jamais partager leur traduction
+        // ni leur texte : l'exercice « associe les paires » deviendrait insoluble
+        // et les QCM auraient deux bonnes réponses.
+        const vus = new Map<string, string>()
+        for (const item of lesson.items ?? []) {
+          for (const [champ, valeur] of [
+            ['fr', item.fr],
+            ['text', item.text],
+          ] as const) {
+            const cle = `${champ}:${valeur.trim().toLowerCase()}`
+            const premier = vus.get(cle)
+            if (premier) {
+              errors.push(`${lesson.id}: "${valeur}" (${champ}) porté par ${premier} et ${item.id}`)
+            } else {
+              vus.set(cle, item.id)
+            }
+          }
+        }
         for (const item of lesson.items ?? []) {
           checkId(item.id, `item ${item.fr}`)
           if (!item.text) errors.push(`${item.id}: text manquant`)

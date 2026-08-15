@@ -9,6 +9,10 @@ describe('levenshtein / similarity', () => {
     expect(levenshtein('helo', 'hello')).toBe(1)
     expect(similarity('helo', 'hello')).toBeCloseTo(0.8)
   })
+  it('une inversion de lettres coûte 1 (Damerau), pas 2', () => {
+    expect(levenshtein('tabel', 'table')).toBe(1)
+    expect(levenshtein('hte', 'the')).toBe(1)
+  })
   it('vides → 1', () => {
     expect(similarity('', '')).toBe(1)
   })
@@ -18,8 +22,19 @@ describe('checkTyped', () => {
   it('ponctuation et casse ignorées', () => {
     expect(checkTyped('Hello!', 'hello', 'en').ok).toBe(true)
   })
-  it('faute trop grosse refusée (seuil 0.85)', () => {
-    expect(checkTyped('helo', 'hello', 'en').ok).toBe(false)
+  it('une seule faute de frappe est pardonnée dès 4 lettres', () => {
+    expect(checkTyped('helo', 'hello', 'en').ok).toBe(true)
+    // inversion de deux lettres = 1 faute (Damerau), pas 2
+    expect(checkTyped('tabel', 'table', 'en').ok).toBe(true)
+  })
+
+  it('un mot vraiment faux reste refusé', () => {
+    expect(checkTyped('house', 'hello', 'en').ok).toBe(false)
+    expect(checkTyped('chien', 'chat', 'fr').ok).toBe(false)
+  })
+
+  it('sur un mot de moins de 4 lettres, la faute compte', () => {
+    expect(checkTyped('yez', 'yes', 'en').ok).toBe(false)
   })
   it('longue phrase avec 1 typo acceptée', () => {
     expect(checkTyped('good morninng', 'good morning', 'en').ok).toBe(true)

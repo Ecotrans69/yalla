@@ -117,7 +117,7 @@
               "id": "ar_ha",
               "char": "ح",
               "name": "ha (fort)",
-              "phon": "h",
+              "phon": "h (fort, du fond de la gorge)",
               "forms": {
                 "isolated": "ح",
                 "initial": "حـ",
@@ -156,7 +156,7 @@
               "id": "ar_ha2",
               "char": "ه",
               "name": "ha (doux)",
-              "phon": "h",
+              "phon": "h (doux, soufflé comme en anglais)",
               "forms": {
                 "isolated": "ه",
                 "initial": "هـ",
@@ -650,7 +650,7 @@
             {
               "id": "ar_dar",
               "text": "دَار",
-              "fr": "maison",
+              "fr": "maison (demeure)",
               "phon": "dar",
               "emoji": "🏠",
               "kid": true
@@ -1269,7 +1269,7 @@
               "id": "ar_sabata_achar",
               "text": "سَبْعَةَ عَشَرَ",
               "fr": "dix-sept (17)",
-              "phon": "sabata achar",
+              "phon": "sabaata achar",
               "emoji": "🔢"
             },
             {
@@ -1283,7 +1283,7 @@
               "id": "ar_tisata_achar",
               "text": "تِسْعَةَ عَشَرَ",
               "fr": "dix-neuf (19)",
-              "phon": "tisata achar",
+              "phon": "tisaata achar",
               "emoji": "🔢"
             },
             {
@@ -1312,7 +1312,7 @@
               "id": "ar_kam_omrouk",
               "text": "كَمْ عُمْرُكَ؟",
               "fr": "quel âge as-tu ?",
-              "phon": "kam omrouka",
+              "phon": "kam oumrouka",
               "emoji": "🎂",
               "kid": true
             },
@@ -1320,7 +1320,7 @@
               "id": "ar_omri_achr_sanawat",
               "text": "عُمْرِي عَشْرُ سَنَوَاتٍ",
               "fr": "j'ai dix ans",
-              "phon": "omri achrou sanawat",
+              "phon": "oumri achrou sanawat",
               "emoji": "🎂",
               "kid": true
             },
@@ -1478,9 +1478,9 @@
             },
             {
               "id": "ar_bourtouqal",
-              "text": "بُرْتُقَال",
+              "text": "بُرْتُقَالَة",
               "fr": "orange",
-              "phon": "bourtouqal",
+              "phon": "bourtouqala",
               "emoji": "🍊",
               "kid": true
             },
@@ -1510,9 +1510,9 @@
             },
             {
               "id": "ar_tamatim",
-              "text": "طَمَاطِم",
+              "text": "طَمَاطَة",
               "fr": "tomate",
-              "phon": "tamatim",
+              "phon": "tamata",
               "emoji": "🍅",
               "kid": true
             },
@@ -1526,9 +1526,9 @@
             },
             {
               "id": "ar_jazar",
-              "text": "جَزَر",
+              "text": "جَزَرَة",
               "fr": "carotte",
-              "phon": "jazar",
+              "phon": "jazara",
               "emoji": "🥕",
               "kid": true
             }
@@ -1542,16 +1542,32 @@
             {
               "id": "ar_ana_jai",
               "text": "أَنَا جَائِع",
-              "fr": "j'ai faim",
+              "fr": "j'ai faim (dit par un garçon)",
               "phon": "ana jaï",
+              "emoji": "😋",
+              "kid": true
+            },
+            {
+              "id": "ar_ana_jaia",
+              "text": "أَنَا جَائِعَة",
+              "fr": "j'ai faim (dit par une fille)",
+              "phon": "ana jaïa",
               "emoji": "😋",
               "kid": true
             },
             {
               "id": "ar_ana_atchan",
               "text": "أَنَا عَطْشَان",
-              "fr": "j'ai soif",
+              "fr": "j'ai soif (dit par un garçon)",
               "phon": "ana atchan",
+              "emoji": "🥤",
+              "kid": true
+            },
+            {
+              "id": "ar_ana_atchana",
+              "text": "أَنَا عَطْشَانَة",
+              "fr": "j'ai soif (dit par une fille)",
+              "phon": "ana atchana",
               "emoji": "🥤",
               "kid": true
             },
@@ -1868,7 +1884,7 @@
               "id": "ar_saidni",
               "text": "سَاعِدْنِي",
               "fr": "aide-moi",
-              "phon": "saidni",
+              "phon": "saaidni",
               "emoji": "🆘",
               "kid": true
             },
@@ -1973,8 +1989,16 @@
             {
               "id": "ar_asif",
               "text": "آسِف",
-              "fr": "désolé",
+              "fr": "désolé (dit par un garçon)",
               "phon": "asif",
+              "emoji": "😔",
+              "kid": true
+            },
+            {
+              "id": "ar_asifa",
+              "text": "آسِفَة",
+              "fr": "désolée (dit par une fille)",
+              "phon": "asifa",
               "emoji": "😔",
               "kid": true
             },

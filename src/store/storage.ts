@@ -235,6 +235,9 @@ export function importProfile(s: AppState, json: string): AppState {
   return {
     ...s,
     profiles: [...others, parsed.profile],
+    // on active le profil restauré : sinon, sur un téléphone neuf, l'import
+    // « ne faisait rien » de visible
+    activeProfileId: parsed.profile.id,
     data: { ...s.data, [parsed.profile.id]: parsed.data },
   }
 }

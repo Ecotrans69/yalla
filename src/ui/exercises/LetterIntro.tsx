@@ -1,4 +1,5 @@
 import { AudioButton } from '../components/AudioButton'
+import { AR_ATTRS } from './types'
 import type { ExerciseProps } from './types'
 
 const FORM_LABELS: [keyof import('../../content/types').Letter['forms'], string][] = [
@@ -20,7 +21,9 @@ export function LetterIntro({ ex, course, onAnswer }: ExerciseProps) {
         ✨ Nouvelle lettre
       </div>
       <div className="card pop" style={{ margin: '20px 0', padding: 24 }}>
-        <div className="arabic" style={{ fontSize: 96, lineHeight: 1.2 }}>{letter.char}</div>
+        <div className="arabic" {...AR_ATTRS} style={{ fontSize: 96, lineHeight: 1.2 }}>
+          {letter.char}
+        </div>
         <div style={{ fontWeight: 800, fontSize: 22 }}>{letter.name}</div>
         <div style={{ color: 'var(--text-dim)' }}>se prononce « {letter.phon} »</div>
         {ex.item && (
@@ -38,7 +41,9 @@ export function LetterIntro({ ex, course, onAnswer }: ExerciseProps) {
         >
           {FORM_LABELS.map(([key, label]) => (
             <div key={key} className="card" style={{ padding: 8 }}>
-              <div className="arabic" style={{ fontSize: 34 }}>{letter.forms[key]}</div>
+              <div className="arabic" {...AR_ATTRS} style={{ fontSize: 34 }}>
+                {letter.forms[key]}
+              </div>
               <div style={{ fontSize: 12, color: 'var(--text-dim)' }}>{label}</div>
             </div>
           ))}

@@ -195,6 +195,7 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
         {Array.from({ length: 24 }, (_, i) => (
           <div
             key={i}
+            aria-hidden="true"
             className="confetti"
             style={{
               left: `${(i * 41) % 100}%`,
@@ -279,7 +280,18 @@ export function LessonScreen({ courseId, lessonId, review = false, rng = Math.ra
               navigate(backPath)
             }
           }}
-          style={{ background: 'none', border: 'none', fontSize: 20, cursor: 'pointer', color: 'var(--text-dim)' }}
+          style={{
+            background: 'none',
+            border: 'none',
+            fontSize: 20,
+            cursor: 'pointer',
+            color: 'var(--text-dim)',
+            minWidth: 44,
+            minHeight: 44,
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
           ✕
         </button>

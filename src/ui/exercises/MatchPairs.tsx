@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { shuffle } from '../../engine/lessonBuilder'
-import { targetClass } from './types'
+import { targetAttrs, targetClass } from './types'
 import type { ExerciseProps } from './types'
 
 interface Entry {
@@ -49,6 +49,7 @@ export function MatchPairs({ ex, course, onAnswer }: ExerciseProps) {
       <button
         key={side + entry.i}
         className={`btn-choice ${isSel ? 'selected' : ''} ${isMatched ? 'correct' : ''} ${side === 'r' ? targetClass(course) : ''}`}
+        {...(side === 'r' ? targetAttrs(course) : {})}
         disabled={isMatched}
         style={{ width: '100%', opacity: isMatched ? 0.5 : 1 }}
         onClick={() => {

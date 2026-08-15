@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useApp } from '../../store/state'
 import { useRouter } from '../Router'
+import { ImportButton } from '../components/ImportButton'
 
 const AVATARS = ['🦁', '🐯', '🐼', '🐸', '🦊', '🐰', '🦄', '🐢', '🐬', '🦉', '🐥', '🐨']
 
@@ -111,6 +112,10 @@ export function ProfilesScreen() {
           + Nouveau profil
         </button>
       )}
+
+      <div style={{ marginTop: 12 }}>
+        <ImportButton />
+      </div>
     </div>
   )
 }
